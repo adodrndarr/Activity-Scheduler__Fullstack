@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <h2 class="welcome">Please register <br />to Activity Scheduler.</h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="username" 
+                        formControlName="userName"
+                    >
+                </div>
+
+                <span 
+                    *ngIf="isInvalidInput('userName')"
+                    class="alert-warning"
+                >
+                    <span *ngIf="isRequired('userName')">Username is required.</span> <br />
+                    <span *ngIf="isInvalidFormat('userName')">First letter should be capital.</span><br />
+                </span>
+
+
+                <div class="form-group">
+                    <label for="username">Last name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="lastName" 
+                        formControlName="lastName"
+                    >
+                </div>
+
+                <span 
+                    *ngIf="isInvalidInput('lastName')"
+                    class="alert-warning"
+                >
+                    <span *ngIf="isRequired('lastName')">Lastname is required.</span> <br />
+                    <span *ngIf="isInvalidFormat('lastName')">First letter should be capital.</span><br />
+                </span>
+
+
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" email 
+                        formControlName="email"
+                    >
+                </div>
+
+                <span 
+                    *ngIf="isInvalidInput('email')"
+                    class="alert-warning"
+                >
+                    <span *ngIf="isRequired('email')">Email is required.</span> <br />
+                    <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span><br />
+                </span>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password" 
+                        formControlName="password"
+                    >
+                </div>
+
+                <span 
+                    *ngIf="isInvalidInput('password')"
+                    class="alert-warning"
+                >
+                    <span *ngIf="isRequired('password')">Password is required.</span> <br />
+                    <span *ngIf="isInvalidFormat('password')">
+                        Password must be at least 6 characters long, <br /> 
+                        should include 1 large letter(A-Z), 1 special sign(#$%) and 1 number.
+                    </span><br />
+                </span>
+
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm password:</label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="confirmPassword"
+                        formControlName="confirmPassword" 
+                    >
+                </div>
+                
+                <span
+                    *ngIf="isInvalidInput('confirmPassword')"
+                    class="alert-warning"
+                >
+                    <span 
+                        *ngIf="isRequired('confirmPassword')"
+                    >
+                        Confirming the password is required.
+                    </span> <br />                                        
+                    <span 
+                        *ngIf="isInvalidMatch('confirmPassword')" 
+                        class="alert-danger"
+                    >
+                        The passwords must match.
+                    </span><br />                    
+                </span>
+                
+
+                <button 
+                    class="btn btn-primary" 
+                    type="submit" 
+                    [disabled]="!registerForm.valid || isLoading"
+                >{{ isLoading ? 'Creating...' : 'Create new account' }}</button>
+            </form><br />
+
+            <h2 *ngIf="registerResponse?.info" class="alert-info">
+                {{ registerResponse.info }}
+            </h2>    
+
+            <div *ngIf="!!registerResponse?.errorMessages"> <br />
+                <h1 class="alert-warning">Registration failed:</h1>
+                <ul>
+                    <li 
+                        *ngFor="let message of registerResponse?.errorMessages" 
+                        class="alert-danger"
+                    >
+                        {{ message }}
+                    </li>
+                </ul>
+            </div>
+            
+            <app-error 
+                *ngIf="!!error && !registerResponse?.errorMessages" 
+            ></app-error> 
+            <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+        </div>
+    </div>
+</div>
+

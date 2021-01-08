@@ -1,0 +1,30 @@
+<br /><br />
+
+<div 
+    *ngIf="activityEntities.length > 0"
+    style="display: flex; align-items: center; flex-direction: column;">
+    <div 
+        class="card text-light bg-secondary mb-3" 
+        style="max-width: 50rem; text-align: center;" 
+        *ngFor="let activity of activityEntities"
+    >
+        <div class="card-body">
+            <h5 class="card-title">{{ activity.name }}</h5>
+            <img 
+                [src]="activity.imageUrl" 
+                alt="{{ activity.name }}" 
+                class="img-responsive" 
+                style="max-height: 200px; width: 400px;"
+            >
+            <p class="card-header">{{ activity.description }}</p>
+
+            <p class="card-text">Item quantity: {{ activity.itemQuantity }}</p>
+            <p class="card-text">Minimum user count: {{ activity.minUserCount }}</p>
+            <p class="card-text">Maximum user count: {{ activity.maxUserCount }}</p>
+            <p class="card-text">Location: {{ activity.location }}</p>
+        </div>
+    </div>
+</div>
+
+<app-error *ngIf="!!error"></app-error> 
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
