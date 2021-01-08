@@ -9,14 +9,13 @@ namespace WebAPI.ActivityScheduler.Entities
     {
         public ActivityEntity() { }
         public ActivityEntity(
-                                string name,
-                                string imageUrl,
-                                int itemQuantity,
-                                int minUserCount,
-                                int maxUserCount,
-                                string description,
-                                string location
-                             )
+            string name,
+            string imageUrl,
+            int itemQuantity,
+            int minUserCount,
+            int maxUserCount,
+            string description,
+            string location)
         {
             this.Name = name;
             this.ImageUrl = imageUrl;

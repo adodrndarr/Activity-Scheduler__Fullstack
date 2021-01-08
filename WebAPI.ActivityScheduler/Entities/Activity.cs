@@ -12,18 +12,17 @@ namespace WebAPI.ActivityScheduler.Entities
             this.DateBooked = DateTime.Now;
         }
         public Activity(
-                          string name,
-                          string imageUrl,
-                          DateTime bookedForDate,
-                          DateTime startTime,
-                          DateTime endTime,
-                          int itemQuantity,
-                          int minUserCount,
-                          int maxUserCount,
-                          string description,
-                          string location,
-                          string organizerName
-                       )
+            string name,
+            string imageUrl,
+            DateTime bookedForDate,
+            DateTime startTime,
+            DateTime endTime,
+            int itemQuantity,
+            int minUserCount,
+            int maxUserCount,
+            string description,
+            string location,
+            string organizerName)
         {
             this.ActivityEntity.Name = name;
             this.ActivityEntity.ImageUrl = imageUrl;

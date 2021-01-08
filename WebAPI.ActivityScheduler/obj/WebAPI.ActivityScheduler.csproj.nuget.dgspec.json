@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj": {}
+    "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj": {
+    "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
+        "projectUniqueName": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
         "projectName": "WebAPI.ActivityScheduler",
-        "projectPath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
+        "projectPath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
         "packagesPath": "C:\\Users\\Adis.Drndar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\obj\\",
+        "outputPath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adis.Drndar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "NLog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[1.7.0, )"
             }
           },
           "imports": [

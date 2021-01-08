@@ -3,7 +3,7 @@
 
 namespace WebAPI.ActivityScheduler.Services
 {
-    public class ActivityService
+    public class ActivityService : IActivityService
     {
         public string CalculateDuration(DateTime startTime, DateTime endTime)
         {

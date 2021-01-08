@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o1knyW8yvIVwvB/x2vZO9zisKl8oJitl2YAofvLqiPOhiqlq3nHPf84jFRF+YLmdNeG3csN6y0yyueLFxvlhmQ==",
+  "dgSpecHash": "XOpiSaZSA9435I83tqG94qKdTYmT5aMx/kN3NniP7pW7iFxxLU5L0pN+YD1lnwSainjgfmgELc5JKA4mzAfKLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivitySchedulerRepo\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
+  "projectFilePath": "C:\\Users\\Adis.Drndar\\Desktop\\Activitiy Scheduler\\Backend\\ActivityScheduler\\WebAPI.ActivityScheduler\\WebAPI.ActivityScheduler.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\automapper\\6.1.1\\automapper.6.1.1.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\3.1.0\\automapper.extensions.microsoft.dependencyinjection.3.1.0.nupkg.sha512",
@@ -46,6 +46,8 @@
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Adis.Drndar\\.nuget\\packages\\nlog\\4.7.6\\nlog.4.7.6.nupkg.sha512",
+    "C:\\Users\\Adis.Drndar\\.nuget\\packages\\nlog.extensions.logging\\1.7.0\\nlog.extensions.logging.1.7.0.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Adis.Drndar\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
