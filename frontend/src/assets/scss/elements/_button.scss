@@ -1,0 +1,16 @@
+.button {
+    background-color: transparent;
+    border: 1px solid $black;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-button {
+    @extend .button;
+    background-color: $aqua;
+    color: $white;
+    
+    &:hover { opacity: 0.5; }
+    &:disabled { cursor: not-allowed; }
+}

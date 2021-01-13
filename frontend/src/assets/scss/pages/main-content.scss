@@ -1,0 +1,10 @@
+.main-content { flex-grow: 1; }
+.page-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
