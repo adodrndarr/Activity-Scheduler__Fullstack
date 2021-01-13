@@ -1,0 +1,8 @@
+2021-01-13 08:15:57.9260 INFO ActivityEntitiesController GetActivityEntities - Getting activity entities...
+2021-01-13 08:15:59.6967 INFO ActivityEntitiesController GetActivityEntities - Returning 2 activity entities.
+2021-01-13 08:16:00.1932 INFO AccountController Login - User login was successful.
+2021-01-13 08:16:00.3264 INFO ActivityEntitiesController GetActivityEntities - Getting activity entities...
+2021-01-13 08:16:00.3678 INFO ActivityEntitiesController GetActivityEntities - Returning 2 activity entities.
+2021-01-13 08:16:25.3593 INFO AccountController Login - User login failed.
+2021-01-13 08:16:25.3654 INFO AccountController Login - User login failed.
+2021-01-13 08:16:29.1684 INFO AccountController Login - User login was successful.

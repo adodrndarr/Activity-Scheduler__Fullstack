@@ -164,7 +164,7 @@ namespace WebAPI.ActivityScheduler.Controllers
                 if (signInProcess.Succeeded)
                 {
                     var roles = await _userManager.GetRolesAsync(userFound);
-                    bool isAdmin = roles.Any(r => r == UserRoles.Admin);
+                    bool hasAdminRole = roles.Any(r => r == UserRoles.Admin);
 
                     var signinCredentials = _JWTManager.GetSigningCredentials();
                     var claims = await _JWTManager.GetClaimsAsync(userFound) as List<Claim>;
@@ -187,7 +187,7 @@ namespace WebAPI.ActivityScheduler.Controllers
                     
                     var response = new LoginResponseDTO(
                             isLoginSuccessful: true,
-                            isAdmin: isAdmin,
+                            isAdmin: hasAdminRole,
                             email: userFound.Email,
                             id: userFound.Id,
                             token: token,
