@@ -17,7 +17,11 @@ const routes: Routes = [
     component: RegisterAdminComponent
   },
   { path: 'login', component: LoginComponent },
-  { path: 'activities', component: ActivityEntitiesComponent },
+  {
+    path: 'activities',
+    canActivate: [AuthGuard],
+    component: ActivityEntitiesComponent
+  },
   { path: 'not-found', component: NotFoundComponent },
   { path: '', redirectTo: '/activities', pathMatch: 'full' },
   { path: '**', redirectTo: '/not-found', pathMatch: 'full' }

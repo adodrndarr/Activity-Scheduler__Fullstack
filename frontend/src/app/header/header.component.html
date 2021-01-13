@@ -1,45 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/activities">Activities</a>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto">
+<header class="header">
+    <nav class="nav">
+        <ul class="nav__list">
             <li 
-                class="nav-item" 
+                class="nav__logo" 
+                routerLinkActive="active" 
+            >
+                <a href="#">Activity Scheduler</a>
+            </li>
+
+
+            <li 
+                class="nav__item" 
+                routerLinkActive="active" 
+                *ngIf="isLoggedIn"
+                routerLink="/activities"
+            >
+                <a>Activities</a>
+            </li>
+            
+            <li 
+                class="nav__item" 
                 routerLinkActive="active" 
                 *ngIf="!isLoggedIn"
+                routerLink="/register"
             >
-                <a class="nav-link" routerLink="/register">Create Account</a>
+                <a>Register</a>
             </li>
 
             <li 
-                class="nav-item" 
+                class="nav__item" 
                 routerLinkActive="active" 
                 *ngIf="isAdmin"
+                routerLink="/register-admin"
             >
-                <a class="nav-link" routerLink="/register-admin">Register Admin</a>
+                <a>Register Admin</a>
             </li>
 
             <li 
-                class="nav-item" 
+                class="nav__item" 
                 routerLinkActive="active" 
                 *ngIf="!isLoggedIn"
+                routerLink="/login"
             >
-                <a class="nav-link" routerLink="/login">Login</a>
+                <a>Login</a>
             </li>
 
             <li 
-                class="nav-item" 
+                class="nav__item" 
                 routerLinkActive="active" 
                 *ngIf="isLoggedIn" 
                 (click)="onLogout()"
+                routerLink="/login"
             >
-                <a class="nav-link" routerLink="/login">Log out</a>
-            </li>            
+                <a>Log out</a>
+            </li>
         </ul>
-    </div>
-</nav>
+    </nav>
+</header>

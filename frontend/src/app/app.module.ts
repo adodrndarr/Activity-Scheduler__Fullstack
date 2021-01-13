@@ -16,6 +16,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ErrorComponent } from './shared/error/error.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     ActivityEntitiesComponent,
     ErrorComponent,
     LoadingSpinnerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

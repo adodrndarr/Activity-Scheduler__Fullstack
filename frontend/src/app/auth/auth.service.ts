@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -25,6 +25,7 @@ export class AuthService {
 
   user = new BehaviorSubject<CurrentUser>(null);
   private tokenExpirationTimer: any;
+  errorMessage = null;
 
   register(user: UserToRegisterDTO, registerAsAdmin = false): Observable<RegisterResponseDTO> {
     if (registerAsAdmin) {
@@ -61,8 +62,11 @@ export class AuthService {
   }
 
   logout(): void {
+    this.cookieService.delete('user');
+    this.cookieService.delete('token');
+    this.cookieService.delete('tokenExpirationDate');
+
     this.user.next(null);
-    this.cookieService.deleteAll();
     this.tokenExpirationTimer = null;
   }
 
@@ -93,8 +97,21 @@ export class AuthService {
 
     this.autoLogout(expirationDuration);
   }
-}
 
+  handleError(errorRes: HttpErrorResponse): void {
+    this.errorMessage = 'An unknown error occured, please try again later.';
+
+    switch (errorRes.status) {
+      case 401:
+        this.errorMessage = 'You\'re not authorized to access the ressource.';
+        break;
+      case 500:
+        this.errorMessage = 'Internal Server Error, please try again later.';
+        break;
+    }
+  }
+
+}
 
 
 // login()

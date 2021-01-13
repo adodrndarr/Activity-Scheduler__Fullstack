@@ -1,69 +1,64 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 col-md-offset-3">
+<div class="login__page">
+    <div class="form__container">
+        <form 
+            class="form"
+            [formGroup]="loginForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <h2>Login</h2>
+            <label for="email">E-Mail:</label>
+            <input 
+                type="email" 
+                class="form__input" 
+                id="email" 
+                formControlName="email"
+            >
 
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <h2 class="welcome">Login <br />to Activity Scheduler.</h2>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input 
-                        type="email" 
-                        class="form-control" 
-                        id="email" 
-                        formControlName="email"
-                    >
-                </div>
-
-                <span 
-                    *ngIf="isInvalidInput('email')"
-                    class="alert-warning"
-                >
-                    <span *ngIf="isRequired('email')">Email is required.</span> <br />
-                    <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span><br />
-                </span>
-
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input 
-                        type="password" 
-                        class="form-control" 
-                        id="password" 
-                        formControlName="password"
-                    >
-                </div>
-
-                <span 
-                    *ngIf="isInvalidInput('password')"
-                    class="alert-warning"
-                >
-                    <span *ngIf="isRequired('password')">Password is required.</span><br /><br />
-                </span>                
+            <span 
+                *ngIf="isInvalidInput('email')"
+            >
+                <span *ngIf="isRequired('email')">Email is required.</span>
+                <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span>
+            </span>
 
 
-                <div>
-                    <button 
-                        class="btn btn-primary" 
-                        type="submit" 
-                        [disabled]="!loginForm.valid || isLoading"
-                    >{{ isLoading ? 'Logging in...' : 'Login' }}</button>
-                </div>
-            </form><br />
+            <label for="password">Password:</label>
+            <input 
+                type="password" 
+                class="form__input" 
+                id="password" 
+                formControlName="password"
+            >
 
-            <div *ngIf="!!loginResponse?.errorMessage"> <br />
-                <h1 class="alert-warning">Login failed:</h1>
-                <ul>
-                    <li class="alert-danger">
-                        {{ loginResponse?.errorMessage }}
-                    </li>
-                </ul>
+            <span 
+                *ngIf="isInvalidInput('password')"
+            >
+                <span *ngIf="isRequired('password')">Password is required.</span>
+            </span>               
+
+
+            <div>
+                <button 
+                    class="primary-button" 
+                    type="submit" 
+                    [disabled]="!loginForm.valid || isLoading"
+                >{{ isLoading ? 'Logging in...' : 'Login' }}</button>
             </div>
+        </form><br />
 
-            <app-error
-                *ngIf="!!error && !loginResponse?.errorMessage"
-            ></app-error>                         
-            <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-
+        <div *ngIf="!!loginResponse?.errorMessage" class="login-failed">
+            <h2 class="login-failed__title">Login failed:</h2>
+            <ul>
+                <li class="login-failed__message">
+                    {{ loginResponse?.errorMessage }}
+                </li>
+            </ul>
         </div>
+
+        <app-error
+            *ngIf="!!errorMessage && !loginResponse?.errorMessage"
+            [error]="errorMessage"
+        ></app-error>                         
+        <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
     </div>
 </div>

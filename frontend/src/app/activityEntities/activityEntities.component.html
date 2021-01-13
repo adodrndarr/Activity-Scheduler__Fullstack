@@ -1,8 +1,58 @@
-<br /><br />
+<div 
+    class="activityEntity__page"
+    *ngIf="activityEntities.length > 0"
+>
+    <div 
+        class="activityEntity__container"
+        *ngFor="let activity of activityEntities"
+    >
+        <div class="activityEntity">
+            <h5 class="activityEntity__name">{{ activity.name }}</h5>
+            <img 
+                class="activityEntity__image"
+                [src]="activity.imageUrl" 
+                alt="{{ activity.name }}"  
+            >
+            <p class="activityEntity__description">{{ activity.description }}</p>
 
+            <p>Item quantity: 
+                <span class="activityEntity__info">{{ activity.itemQuantity }}</span>
+            </p>
+            <p>Minimum user count: 
+                <span class="activityEntity__info">{{ activity.minUserCount }}</span>
+            </p>
+            <p>Maximum user count: 
+                <span class="activityEntity__info">{{ activity.maxUserCount }}</span>
+            </p>
+            <p>Location: 
+                <span class="activityEntity__info">{{ activity.location }}</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<app-error *ngIf="!!errorMessage" [error]="errorMessage"></app-error> 
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div 
     *ngIf="activityEntities.length > 0"
-    style="display: flex; align-items: center; flex-direction: column;">
+    style="display: flex; align-items: center; flex-direction: column;"
+>
     <div 
         class="card text-light bg-secondary mb-3" 
         style="max-width: 50rem; text-align: center;" 
@@ -26,5 +76,5 @@
     </div>
 </div>
 
-<app-error *ngIf="!!error"></app-error> 
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-error *ngIf="!!errorMessage" [error]="errorMessage"></app-error> 
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner> -->

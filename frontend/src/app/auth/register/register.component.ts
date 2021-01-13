@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   registerResponse: RegisterResponseDTO;
-  error: HttpErrorResponse = null;
+  errorMessage: string = null;
   isLoading = false;
 
   @Input() registerAdmin: boolean;
@@ -77,8 +77,10 @@ export class RegisterComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         console.log(errorResponse);
+        this.authService.handleError(errorResponse);
+
         this.registerResponse = errorResponse.error;
-        this.error = errorResponse;
+        this.errorMessage = this.authService.errorMessage;
 
         this.isLoading = false;
       }
@@ -86,7 +88,7 @@ export class RegisterComponent implements OnInit {
   }
 
   private resetState(): void {
-    this.error = null;
+    this.errorMessage = null;
     this.registerResponse = null;
   }
 

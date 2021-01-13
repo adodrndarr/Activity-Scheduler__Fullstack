@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './error.component.html'
 })
 export class ErrorComponent {
+  @Input() error = 'An unknown error occured, please try again later.';
 }

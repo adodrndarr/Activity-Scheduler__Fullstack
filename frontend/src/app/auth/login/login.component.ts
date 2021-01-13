@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginResponse: LoginResponseDTO;
-  error: HttpErrorResponse = null;
+  errorMessage: string = null;
   isLoading = false;
 
   ngOnInit(): void {
@@ -70,9 +70,10 @@ export class LoginComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         console.log(errorResponse);
+        this.authService.handleError(errorResponse);
 
         this.loginResponse = errorResponse.error;
-        this.error = errorResponse;
+        this.errorMessage = this.authService.errorMessage;
 
         this.loginForm.controls['password'].reset();
         this.isLoading = false;
@@ -81,7 +82,7 @@ export class LoginComponent implements OnInit {
   }
 
   private resetState(): void {
-    this.error = null;
+    this.errorMessage = null;
     this.loginResponse = null;
   }
 

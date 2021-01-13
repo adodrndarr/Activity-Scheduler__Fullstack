@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 import { ActivityEntity } from '../auth/Entities/Models/activityEntity.model';
 import { DataStorageService } from '../services/data-storage.service';
 import { HttpService } from '../services/http.service';
@@ -12,12 +14,13 @@ export class ActivityEntitiesComponent implements OnInit {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private authService: AuthService
   ) { }
 
 
   activityEntities: ActivityEntity[] = [];
-  error = null;
+  errorMessage = null;
   isLoading = true;
 
   ngOnInit() {
@@ -33,8 +36,11 @@ export class ActivityEntitiesComponent implements OnInit {
           this.dataStorageService.activityEntities = newActivities;
           this.isLoading = false;
         },
-        (errorRes) => {
-          this.error = errorRes;
+        (errorRes: HttpErrorResponse) => {
+          console.log(errorRes);
+          this.authService.handleError(errorRes);
+
+          this.errorMessage = this.authService.errorMessage;
           this.isLoading = false;
         });
     }
