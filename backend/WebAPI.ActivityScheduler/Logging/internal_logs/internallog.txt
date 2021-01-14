@@ -3667,3 +3667,905 @@
 2021-01-13 08:16:25.3593 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
 2021-01-13 08:16:25.3654 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
 2021-01-13 08:16:29.1684 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:42:57.0594 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:42:57.1063 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:42:57.1127 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:44:04.6213 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:46:40.7979 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:46:40.8530 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:46:40.8712 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:49:06.7837 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:49:06.8513 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:49:06.8615 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:50:04.2395 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:50:04.2568 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:50:10.6140 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:50:10.6551 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:51:54.3231 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:51:54.3305 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:52:51.5940 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:52:51.5990 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:53:08.9818 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:53:09.0188 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:53:09.0188 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:54:16.3299 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:54:16.3299 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:54:27.1275 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 08:54:27.1275 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:00:39.6747 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:00:39.6747 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:00:42.7761 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:00:42.8065 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:00:42.8157 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:01:09.5283 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:01:09.5510 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:01:54.4371 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:01:54.4446 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:15.8523 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:15.8697 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:41.8863 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:41.9001 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:53.5312 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:02:53.5551 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:12.0830 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:12.0830 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:19.3954 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:19.4168 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:34.7031 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:34.7209 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:52.0771 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:03:52.1106 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:04:04.7044 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:04:04.7044 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:04:07.7333 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:04:07.7463 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:05:48.9410 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:05:48.9561 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:06:01.6774 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:06:30.9147 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:06:30.9256 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:06:46.2476 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:06:46.2900 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:07:52.6728 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:07:52.6728 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:08:41.8492 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:08:41.8704 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:08.0779 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:08.0925 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:26.6256 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:26.6402 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:41.7466 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:09:41.7640 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:10:04.1050 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:10:04.1251 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:10:56.7850 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:10:56.8027 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:11:26.9348 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:11:26.9558 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:11:38.9586 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:11:38.9814 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:12:33.8994 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:12:33.9194 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:12:49.8621 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:12:49.8868 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:13:00.6088 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:13:00.6311 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:13:37.5041 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:05.5475 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:05.5760 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:05.5832 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:52.7765 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:52.8086 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:17:52.8157 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:20:06.4498 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:20:06.4567 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:20:11.8071 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:20:11.8347 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:20:11.8347 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:24:06.5029 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 09:24:06.6392 Debug Found assembly location directory: 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-13 09:24:06.6487 Debug Search for auto loading files in location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 09:24:06.6642 Debug Start auto loading, location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 09:24:06.6642 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 09:24:06.6730 Info Loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 09:24:06.7021 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-01-13 09:24:06.7044 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 09:24:06.7044 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2021-01-13 09:24:06.7044 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 09:24:06.7044 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 09:24:06.7227 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-01-13 09:24:06.7227 Debug Auto loading done
+2021-01-13 09:24:06.7227 Info Message Template Auto Format enabled
+2021-01-13 09:24:06.7531 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.7531 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:24:06.7688 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 09:24:06.7688 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 09:24:06.7688 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.7688 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:06.7688 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.7835 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:24:06.7835 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:24:06.7835 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:24:06.7835 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:06.7835 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:06.8010 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8010 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-13 09:24:06.8010 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8010 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:24:06.8178 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-13 09:24:06.8178 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 09:24:06.8178 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8178 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:24:06.8290 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 09:24:06.8290 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8290 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:24:06.8290 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 09:24:06.8290 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 09:24:06.8290 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8452 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:06.8452 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8452 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:24:06.8452 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:24:06.8452 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:24:06.8452 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:06.8631 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:06.8631 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:06.8631 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:24:06.8631 Info Adding target FileTarget(Name=logfile)
+2021-01-13 09:24:06.8631 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-13 09:24:06.8791 Trace ParseRulesElement
+2021-01-13 09:24:06.8995 Debug Watching path 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler' filter 'nlog.config' for changes.
+2021-01-13 09:24:06.8995 Debug --- NLog configuration dump ---
+2021-01-13 09:24:06.8995 Debug Targets:
+2021-01-13 09:24:06.9072 Debug File Target[logfile]
+2021-01-13 09:24:06.9072 Debug Rules:
+2021-01-13 09:24:06.9072 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-13 09:24:06.9072 Debug --- End of NLog configuration dump ---
+2021-01-13 09:24:06.9072 Trace FindReachableObject<System.Object>:
+2021-01-13 09:24:06.9235 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-13 09:24:06.9235 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-13 09:24:06.9235 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-13 09:24:06.9235 Trace   Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 09:24:06.9235 Trace   Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:24:06.9235 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:06.9406 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:06.9406 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:24:06.9406 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:06.9406 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 09:24:06.9406 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:24:06.9555 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:06.9555 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:24:06.9555 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:06.9555 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:24:06.9555 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:24:06.9555 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:24:06.9712 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:06.9712 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:06.9712 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:06.9712 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:24:06.9712 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 09:24:06.9712 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-13 09:24:06.9875 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-13 09:24:06.9875 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/nlog.config
+2021-01-13 09:24:06.9875 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-13 09:24:07.0061 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-13 09:24:07.0061 Trace Initializing Layout Renderer: ${message}
+2021-01-13 09:24:07.0061 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:24:07.0061 Trace Initializing Layout Renderer: ${level}
+2021-01-13 09:24:07.0179 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-13 09:24:07.0179 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:07.0179 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:24:07.0179 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:07.0179 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:07.0381 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-13 09:24:07.0381 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:24:07.0381 Trace Initializing Layout Renderer: ${longdate}
+2021-01-13 09:24:07.0487 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 09:24:07.0487 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:07.0487 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:24:07.0487 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:07.0487 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:24:07.0647 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:07.0647 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:24:07.0647 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:24:07.0647 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:24:07.0647 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:07.0807 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:24:07.0807 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:07.0807 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:24:07.0807 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:24:07.0807 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-13 09:24:07.0972 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:24:07.0972 Trace Initializing 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 09:24:07.0972 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:24:07.0972 Trace Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:24:07.1106 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:24:07.1106 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:07.1106 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:24:07.1106 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:24:07.1106 Trace Initializing File Target[logfile]
+2021-01-13 09:24:07.1282 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-13 09:24:07.1282 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-13 09:24:07.1282 Trace  Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 09:24:07.1282 Trace  Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:24:07.1282 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 09:24:07.1282 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:24:07.1426 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 09:24:07.1426 Trace File Target[logfile] has 2 layouts
+2021-01-13 09:24:07.1426 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-13 09:24:08.3411 Debug Targets for WebAPI.ActivityScheduler.Services.LoggerService by level:
+2021-01-13 09:24:08.3411 Debug Trace =>
+2021-01-13 09:24:08.3457 Debug Debug => logfile
+2021-01-13 09:24:08.3457 Debug Info => logfile
+2021-01-13 09:24:08.3457 Debug Warn => logfile
+2021-01-13 09:24:08.3457 Debug Error => logfile
+2021-01-13 09:24:08.3618 Debug Fatal => logfile
+2021-01-13 09:24:08.4051 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt'
+2021-01-13 09:24:08.4187 Debug Creating file appender: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt
+2021-01-13 09:24:08.4249 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:24:11.1278 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:03.9501 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 09:34:04.0554 Debug Found assembly location directory: 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-13 09:34:04.0554 Debug Search for auto loading files in location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 09:34:04.0727 Debug Start auto loading, location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 09:34:04.0817 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 09:34:04.0817 Info Loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 09:34:04.1024 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-01-13 09:34:04.1024 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 09:34:04.1152 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2021-01-13 09:34:04.1152 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 09:34:04.1270 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 09:34:04.1270 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-01-13 09:34:04.1270 Debug Auto loading done
+2021-01-13 09:34:04.1270 Info Message Template Auto Format enabled
+2021-01-13 09:34:04.1888 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.1888 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:34:04.2153 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 09:34:04.2217 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 09:34:04.2217 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.2217 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.2353 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.2353 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:34:04.2353 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:34:04.2546 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:34:04.2546 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.2692 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.2692 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.2692 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-13 09:34:04.2981 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3046 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:34:04.3279 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-13 09:34:04.3323 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 09:34:04.3323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3323 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:34:04.3323 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 09:34:04.3451 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3451 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:34:04.3451 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 09:34:04.3451 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 09:34:04.3451 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3451 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.3617 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3617 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:34:04.3617 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:34:04.3617 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:34:04.3617 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.3617 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.3766 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.3766 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:34:04.3766 Info Adding target FileTarget(Name=logfile)
+2021-01-13 09:34:04.3766 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-13 09:34:04.3766 Trace ParseRulesElement
+2021-01-13 09:34:04.4254 Debug Watching path 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler' filter 'nlog.config' for changes.
+2021-01-13 09:34:04.4254 Debug --- NLog configuration dump ---
+2021-01-13 09:34:04.4254 Debug Targets:
+2021-01-13 09:34:04.4390 Debug File Target[logfile]
+2021-01-13 09:34:04.4390 Debug Rules:
+2021-01-13 09:34:04.4390 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-13 09:34:04.4390 Debug --- End of NLog configuration dump ---
+2021-01-13 09:34:04.4593 Trace FindReachableObject<System.Object>:
+2021-01-13 09:34:04.4593 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-13 09:34:04.4593 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-13 09:34:04.4697 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-13 09:34:04.4697 Trace   Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 09:34:04.4697 Trace   Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:34:04.4697 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.4697 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.4697 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:34:04.4874 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.4874 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 09:34:04.4874 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:34:04.4874 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.4874 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:34:04.5011 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.5011 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:34:04.5011 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:34:04.5011 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:34:04.5011 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.5011 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.5173 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.5173 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:34:04.5173 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 09:34:04.5173 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-13 09:34:04.5173 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-13 09:34:04.5348 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/nlog.config
+2021-01-13 09:34:04.5348 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-13 09:34:04.5501 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-13 09:34:04.5501 Trace Initializing Layout Renderer: ${message}
+2021-01-13 09:34:04.5501 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:34:04.5635 Trace Initializing Layout Renderer: ${level}
+2021-01-13 09:34:04.5635 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-13 09:34:04.5635 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.5635 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:34:04.5816 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.5816 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.5816 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-13 09:34:04.5951 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:34:04.5951 Trace Initializing Layout Renderer: ${longdate}
+2021-01-13 09:34:04.5951 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 09:34:04.5951 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.5951 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:34:04.5951 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.6109 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 09:34:04.6109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.6109 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 09:34:04.6109 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 09:34:04.6109 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 09:34:04.6109 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.6109 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 09:34:04.6281 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.6281 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 09:34:04.6281 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:34:04.6281 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-13 09:34:04.6281 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 09:34:04.6412 Trace Initializing 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 09:34:04.6412 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 09:34:04.6412 Trace Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:34:04.6412 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 09:34:04.6412 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.6412 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 09:34:04.6412 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 09:34:04.6600 Trace Initializing File Target[logfile]
+2021-01-13 09:34:04.6600 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-13 09:34:04.6600 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-13 09:34:04.6600 Trace  Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 09:34:04.6600 Trace  Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 09:34:04.6735 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 09:34:04.6735 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 09:34:04.6735 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 09:34:04.6735 Trace File Target[logfile] has 2 layouts
+2021-01-13 09:34:04.6735 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-13 09:34:13.9315 Debug Targets for WebAPI.ActivityScheduler.Services.LoggerService by level:
+2021-01-13 09:34:13.9315 Debug Trace =>
+2021-01-13 09:34:13.9418 Debug Debug => logfile
+2021-01-13 09:34:13.9418 Debug Info => logfile
+2021-01-13 09:34:13.9418 Debug Warn => logfile
+2021-01-13 09:34:13.9564 Debug Error => logfile
+2021-01-13 09:34:13.9733 Debug Fatal => logfile
+2021-01-13 09:34:14.0333 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt'
+2021-01-13 09:34:14.0514 Debug Creating file appender: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt
+2021-01-13 09:34:14.0514 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:15.9235 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:16.7630 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:16.7672 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:21.6954 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:21.8999 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 09:34:21.9094 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:54:06.2620 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:54:06.3417 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:54:06.3631 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:54:38.3783 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:55:29.6042 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 10:55:29.7242 Debug Found assembly location directory: 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-13 10:55:29.7313 Debug Search for auto loading files in location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 10:55:29.7313 Debug Start auto loading, location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 10:55:29.7433 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 10:55:29.7433 Info Loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 10:55:29.7679 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-01-13 10:55:29.7679 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 10:55:29.7733 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2021-01-13 10:55:29.7733 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 10:55:29.7733 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 10:55:29.7733 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-01-13 10:55:29.7882 Debug Auto loading done
+2021-01-13 10:55:29.7882 Info Message Template Auto Format enabled
+2021-01-13 10:55:29.8141 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8187 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 10:55:29.8187 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 10:55:29.8187 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 10:55:29.8340 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8340 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:29.8340 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8340 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 10:55:29.8516 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 10:55:29.8516 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 10:55:29.8516 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:29.8516 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:29.8678 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8678 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-13 10:55:29.8678 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8678 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 10:55:29.8900 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-13 10:55:29.8900 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 10:55:29.8977 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8977 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 10:55:29.8977 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 10:55:29.8977 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.8977 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 10:55:29.9129 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 10:55:29.9129 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 10:55:29.9129 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.9129 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:29.9129 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.9304 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 10:55:29.9304 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 10:55:29.9304 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 10:55:29.9304 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:29.9304 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:29.9453 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:29.9453 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 10:55:29.9453 Info Adding target FileTarget(Name=logfile)
+2021-01-13 10:55:29.9453 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-13 10:55:29.9453 Trace ParseRulesElement
+2021-01-13 10:55:29.9801 Debug Watching path 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler' filter 'nlog.config' for changes.
+2021-01-13 10:55:29.9801 Debug --- NLog configuration dump ---
+2021-01-13 10:55:29.9801 Debug Targets:
+2021-01-13 10:55:29.9801 Debug File Target[logfile]
+2021-01-13 10:55:29.9921 Debug Rules:
+2021-01-13 10:55:29.9921 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-13 10:55:29.9921 Debug --- End of NLog configuration dump ---
+2021-01-13 10:55:30.0060 Trace FindReachableObject<System.Object>:
+2021-01-13 10:55:30.0060 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-13 10:55:30.0060 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-13 10:55:30.0060 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-13 10:55:30.0060 Trace   Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 10:55:30.0060 Trace   Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 10:55:30.0221 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.0221 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.0221 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 10:55:30.0221 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.0221 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 10:55:30.0382 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 10:55:30.0382 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.0382 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 10:55:30.0382 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.0382 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 10:55:30.0542 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 10:55:30.0542 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 10:55:30.0542 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.0542 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:30.0542 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.0542 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 10:55:30.0713 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 10:55:30.0713 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-13 10:55:30.0713 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-13 10:55:30.0713 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/nlog.config
+2021-01-13 10:55:30.0884 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-13 10:55:30.0884 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-13 10:55:30.1009 Trace Initializing Layout Renderer: ${message}
+2021-01-13 10:55:30.1009 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 10:55:30.1009 Trace Initializing Layout Renderer: ${level}
+2021-01-13 10:55:30.1009 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-13 10:55:30.1182 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:30.1182 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 10:55:30.1182 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.1182 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:30.1337 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-13 10:55:30.1337 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 10:55:30.1337 Trace Initializing Layout Renderer: ${longdate}
+2021-01-13 10:55:30.1337 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 10:55:30.1477 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:30.1477 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 10:55:30.1477 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.1477 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 10:55:30.1626 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.1626 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 10:55:30.1626 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 10:55:30.1626 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 10:55:30.1626 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.1829 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 10:55:30.1829 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.1829 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 10:55:30.1939 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 10:55:30.1939 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-13 10:55:30.1939 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 10:55:30.1939 Trace Initializing 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 10:55:30.1939 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 10:55:30.2113 Trace Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 10:55:30.2113 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 10:55:30.2113 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.2113 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 10:55:30.2113 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 10:55:30.2113 Trace Initializing File Target[logfile]
+2021-01-13 10:55:30.2297 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-13 10:55:30.2297 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-13 10:55:30.2297 Trace  Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 10:55:30.2297 Trace  Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 10:55:30.2297 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 10:55:30.2425 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 10:55:30.2425 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 10:55:30.2425 Trace File Target[logfile] has 2 layouts
+2021-01-13 10:55:30.2425 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-13 10:55:31.5176 Debug Targets for WebAPI.ActivityScheduler.Services.LoggerService by level:
+2021-01-13 10:55:31.5176 Debug Trace =>
+2021-01-13 10:55:31.5228 Debug Debug => logfile
+2021-01-13 10:55:31.5228 Debug Info => logfile
+2021-01-13 10:55:31.5228 Debug Warn => logfile
+2021-01-13 10:55:31.5228 Debug Error => logfile
+2021-01-13 10:55:31.5228 Debug Fatal => logfile
+2021-01-13 10:55:31.5585 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt'
+2021-01-13 10:55:31.5585 Debug Creating file appender: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt
+2021-01-13 10:55:31.5721 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 10:55:33.6950 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 11:17:33.0883 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 11:17:33.3022 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 11:17:33.3283 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 12:32:41.8484 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 12:32:41.8628 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:00:29.9364 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:01:44.3894 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:02:01.4879 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:02:01.9317 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:33:56.0246 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:33:56.1306 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:33:56.1523 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:34:29.0078 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:34:36.7316 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 15:34:36.7530 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:27:41.1947 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 16:27:41.3507 Debug Found assembly location directory: 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-13 16:27:41.3560 Debug Search for auto loading files in location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 16:27:41.3560 Debug Start auto loading, location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-13 16:27:41.3694 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 16:27:41.3694 Info Loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-13 16:27:41.3948 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-01-13 16:27:41.3948 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-13 16:27:41.4008 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2021-01-13 16:27:41.4008 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 16:27:41.4008 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-13 16:27:41.4008 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-01-13 16:27:41.4008 Debug Auto loading done
+2021-01-13 16:27:41.4183 Info Message Template Auto Format enabled
+2021-01-13 16:27:41.4384 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.4384 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:27:41.4525 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 16:27:41.4525 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 16:27:41.4525 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.4626 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.4626 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.4626 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:27:41.4626 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:27:41.4795 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:27:41.4795 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.4795 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.4795 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.4947 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-13 16:27:41.4947 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.4947 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:27:41.5133 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-13 16:27:41.5133 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 16:27:41.5133 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.5133 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:27:41.5261 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 16:27:41.5261 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.5261 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:27:41.5261 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-13 16:27:41.5261 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-13 16:27:41.5435 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.5435 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.5435 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.5435 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:27:41.5435 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:27:41.5597 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:27:41.5597 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.5597 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.5597 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.5718 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:27:41.5718 Info Adding target FileTarget(Name=logfile)
+2021-01-13 16:27:41.5718 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-13 16:27:41.5718 Trace ParseRulesElement
+2021-01-13 16:27:41.6034 Debug Watching path 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler' filter 'nlog.config' for changes.
+2021-01-13 16:27:41.6034 Debug --- NLog configuration dump ---
+2021-01-13 16:27:41.6034 Debug Targets:
+2021-01-13 16:27:41.6034 Debug File Target[logfile]
+2021-01-13 16:27:41.6034 Debug Rules:
+2021-01-13 16:27:41.6034 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-13 16:27:41.6204 Debug --- End of NLog configuration dump ---
+2021-01-13 16:27:41.6204 Trace FindReachableObject<System.Object>:
+2021-01-13 16:27:41.6204 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-13 16:27:41.6204 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-13 16:27:41.6204 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-13 16:27:41.6364 Trace   Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 16:27:41.6364 Trace   Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 16:27:41.6364 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.6364 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.6500 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:27:41.6500 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.6500 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 16:27:41.6500 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:27:41.6500 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.6670 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:27:41.6670 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.6670 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:27:41.6670 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:27:41.6670 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:27:41.6670 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.6830 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.6830 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.6830 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:27:41.6830 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 16:27:41.6967 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-13 16:27:41.6967 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-13 16:27:41.6967 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/nlog.config
+2021-01-13 16:27:41.6967 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-13 16:27:41.7192 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-13 16:27:41.7192 Trace Initializing Layout Renderer: ${message}
+2021-01-13 16:27:41.7192 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:27:41.7192 Trace Initializing Layout Renderer: ${level}
+2021-01-13 16:27:41.7300 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-13 16:27:41.7300 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.7300 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:27:41.7300 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.7437 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.7437 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-13 16:27:41.7437 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:27:41.7437 Trace Initializing Layout Renderer: ${longdate}
+2021-01-13 16:27:41.7437 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-13 16:27:41.7608 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.7608 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:27:41.7608 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.7608 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-13 16:27:41.7608 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.7608 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-13 16:27:41.7766 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-13 16:27:41.7766 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-13 16:27:41.7766 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.7766 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-13 16:27:41.7766 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.7766 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-13 16:27:41.7954 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:27:41.7954 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-13 16:27:41.7954 Trace Initializing Layout Renderer: ${literal}
+2021-01-13 16:27:41.7954 Trace Initializing 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-13 16:27:41.7954 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-13 16:27:41.8097 Trace Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 16:27:41.8097 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-13 16:27:41.8097 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.8097 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-13 16:27:41.8222 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-13 16:27:41.8222 Trace Initializing File Target[logfile]
+2021-01-13 16:27:41.8222 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-13 16:27:41.8222 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-13 16:27:41.8222 Trace  Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-13 16:27:41.8222 Trace  Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-13 16:27:41.8397 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-13 16:27:41.8397 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-13 16:27:41.8397 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-13 16:27:41.8397 Trace File Target[logfile] has 2 layouts
+2021-01-13 16:27:41.8397 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-13 16:27:43.3239 Debug Targets for WebAPI.ActivityScheduler.Services.LoggerService by level:
+2021-01-13 16:27:43.3239 Debug Trace =>
+2021-01-13 16:27:43.3239 Debug Debug => logfile
+2021-01-13 16:27:43.3239 Debug Info => logfile
+2021-01-13 16:27:43.3239 Debug Warn => logfile
+2021-01-13 16:27:43.3239 Debug Error => logfile
+2021-01-13 16:27:43.3401 Debug Fatal => logfile
+2021-01-13 16:27:43.3669 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt'
+2021-01-13 16:27:43.3768 Debug Creating file appender: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt
+2021-01-13 16:27:43.3768 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:27:46.6608 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:00.5962 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:00.7466 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:00.7634 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:23.7494 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:23.7690 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:30.9629 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:30.9791 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:46.1758 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:46.2128 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:51.8756 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:28:51.8908 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:29:09.9181 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:29:10.0077 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:29:27.9385 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:29:27.9903 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:30:12.9986 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:30:13.0150 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:30:21.0908 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:30:21.1320 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:10.1449 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:10.1663 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:16.7124 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:16.7432 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:27.4066 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:27.4391 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:36.9686 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:31:36.9932 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:32:16.2675 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:32:16.2857 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:34:24.2902 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:34:24.3083 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:43:59.0032 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:43:59.0411 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:43:59.0411 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:45:43.2099 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:45:43.2588 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:45:43.2588 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:46:00.8170 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:46:00.8375 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:46:42.6158 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:46:42.6305 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:03.3511 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:03.3689 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:20.2167 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:20.2359 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:36.2171 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:36.2348 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:47:50.0598 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:06.2219 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:06.2448 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:36.7596 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:36.7801 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:48.9987 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:48:49.0267 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:49:55.3612 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:49:55.3875 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:49:55.3875 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:50:04.0825 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 16:50:04.0922 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 17:08:51.8704 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-13 17:08:51.8704 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-13_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:09:15.0983 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-14 08:09:15.2783 Debug Found assembly location directory: 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2021-01-14 08:09:15.2830 Debug Search for auto loading files in location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-14 08:09:15.2830 Debug Start auto loading, location: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1
+2021-01-14 08:09:15.2984 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-14 08:09:15.2984 Info Loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2021-01-14 08:09:15.4387 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.0.1463. Product version: 1.7.0+53f8c72107ad200657b89638c4d236a0c9e351eb. GlobalAssemblyCache: False
+2021-01-14 08:09:15.4387 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-01-14 08:09:15.4387 Info Auto loading assembly file: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2021-01-14 08:09:15.4387 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-14 08:09:15.4585 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2021-01-14 08:09:15.4585 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2021-01-14 08:09:15.4585 Debug Auto loading done
+2021-01-14 08:09:15.4585 Info Message Template Auto Format enabled
+2021-01-14 08:09:15.4917 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.4917 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-14 08:09:15.5059 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-14 08:09:15.5059 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-14 08:09:15.5059 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5174 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.5174 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5174 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-14 08:09:15.5328 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-14 08:09:15.5328 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-14 08:09:15.5328 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.5328 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.5328 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5500 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-01-14 08:09:15.5500 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5500 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-14 08:09:15.5684 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2021-01-14 08:09:15.5684 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-14 08:09:15.5684 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5684 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-14 08:09:15.5808 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2021-01-14 08:09:15.5808 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5808 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-14 08:09:15.5808 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-01-14 08:09:15.5945 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-01-14 08:09:15.5945 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5945 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.5945 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.5945 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-14 08:09:15.5945 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-14 08:09:15.6117 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-14 08:09:15.6117 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.6117 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.6117 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.6117 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-14 08:09:15.6289 Info Adding target FileTarget(Name=logfile)
+2021-01-14 08:09:15.6289 Debug Registered target logfile: NLog.Targets.FileTarget
+2021-01-14 08:09:15.6289 Trace ParseRulesElement
+2021-01-14 08:09:15.6585 Debug Watching path 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler' filter 'nlog.config' for changes.
+2021-01-14 08:09:15.6585 Debug --- NLog configuration dump ---
+2021-01-14 08:09:15.6585 Debug Targets:
+2021-01-14 08:09:15.6585 Debug File Target[logfile]
+2021-01-14 08:09:15.6585 Debug Rules:
+2021-01-14 08:09:15.6755 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2021-01-14 08:09:15.6755 Debug --- End of NLog configuration dump ---
+2021-01-14 08:09:15.6755 Trace FindReachableObject<System.Object>:
+2021-01-14 08:09:15.6885 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2021-01-14 08:09:15.6885 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-01-14 08:09:15.6885 Trace  Scanning FileTarget 'File Target[logfile]'
+2021-01-14 08:09:15.6885 Trace   Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-14 08:09:15.6885 Trace   Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-14 08:09:15.6885 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.7057 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.7057 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-14 08:09:15.7057 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.7057 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-14 08:09:15.7057 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-14 08:09:15.7212 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.7212 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-14 08:09:15.7212 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.7212 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-14 08:09:15.7212 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-14 08:09:15.7367 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-14 08:09:15.7367 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.7367 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.7367 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.7511 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-14 08:09:15.7511 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-14 08:09:15.7511 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-01-14 08:09:15.7511 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-01-14 08:09:15.7511 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/nlog.config
+2021-01-14 08:09:15.7688 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-01-14 08:09:15.7688 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-01-14 08:09:15.7688 Trace Initializing Layout Renderer: ${message}
+2021-01-14 08:09:15.7820 Trace Initializing Layout Renderer: ${literal}
+2021-01-14 08:09:15.7820 Trace Initializing Layout Renderer: ${level}
+2021-01-14 08:09:15.7820 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2021-01-14 08:09:15.7820 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.7820 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-14 08:09:15.8007 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.8007 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.8007 Trace Initializing Layout Renderer: ${uppercase}
+2021-01-14 08:09:15.8131 Trace Initializing Layout Renderer: ${literal}
+2021-01-14 08:09:15.8131 Trace Initializing Layout Renderer: ${longdate}
+2021-01-14 08:09:15.8131 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2021-01-14 08:09:15.8131 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.8131 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-14 08:09:15.8131 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.8321 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-01-14 08:09:15.8321 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.8321 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-01-14 08:09:15.8321 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-01-14 08:09:15.8321 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-01-14 08:09:15.8453 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.8453 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-01-14 08:09:15.8453 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.8453 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-01-14 08:09:15.8453 Trace Initializing Layout Renderer: ${literal}
+2021-01-14 08:09:15.8627 Trace Initializing Layout Renderer: ${shortdate}
+2021-01-14 08:09:15.8627 Trace Initializing Layout Renderer: ${literal}
+2021-01-14 08:09:15.8627 Trace Initializing 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'
+2021-01-14 08:09:15.8627 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-01-14 08:09:15.8627 Trace Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-14 08:09:15.8777 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-01-14 08:09:15.8777 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.8777 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-01-14 08:09:15.8777 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-01-14 08:09:15.8936 Trace Initializing File Target[logfile]
+2021-01-14 08:09:15.8936 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-01-14 08:09:15.8936 Trace Scanning FileTarget 'File Target[logfile]'
+2021-01-14 08:09:15.8936 Trace  Scanning Property FileName ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt'' NLog.Layouts
+2021-01-14 08:09:15.9089 Trace  Scanning SimpleLayout ''C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/${shortdate}_logfile.txt''
+2021-01-14 08:09:15.9089 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2021-01-14 08:09:15.9089 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2021-01-14 08:09:15.9089 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-01-14 08:09:15.9236 Trace File Target[logfile] has 2 layouts
+2021-01-14 08:09:15.9236 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-01-14 08:09:17.6817 Debug Targets for WebAPI.ActivityScheduler.Services.LoggerService by level:
+2021-01-14 08:09:17.6817 Debug Trace =>
+2021-01-14 08:09:17.6817 Debug Debug => logfile
+2021-01-14 08:09:17.6901 Debug Info => logfile
+2021-01-14 08:09:17.6901 Debug Warn => logfile
+2021-01-14 08:09:17.6901 Debug Error => logfile
+2021-01-14 08:09:17.6901 Debug Fatal => logfile
+2021-01-14 08:09:17.7282 Debug FileTarget(Name=logfile): Preparing for new file 'C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt'
+2021-01-14 08:09:17.7390 Debug Creating file appender: C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt
+2021-01-14 08:09:17.7390 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:09:25.1434 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:09:32.0478 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:09:32.3599 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:09:32.3880 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:11:10.5807 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:11:10.6285 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 08:11:10.6285 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:12:34.2252 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:12:34.3136 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:12:34.3369 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:13:03.4852 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:13:06.4583 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
+2021-01-14 11:13:06.4716 Trace Opening C:\Users\Adis.Drndar\Desktop\Activitiy Scheduler\Backend\ActivityScheduler\WebAPI.ActivityScheduler/Logging\logs/2021-01-14_logfile.txt with allowFileSharedWriting=False
