@@ -17,7 +17,7 @@
     margin-bottom: 50px;
     
     color: $white;
-    background-color: $lightGray;
+    background-color: $gray;
     border: 2px solid $black;
 }
 
@@ -26,6 +26,9 @@
     flex-direction: column;
     width: 75%;
     margin: 50px 0px 50px 0;
+    padding: 10px;
+    box-shadow: 3px 3px 5px 3px #595959;
+    background-color: $gray;
     
     &__image {
         margin: 20px auto 20px auto;
@@ -38,9 +41,7 @@
         font-weight: bold;
     }
 
-    &__info {
-        color: $yellow;
-    }
+    &__info { color: $yellow; }
 }
 
 /* Responsiveness */

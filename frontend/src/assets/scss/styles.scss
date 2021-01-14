@@ -1,7 +1,7 @@
 // base
 @import './base/variables';
 @import './base/base';
-@import './base//mixins';
+@import './base/mixins';
 @import './base/typography';
 @import './base/utilities';
 
@@ -15,4 +15,4 @@
 // pages
 @import './pages/main-content.scss';
 @import './pages/login.scss';
-@import './pages//activityEntities.scss';
+@import './pages/activityEntities.scss';
