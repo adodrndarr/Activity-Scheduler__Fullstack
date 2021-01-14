@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { ValidatorService } from 'src/app/services/validator.service';
 import { AuthService } from '../auth.service';
 import { RegisterResponseDTO } from '../Entities/Interfaces/auth-response';
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private validatorService: ValidatorService
+    private validatorService: ValidatorService,
+    private errorHandlerService: ErrorHandlerService
   ) { }
 
 
@@ -77,10 +79,10 @@ export class RegisterComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         console.log(errorResponse);
-        this.authService.handleError(errorResponse);
+        this.errorHandlerService.handleError(errorResponse);
 
         this.registerResponse = errorResponse.error;
-        this.errorMessage = this.authService.errorMessage;
+        this.errorMessage = this.errorHandlerService.errorMessage;
 
         this.isLoading = false;
       }

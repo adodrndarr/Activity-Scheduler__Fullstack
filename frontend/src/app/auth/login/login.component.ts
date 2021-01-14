@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { ValidatorService } from 'src/app/services/validator.service';
 import { AuthService } from '../auth.service';
 import { LoginResponseDTO } from '../Entities/Interfaces/auth-response';
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private validatorService: ValidatorService
+    private validatorService: ValidatorService,
+    private errorHandlerService: ErrorHandlerService
   ) { }
 
 
@@ -70,10 +72,10 @@ export class LoginComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         console.log(errorResponse);
-        this.authService.handleError(errorResponse);
+        this.errorHandlerService.handleError(errorResponse);
 
         this.loginResponse = errorResponse.error;
-        this.errorMessage = this.authService.errorMessage;
+        this.errorMessage = this.errorHandlerService.errorMessage;
 
         this.loginForm.controls['password'].reset();
         this.isLoading = false;

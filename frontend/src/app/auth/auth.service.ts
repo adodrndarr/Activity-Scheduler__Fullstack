@@ -25,7 +25,6 @@ export class AuthService {
 
   user = new BehaviorSubject<CurrentUser>(null);
   private tokenExpirationTimer: any;
-  errorMessage = null;
 
   register(user: UserToRegisterDTO, registerAsAdmin = false): Observable<RegisterResponseDTO> {
     if (registerAsAdmin) {
@@ -97,20 +96,6 @@ export class AuthService {
 
     this.autoLogout(expirationDuration);
   }
-
-  handleError(errorRes: HttpErrorResponse): void {
-    this.errorMessage = 'An unknown error occured, please try again later.';
-
-    switch (errorRes.status) {
-      case 401:
-        this.errorMessage = 'You\'re not authorized to access the ressource.';
-        break;
-      case 500:
-        this.errorMessage = 'Internal Server Error, please try again later.';
-        break;
-    }
-  }
-
 }
 
 
