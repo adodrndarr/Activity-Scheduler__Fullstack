@@ -10,4 +10,5 @@ export class DataStorageService {
 
 
   activityEntities: ActivityEntity[] = [];
+  selectedActivity: ActivityEntity = null;
 }

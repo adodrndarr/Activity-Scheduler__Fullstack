@@ -64,7 +64,7 @@ namespace WebAPI.ActivityScheduler.Controllers
                     StatusCodes.Status201Created,
                     new InfoResponseDTO
                     {
-                        Info = $"The activity entity: {newActivityEntity.Name}, has been added."
+                        Info = $"The activity entity: {newActivityEntity.Name}, has been created."
                     }
                 );
             }
@@ -75,6 +75,49 @@ namespace WebAPI.ActivityScheduler.Controllers
                 new InfoResponseDTO
                 {
                     Info = $"Please provide a valid activity entity."
+                }
+            );
+        }
+
+        [Authorize(Roles = UserRoles.StandardUser)]
+        // PUT activityEntities, Params: activityId, body: newActivity
+        [HttpPut]
+        public ActionResult UpdateActivityEntity(Guid activityId, [FromBody] ActivityEntity newActivity)
+        {
+            this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Getting specific activity entity to update...");
+            var activityToBeUpdated = _db.ActivityEntities
+                .AsQueryable()
+                .FirstOrDefault(a => a.Id == activityId);
+
+            if (newActivity != null && activityToBeUpdated != null)
+            {
+                activityToBeUpdated.Name = newActivity?.Name;
+                activityToBeUpdated.ImageUrl = newActivity?.ImageUrl;
+                activityToBeUpdated.ItemQuantity = newActivity.ItemQuantity;
+
+                activityToBeUpdated.MinUserCount = newActivity.MinUserCount;
+                activityToBeUpdated.MaxUserCount = newActivity.MaxUserCount;
+                activityToBeUpdated.Description = newActivity?.Description;
+                activityToBeUpdated.Location = newActivity?.Location;
+
+                _db.SaveChanges();
+
+                this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Update was successful.");
+                return StatusCode(
+                    StatusCodes.Status201Created,
+                    new InfoResponseDTO
+                    {
+                        Info = $"Update for {newActivity.Name} was successful."
+                    }
+                );
+            }
+
+            this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Update failed.");
+            return StatusCode(
+                StatusCodes.Status400BadRequest,
+                new InfoResponseDTO
+                {
+                    Info = $"Could not update the activity, please make sure you provided valid Id and body."
                 }
             );
         }

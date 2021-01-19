@@ -23,6 +23,7 @@
     "jquery": "^3.5.1",
     "ngx-cookie-service": "^11.0.2",
     "rxjs": "~6.4.0",
+    "sweetalert2": "^10.13.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

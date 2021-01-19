@@ -1,80 +1,133 @@
-<div 
-    class="activityEntity__page"
-    *ngIf="activityEntities.length > 0"
+<button 
+    class="btn-success"
+    routerLink="/create-activity"
+    *ngIf="isAdmin"
 >
+    New activity
+</button><br />
+<input 
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()"
+    type="text" 
+    placeholder="Search by name..." 
+/>
+<button 
+    class="btn-primary"
+    (click)="onClear()"
+>
+    Clear
+</button>
+
+<div class="activityEntity__page">
     <div 
         class="activityEntity__container"
-        *ngFor="let activity of activityEntities"
+        *ngIf="activityEntities.length > 0"
     >
-        <div class="activityEntity">
-            <h5 class="activityEntity__name">{{ activity.name }}</h5>
-            <img 
-                class="activityEntity__image"
-                [src]="activity.imageUrl" 
-                alt="{{ activity.name }}"  
-            >
-            <p class="activityEntity__description">{{ activity.description }}</p>
+        <table class="table table-responsive" >
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Min users</th>
+                <th scope="col">Max users</th>
+                <th scope="col">Location</th>
+                <th scope="col" colspan="3"></th>
+            </tr>
+            </thead>
+        
+            <tbody *ngIf="!displayFiltered">
+                <tr *ngFor="let activity of activityEntities; let number = index;">
+                    <th scope="row">{{ number + 1 }} </th>
+                    <td>{{ activity.name }}</td>
+                    <td>{{ activity.itemQuantity }}</td>
+                    <td>{{ activity.minUserCount }}</td>
+                    <td>{{ activity.maxUserCount }}</td>
+                    <td>{{ activity.location }}</td>
 
-            <p>Item quantity: 
-                <span class="activityEntity__info">{{ activity.itemQuantity }}</span>
-            </p>
-            <p>Minimum user count: 
-                <span class="activityEntity__info">{{ activity.minUserCount }}</span>
-            </p>
-            <p>Maximum user count: 
-                <span class="activityEntity__info">{{ activity.maxUserCount }}</span>
-            </p>
-            <p>Location: 
-                <span class="activityEntity__info">{{ activity.location }}</span>
-            </p>
-        </div>
+                    <td>
+                        <button 
+                            class="btn-success" 
+                            (click)="onSelect(activity)"
+                            routerLink="/view-activity"
+                        >
+                            View
+                        </button>
+                    </td>
+                    <td>
+                        <button 
+                            class="btn-warning"
+                            (click)="onSelect(activity)"
+                            routerLink="/edit-activity"
+                        >
+                            Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button 
+                            class="btn-danger"
+                            (click)="onDelete(activity)"
+                            *ngIf="isAdmin"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody *ngIf="displayFiltered">
+                <tr *ngFor="let activity of filteredActivityEntities; let number = index;">
+                    <th scope="row">{{ number + 1 }} </th>
+                    <td>{{ activity.name }}</td>
+                    <td>{{ activity.itemQuantity }}</td>
+                    <td>{{ activity.minUserCount }}</td>
+                    <td>{{ activity.maxUserCount }}</td>
+                    <td>{{ activity.location }}</td>
+
+                    <td>
+                        <button 
+                            class="btn-success" 
+                            (click)="onSelect(activity)"
+                            routerLink="/view-activity"
+                        >
+                            View
+                        </button>
+                    </td>
+                    <td>
+                        <button 
+                            class="btn-warning"
+                            (click)="onSelect(activity)"
+                            routerLink="/edit-activity"
+                        >
+                            Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button 
+                            class="btn-danger"
+                            (click)="onDelete(activity)"
+                            *ngIf="isAdmin"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody *ngIf="filteredActivityEntities.length < 1 && searchTerm">
+                <tr>
+                    <td>No such activity found.</td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 </div>
 
-<app-error *ngIf="!!errorMessage" [error]="errorMessage"></app-error> 
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<div 
-    *ngIf="activityEntities.length > 0"
-    style="display: flex; align-items: center; flex-direction: column;"
->
-    <div 
-        class="card text-light bg-secondary mb-3" 
-        style="max-width: 50rem; text-align: center;" 
-        *ngFor="let activity of activityEntities"
-    >
-        <div class="card-body">
-            <h5 class="card-title">{{ activity.name }}</h5>
-            <img 
-                [src]="activity.imageUrl" 
-                alt="{{ activity.name }}" 
-                class="img-responsive" 
-                style="max-height: 200px; width: 400px;"
-            >
-            <p class="card-header">{{ activity.description }}</p>
-
-            <p class="card-text">Item quantity: {{ activity.itemQuantity }}</p>
-            <p class="card-text">Minimum user count: {{ activity.minUserCount }}</p>
-            <p class="card-text">Maximum user count: {{ activity.maxUserCount }}</p>
-            <p class="card-text">Location: {{ activity.location }}</p>
-        </div>
-    </div>
-</div>
-
-<app-error *ngIf="!!errorMessage" [error]="errorMessage"></app-error> 
-<app-loading-spinner *ngIf="isLoading"></app-loading-spinner> -->
+<app-error 
+    *ngIf="!!errorMessage" 
+    [error]="errorMessage"
+></app-error> 
+<app-loading-spinner *ngIf="isLoading">
+</app-loading-spinner>
+  

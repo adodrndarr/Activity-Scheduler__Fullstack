@@ -17,4 +17,20 @@ export class HttpService {
   getActivityEntities(): Observable<ActivityEntity[]> {
     return this.htpp.get<ActivityEntity[]>(activitiesUrl);
   }
+
+  createActivityEntity(newActivityEntity: ActivityEntity): Observable<any> {
+    return this.htpp.post<any>(activitiesUrl, newActivityEntity);
+  }
+
+  editActivityEntity(id: string, activityEntityToUpdate: ActivityEntity): Observable<any> {
+    return this.htpp.put<any>(activitiesUrl, activityEntityToUpdate, {
+      params: { 'activityId': id }
+    });
+  }
+
+  deleteActivityEntity(id: string): Observable<any> {
+    return this.htpp.delete<any>(activitiesUrl, {
+      params: { 'activityEntityId': id }
+    });
+  }
 }

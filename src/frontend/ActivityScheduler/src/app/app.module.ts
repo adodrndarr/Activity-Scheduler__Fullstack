@@ -7,7 +7,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterAdminComponent } from './auth/register-admin/register-admin.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
@@ -18,6 +18,9 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalErrorHandlerService } from './services/global-error-handler.service';
+import { NewActivityComponent } from './activityEntities/new-activity/new-activity.component';
+import { ViewActivityComponent } from './activityEntities/view-activity/view-activity.component';
+import { EditActivityComponent } from './activityEntities/edit-activity/edit-activity.component';
 
 
 @NgModule({
@@ -32,12 +35,16 @@ import { GlobalErrorHandlerService } from './services/global-error-handler.servi
     ErrorComponent,
     LoadingSpinnerComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    NewActivityComponent,
+    ViewActivityComponent,
+    EditActivityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [

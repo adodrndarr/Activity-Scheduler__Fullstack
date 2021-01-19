@@ -15,8 +15,12 @@ export class ErrorHandlerService {
     this.errorMessage = 'An unknown error occured, please try again later.';
 
     switch (errorRes.status) {
+      case 400:
+        this.errorMessage = 'Invalid info provided, could not complete the action.';
+        break;
       case 401:
-        this.errorMessage = 'You\'re not authorized to access the ressource.';
+      case 403:
+        this.errorMessage = 'You\'re not authorized to perform the action.';
         break;
       case 500:
         this.errorMessage = 'Internal Server Error, please try again later.';
