@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -9,12 +8,13 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor(private authService: AuthService, private cookieService: CookieService) { }
+  constructor(private authService: AuthService) { }
 
 
   isAdmin = false;
   userSub: Subscription;
   isLoggedIn = false;
+  toggleDropdown = true;
 
   ngOnInit() {
     this.userSub = this.authService.user
@@ -32,6 +32,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout(): void {
     this.authService.logout();
+  }
+
+  toggleMenu(): void {
+    this.toggleDropdown = !this.toggleDropdown;
   }
 
   ngOnDestroy(): void {

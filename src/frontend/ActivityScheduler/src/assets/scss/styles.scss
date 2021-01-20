@@ -12,9 +12,11 @@
 @import './elements/form';
 @import './elements/footer';
 @import './elements/page';
+@import './elements/input';
 
 // pages
 @import './pages/main-content.scss';
 @import './pages/login.scss';
 @import './pages/activityEntities.scss';
+@import './pages/view-activity.scss';
 

@@ -4,6 +4,10 @@
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
+    &:disabled { 
+        cursor: not-allowed;
+        opacity: 0.5; 
+    }
 }
 
 .primary-button {
@@ -12,5 +16,58 @@
     color: $white;
     
     &:hover { opacity: 0.5; }
-    &:disabled { cursor: not-allowed; }
+}
+
+.view-button {
+    @extend .button;
+    background-color: $darkGreen;
+    color: $lightGray;
+
+    &:hover { 
+        background-color: darken($color: $darkGreen, $amount: 16%);
+        color: $lightGreen;
+    }
+}
+
+.new-activity-button {
+    @extend .view-button;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.edit-button {
+    @extend .button;
+    background-color: $darkYellow;
+    color: $lightGray;
+    
+    &:hover { 
+        background-color: darken($color: $darkYellow, $amount: 10%);
+        color: $yellow;
+    }
+}
+
+.cancel-button,
+.delete-button {
+    @extend .button;
+    background-color: $darkRed;
+    color: $lightGray;
+    
+    &:hover { 
+        background-color: darken($color: $darkRed, $amount: 10%);
+        color: $red;
+    }
+}
+
+.create-button,
+.update-button,
+.back-button,
+.clear-button {
+    @extend .button;
+    background-color: $darkAqua;
+    color: $lightGray;
+    font-weight: bold;
+    
+    &:hover { 
+        background-color: darken($darkAqua, $amount: 20%);
+    }
 }

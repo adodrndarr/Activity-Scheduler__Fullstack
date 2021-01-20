@@ -1,29 +1,34 @@
-<button 
-    class="btn-success"
-    routerLink="/create-activity"
-    *ngIf="isAdmin"
->
-    New activity
-</button><br />
-<input 
-    [(ngModel)]="searchTerm"
-    (input)="onSearch()"
-    type="text" 
-    placeholder="Search by name..." 
-/>
-<button 
-    class="btn-primary"
-    (click)="onClear()"
->
-    Clear
-</button>
+<div class="manage__container">
+    <div class="manage__activityEntities">
+        <button 
+            class="new-activity-button"
+            routerLink="/create-activity"
+            *ngIf="isAdmin"
+        >
+            New activity
+        </button><br />
+        <input 
+            class="primary-input"
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+            type="text" 
+            placeholder="Search by name..." 
+        />
+        <button 
+            class="clear-button"
+            (click)="onClear()"
+        >
+            Clear
+        </button>
+    </div>
+</div>
 
 <div class="activityEntity__page">
     <div 
         class="activityEntity__container"
         *ngIf="activityEntities.length > 0"
     >
-        <table class="table table-responsive" >
+        <table class="table table-striped table-responsive">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -47,7 +52,7 @@
 
                     <td>
                         <button 
-                            class="btn-success" 
+                            class="view-button" 
                             (click)="onSelect(activity)"
                             routerLink="/view-activity"
                         >
@@ -56,7 +61,7 @@
                     </td>
                     <td>
                         <button 
-                            class="btn-warning"
+                            class="edit-button"
                             (click)="onSelect(activity)"
                             routerLink="/edit-activity"
                         >
@@ -65,7 +70,7 @@
                     </td>
                     <td>
                         <button 
-                            class="btn-danger"
+                            class="delete-button"
                             (click)="onDelete(activity)"
                             *ngIf="isAdmin"
                         >
@@ -86,7 +91,7 @@
 
                     <td>
                         <button 
-                            class="btn-success" 
+                            class="view-button" 
                             (click)="onSelect(activity)"
                             routerLink="/view-activity"
                         >
@@ -95,7 +100,7 @@
                     </td>
                     <td>
                         <button 
-                            class="btn-warning"
+                            class="edit-button"
                             (click)="onSelect(activity)"
                             routerLink="/edit-activity"
                         >
@@ -104,7 +109,7 @@
                     </td>
                     <td>
                         <button 
-                            class="btn-danger"
+                            class="delete-button"
                             (click)="onDelete(activity)"
                             *ngIf="isAdmin"
                         >
@@ -116,7 +121,7 @@
 
             <tbody *ngIf="filteredActivityEntities.length < 1 && searchTerm">
                 <tr>
-                    <td>No such activity found.</td>
+                    <td colspan="7">No such activity found.</td>
                 </tr>
             </tbody>
 

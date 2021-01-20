@@ -1,58 +1,75 @@
 <header class="header">
     <nav class="nav">
         <ul class="nav__list">
-            <li 
-                class="nav__logo" 
-                routerLinkActive="active" 
-            >
-                <a href="#">Activity Scheduler</a>
+            <li class="nav__logo">
+                <a 
+                    href="#" 
+                    routerLinkActive="active"
+                >Activity Scheduler</a>
             </li>
 
-
+            
+            <span 
+                (click)="toggleMenu()"
+                id="dropdown"
+                [ngClass]="{'full-opacity': toggleDropdown}"
+            >
+                &#9776;
+            </span><br />
             <li 
                 class="nav__item" 
-                routerLinkActive="active" 
                 *ngIf="isLoggedIn"
-                routerLink="/activities"
+                [ngClass]="{'show-item': toggleDropdown}"
             >
-                <a>Activities</a>
+                <a 
+                    routerLink="/activities"
+                    routerLinkActive="active"     
+                >Activities</a>
             </li>
             
             <li 
                 class="nav__item" 
-                routerLinkActive="active" 
                 *ngIf="!isLoggedIn"
-                routerLink="/register"
+                [ngClass]="{'show-item': toggleDropdown}"
             >
-                <a>Register</a>
+                <a 
+                    routerLink="/register"
+                    routerLinkActive="active"     
+                >Register</a>
             </li>
 
             <li 
                 class="nav__item" 
-                routerLinkActive="active" 
                 *ngIf="isAdmin"
-                routerLink="/register-admin"
+                [ngClass]="{'show-item': toggleDropdown}"
             >
-                <a>Register Admin</a>
+                <a 
+                    routerLink="/register-admin"
+                    routerLinkActive="active" 
+                >Register Admin</a>
             </li>
 
             <li 
                 class="nav__item" 
-                routerLinkActive="active" 
                 *ngIf="!isLoggedIn"
-                routerLink="/login"
+                [ngClass]="{'show-item': toggleDropdown}"
             >
-                <a>Login</a>
+                <a 
+                    routerLink="/login"
+                    routerLinkActive="active" 
+                >Login</a>
             </li>
 
             <li 
                 class="nav__item" 
-                routerLinkActive="active" 
                 *ngIf="isLoggedIn" 
-                (click)="onLogout()"
-                routerLink="/login"
+                [ngClass]="{'show-item': toggleDropdown}"
             >
-                <a>Log out</a>
+                <a 
+                    (click)="onLogout()"
+                    routerLink="/login"
+                    routerLinkActive="active" 
+                >Log out</a>
             </li>
         </ul>
     </nav>

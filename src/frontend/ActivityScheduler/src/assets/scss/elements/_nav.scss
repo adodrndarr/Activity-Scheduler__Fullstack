@@ -29,11 +29,21 @@
     &__item {
         @include styleNavigation();
 
-        &:hover { text-decoration: underline; }
-
-        opacity: 0.7;
-        cursor: pointer;
         outline: none;
+        cursor: pointer;
+
+        & a { 
+            opacity: 0.7; 
+            color: $white;
+        }
+        
+        & a:hover,
+        & a:focus {
+            color: $white;
+            text-decoration: underline;
+        }
+
+        & a.active { opacity: 1; }
     }
 }
 
@@ -45,7 +55,7 @@
 
 
 /* Responsiveness */
-@media (max-width: 720px) {
+@media (max-width: 770px) {
     .nav {
         &__list { flex-direction: column; }
         &__item { text-align: center; }    

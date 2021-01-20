@@ -46,6 +46,8 @@ import { EditActivityComponent } from './activityEntities/edit-activity/edit-act
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
+
+
   ],
   providers: [
     {

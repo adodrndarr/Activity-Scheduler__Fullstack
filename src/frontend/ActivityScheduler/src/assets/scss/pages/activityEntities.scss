@@ -12,59 +12,52 @@
     align-items: center;
     text-align: center;
 
-    width: 75%;
     font-size: 14px;
     margin-bottom: 50px;
+    margin-top: 50px;
     
     color: $white;
-    background-color: $gray;
-    border: 2px solid $black;
+    background-color: $lightGray;
+    box-shadow: 3px 3px 5px 3px $shadowGray;
+
+    & table tr {
+        border-bottom: 2px solid $gray;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    & table {
+        padding: 5px;
+        margin-bottom: 0;
+    }
 }
 
-.activityEntity {
+.manage__container {
     display: flex;
-    flex-direction: column;
-    width: 75%;
-    margin: 50px 0px 50px 0;
-    padding: 10px;
-    box-shadow: 3px 3px 5px 3px #595959;
-    background-color: $gray;
-    
-    &__image {
-        margin: 20px auto 20px auto;
-        width: 75%;
-        height: 200px;
-    }
+    margin-left: 5%;
 
-    &__name {
-        text-decoration: underline;
-        font-weight: bold;
-    }
+}
 
-    &__info { color: $yellow; }
+.manage__activityEntities {
+    background-color: $white;
+    border: 2px solid $gray;
+    color: $black;
+    box-shadow: 3px 3px 5px 3px $gray;
+    padding: 20px;
 }
 
 /* Responsiveness */
-@media (min-width: 1000px) {
+@media (max-width: 1000px) {
     .activityEntity__container { 
         font-size: 16px;
-    }
-    .activityEntity {
-        &__image {
-            width: 50%;
-        }
-    }
-}
-
-@media (min-width: 1400px) {
-    .activityEntity__container { 
-        width: 55%;
+        width: 95%;
     }
 }
 
 @media (min-width: 1900px) {
     .activityEntity__container { 
-        width: 40%;
         font-size: 22px;
     }
 }

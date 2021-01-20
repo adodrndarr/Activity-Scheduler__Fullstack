@@ -1,11 +1,11 @@
 <div class="new-activity__page">
-    <div class="form__container">
+    <div class="edit-activity__container">
         <form 
-            class="form"
+            class="edit-activity__form"
             [formGroup]="editActivityForm" 
             (ngSubmit)="onSubmit()"
         >
-            <h2>Edit existing Activity</h2>
+            <h2 *ngIf="selectedActivity?.name">Modify - {{ selectedActivity.name }}</h2>
             <label for="name">Name:</label>
             <input 
                 type="name" 
@@ -102,14 +102,14 @@
 
             <div>
                 <button 
-                    class="primary-button" 
+                    class="update-button" 
                     type="submit" 
                     [disabled]="!editActivityForm.valid || isLoading"
                 >
                     {{ isLoading ? 'Updating...' : 'Update' }}
                 </button>
                 <button 
-                    class="btn-danger" 
+                    class="cancel-button" 
                     (click)="onCancel()"
                 >
                     Cancel

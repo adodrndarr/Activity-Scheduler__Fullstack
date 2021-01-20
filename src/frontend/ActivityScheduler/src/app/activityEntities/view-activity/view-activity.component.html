@@ -1,8 +1,8 @@
 <div 
-    class="activityEntity__page"
+    class="view-activity__page"
     *ngIf="activity"
 >
-    <div class="activityEntity__container">
+    <div class="view-activity__container">
         <div class="activityEntity">
             <h5 class="activityEntity__name">{{ activity.name }}</h5>
             <img 
@@ -12,21 +12,23 @@
             >
             <p class="activityEntity__description">{{ activity.description }}</p>
 
-            <p>Item quantity: 
-                <span class="activityEntity__info">{{ activity.itemQuantity }}</span>
-            </p>
-            <p>Minimum user count: 
-                <span class="activityEntity__info">{{ activity.minUserCount }}</span>
-            </p>
-            <p>Maximum user count: 
-                <span class="activityEntity__info">{{ activity.maxUserCount }}</span>
-            </p>
-            <p>Location: 
-                <span class="activityEntity__info">{{ activity.location }}</span>
-            </p>
+           <div class="content__info">
+                <p>Item quantity: 
+                    <span class="activityEntity__info">{{ activity.itemQuantity }}</span>
+                </p>
+                <p>Minimum user count: 
+                    <span class="activityEntity__info">{{ activity.minUserCount }}</span>
+                </p>
+                <p>Maximum user count: 
+                    <span class="activityEntity__info">{{ activity.maxUserCount }}</span>
+                </p>
+                <p>Location: 
+                    <span class="activityEntity__info">{{ activity.location }}</span>
+                </p>
+           </div>
         </div>
         <button 
-            class="btn-info" 
+            class="back-button" 
             (click)="onGoBack()"
         >
             Go back

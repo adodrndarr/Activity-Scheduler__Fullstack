@@ -32,7 +32,7 @@ export class HelperService {
       text: 'Please confirm to continue...',
       showCancelButton: true,
       confirmButtonText: `Yes, delete it.`,
-      confirmButtonColor: '#d33',
+      confirmButtonColor: '#e62e00',
       cancelButtonText: `No, keep it.`,
       cancelButtonColor: '#999999'
     });

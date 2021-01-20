@@ -1,7 +1,7 @@
 <div class="new-activity__page">
-    <div class="form__container">
+    <div class="new-activity__container">
         <form 
-            class="form"
+            class="new-activity__form"
             [formGroup]="newActivityForm" 
             (ngSubmit)="onSubmit()"
         >
@@ -102,14 +102,14 @@
 
             <div>
                 <button 
-                    class="primary-button" 
+                    class="create-button" 
                     type="submit" 
                     [disabled]="!newActivityForm.valid || isLoading"
                 >
                     {{ isLoading ? 'Creating...' : 'Create' }}
                 </button>
                 <button 
-                    class="btn-danger" 
+                    class="cancel-button" 
                     (click)="onCancel()"
                 >
                     Cancel

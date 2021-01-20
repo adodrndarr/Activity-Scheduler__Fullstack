@@ -1,3 +1,16 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $white;
+    border: 2px solid $gray;
+    color: $black;
+    box-shadow: 3px 3px 5px 3px $gray;
+
+    width: 75%;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -33,22 +46,37 @@
         font-weight: bold;
         align-self: flex-start;
     }
+
+    & .create-button,
+    & .update-button { 
+        margin-top: 30px; 
+        margin-right: 20px; 
+    }
 }
 
-.form__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.new-activity__container,
+.edit-activity__container {
+    @extend .form__container;
+    background-color:  darken($color: $darkYellow, $amount: 10%);;
+}
 
-    background-color: $white;
-    border: 2px solid $gray;
-    color: $black;
-    box-shadow: 3px 3px 5px 3px $gray;
-
-    width: 75%;
+.new-activity__form,
+.edit-activity__form {
+    @extend .form;
+    color: $lightGray;
+    & h2 { 
+        color: $yellow;
+        text-decoration: underline;
+    }
 }
 
 /* Responsiveness */
+@media (max-width: 400px) {
+    .form h2 {
+        font-size: 22px;
+    }
+}
+
 @media (min-width: 1000px) {
     .form__container { width: 50%; }
     .form { & > * { width: 50%; } }
@@ -62,4 +90,5 @@
     .form__container { width: 40%; }
     .form { & > * { width: 40%; } }
 }
+
 
