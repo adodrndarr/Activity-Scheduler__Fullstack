@@ -17,9 +17,5 @@
     <PackageReference Include="NLog.Extensions.Logging" Version="1.7.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EntitiesDTO\Interfaces\" />
-  </ItemGroup>
-
 
 </Project>

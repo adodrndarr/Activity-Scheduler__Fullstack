@@ -36,16 +36,24 @@
 
 .manage__container {
     display: flex;
-    margin-left: 5%;
-
+    flex-wrap: wrap;
 }
 
 .manage__activityEntities {
-    background-color: $white;
-    border: 2px solid $gray;
     color: $black;
-    box-shadow: 3px 3px 5px 3px $gray;
-    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+
+    & input { 
+        margin: 0; 
+        margin-right: auto;
+    }
+    & .clear-button {
+        margin-left: 5%;
+    }
+    & .new-activity-button { margin: 5px 5px 5px 45%; }
 }
 
 /* Responsiveness */

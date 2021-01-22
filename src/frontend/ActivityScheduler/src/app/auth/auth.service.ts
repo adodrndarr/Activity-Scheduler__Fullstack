@@ -61,12 +61,12 @@ export class AuthService {
   }
 
   logout(): void {
-    this.cookieService.delete('user');
-    this.cookieService.delete('token');
-    this.cookieService.delete('tokenExpirationDate');
-
     this.user.next(null);
     this.tokenExpirationTimer = null;
+
+    this.cookieService.deleteAll('/');
+    this.cookieService.deleteAll('/activity-entity');
+    this.cookieService.deleteAll('/activity-entity/edit');
   }
 
   autoLogout(expirationDuration: number): void {

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ActivityContainerComponent } from './activityEntities/activity-container/activity-container.component';
 import { ActivityEntitiesComponent } from './activityEntities/activityEntities.component';
 import { EditActivityComponent } from './activityEntities/edit-activity/edit-activity.component';
 import { NewActivityComponent } from './activityEntities/new-activity/new-activity.component';
@@ -31,14 +32,18 @@ const routes: Routes = [
     component: NewActivityComponent
   },
   {
-    path: 'view-activity',
+    path: 'activity-entity',
     canActivate: [AuthGuard],
-    component: ViewActivityComponent
-  },
-  {
-    path: 'edit-activity',
-    canActivate: [AuthGuard],
-    component: EditActivityComponent
+    component: ActivityContainerComponent,
+    children: [
+      { path: '', redirectTo: '/activities', pathMatch: 'full' },
+      { path: ':id', component: ViewActivityComponent },
+      {
+        path: 'edit/:id',
+        canActivate: [AuthGuard, AdminOnlyGuard],
+        component: EditActivityComponent
+      }
+    ]
   },
   { path: 'not-found', component: NotFoundComponent },
   { path: '', redirectTo: '/activities', pathMatch: 'full' },

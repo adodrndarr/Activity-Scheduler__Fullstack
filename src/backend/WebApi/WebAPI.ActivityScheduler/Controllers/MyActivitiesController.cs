@@ -112,7 +112,7 @@ namespace WebAPI.ActivityScheduler.Controllers
         [Authorize(Roles = UserRoles.StandardUser)]
         // PUT myActivities, Params: activityId
         [HttpPut]
-        public ActionResult UpdateActivity(Guid activityId, [FromBody] ActivityDTO newActivity)
+        public ActionResult UpdateActivity(Guid activityId, ActivityDTO newActivity)
         {
             this._logger.LogInfo("MyActivitiesController UpdateActivity - Getting specific activity to update...");
             var activityToBeUpdated = _db.Activities

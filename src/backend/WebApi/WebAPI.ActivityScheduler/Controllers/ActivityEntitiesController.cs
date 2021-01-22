@@ -8,6 +8,7 @@ using WebAPI.ActivityScheduler.DataAccess;
 using WebAPI.ActivityScheduler.Entities;
 using WebAPI.ActivityScheduler.EntitiesDTO;
 using WebAPI.ActivityScheduler.Services;
+using AutoMapper;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -16,19 +17,25 @@ namespace WebAPI.ActivityScheduler.Controllers
     [ApiController]
     public class ActivityEntitiesController : ControllerBase
     {
-        public ActivityEntitiesController(ActivitySchedulerDbContext dbContext, ILoggerManager logger)
+        public ActivityEntitiesController(
+            ActivitySchedulerDbContext dbContext, 
+            ILoggerManager logger,
+            IMapper mapper)
         {
             this._db = dbContext;
             this._logger = logger;
+            this._mapper = mapper;
         }
 
 
         private ActivitySchedulerDbContext _db;
         private ILoggerManager _logger;
+        private IMapper _mapper;
 
+        //[Authorize(Roles = UserRoles.StandardUser)]
         // GET: activityEntities
         [HttpGet]
-        public ActionResult<IEnumerable<ActivityEntity>> GetActivityEntities()
+        public ActionResult<IEnumerable<ActivityEntityDTO>> GetActivityEntities()
         {
             this._logger.LogInfo("ActivityEntitiesController GetActivityEntities - Getting activity entities...");
             var activities = GetActivities().ToList();
@@ -52,44 +59,34 @@ namespace WebAPI.ActivityScheduler.Controllers
         [Authorize(Roles = UserRoles.Admin)]
         // POST: activityEntities
         [HttpPost]
-        public ActionResult AddActivityEntity([FromBody] ActivityEntity newActivityEntity)
+        public ActionResult AddActivityEntity(ActivityEntityDTO newActivityEntity)
         {
-            if(newActivityEntity != null)
-            {
-                _db.ActivityEntities.Add(newActivityEntity);
-                _db.SaveChanges();
+            var activityEntity = _mapper.Map<ActivityEntity>(newActivityEntity);
 
-                this._logger.LogInfo("ActivityEntitiesController AddActivityEntity - Addition of a new activity entity was successful.");
-                return StatusCode(
-                    StatusCodes.Status201Created,
-                    new InfoResponseDTO
-                    {
-                        Info = $"The activity entity: {newActivityEntity.Name}, has been created."
-                    }
-                );
-            }
+            _db.ActivityEntities.Add(activityEntity);
+            _db.SaveChanges();
 
-            this._logger.LogInfo("ActivityEntitiesController AddActivityEntity - Addition of a new activity entity failed.");
+            this._logger.LogInfo("ActivityEntitiesController AddActivityEntity - Addition of a new activity entity was successful.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
+                StatusCodes.Status201Created,
                 new InfoResponseDTO
                 {
-                    Info = $"Please provide a valid activity entity."
+                    Info = $"The activity entity: {newActivityEntity.Name}, has been created."
                 }
             );
         }
 
-        [Authorize(Roles = UserRoles.StandardUser)]
+        [Authorize(Roles = UserRoles.Admin)]
         // PUT activityEntities, Params: activityId, body: newActivity
         [HttpPut]
-        public ActionResult UpdateActivityEntity(Guid activityId, [FromBody] ActivityEntity newActivity)
+        public ActionResult UpdateActivityEntity(Guid activityId, ActivityEntityDTO newActivity)
         {
             this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Getting specific activity entity to update...");
             var activityToBeUpdated = _db.ActivityEntities
                 .AsQueryable()
                 .FirstOrDefault(a => a.Id == activityId);
 
-            if (newActivity != null && activityToBeUpdated != null)
+            if (activityToBeUpdated != null)
             {
                 activityToBeUpdated.Name = newActivity?.Name;
                 activityToBeUpdated.ImageUrl = newActivity?.ImageUrl;

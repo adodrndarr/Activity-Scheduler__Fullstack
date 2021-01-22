@@ -1,3 +1,5 @@
+.new-activity__container,
+.edit-activity__container,
 .form__container {
     display: flex;
     flex-direction: column;
@@ -11,6 +13,8 @@
     width: 75%;
 }
 
+.new-activity__form,
+.edit-activity__form,
 .form {
     display: flex;
     flex-direction: column;
@@ -54,40 +58,46 @@
     }
 }
 
-.new-activity__container,
-.edit-activity__container {
-    @extend .form__container;
-    background-color:  darken($color: $darkYellow, $amount: 10%);;
-}
-
 .new-activity__form,
 .edit-activity__form {
-    @extend .form;
-    color: $lightGray;
-    & h2 { 
-        color: $yellow;
-        text-decoration: underline;
+    h2 { 
+        color: $black;
+        text-decoration: underline; 
     }
 }
 
 /* Responsiveness */
 @media (max-width: 400px) {
+    .new-activity__form h2,
+    .edit-activity__form h2,
     .form h2 {
         font-size: 22px;
     }
 }
 
 @media (min-width: 1000px) {
+    .new-activity__container,
+    .edit-activity__container,
     .form__container { width: 50%; }
+
+    .new-activity__form,
+    .edit-activity__form,
     .form { & > * { width: 50%; } }
 
+    .new-activity__form label,
+    .edit-activity__form label,
     .form label {
         align-self: center;
     }
 }
 
 @media (min-width: 2000px) {
+    .new-activity__container,
+    .edit-activity__container,
     .form__container { width: 40%; }
+
+    .new-activity__form,
+    .edit-activity__form,
     .form { & > * { width: 40%; } }
 }
 

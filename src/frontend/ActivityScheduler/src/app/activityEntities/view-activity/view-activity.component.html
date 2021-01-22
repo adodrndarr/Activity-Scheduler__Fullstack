@@ -4,7 +4,7 @@
 >
     <div class="view-activity__container">
         <div class="activityEntity">
-            <h5 class="activityEntity__name">{{ activity.name }}</h5>
+            <h2 class="activityEntity__name">{{ activity.name }}</h2>
             <img 
                 class="activityEntity__image"
                 [src]="activity.imageUrl" 
@@ -35,3 +35,10 @@
         </button>
     </div>
 </div>
+
+<app-error 
+    *ngIf="!!errorMessage" 
+    [error]="errorMessage"
+></app-error> 
+<app-loading-spinner *ngIf="isLoading">
+</app-loading-spinner>

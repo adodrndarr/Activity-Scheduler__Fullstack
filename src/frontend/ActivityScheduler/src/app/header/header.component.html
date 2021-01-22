@@ -14,7 +14,7 @@
                 id="dropdown"
                 [ngClass]="{'full-opacity': toggleDropdown}"
             >
-                &#9776;
+                &#9776; <!-- navigation menu (hamburger) -->
             </span><br />
             <li 
                 class="nav__item" 
@@ -66,8 +66,8 @@
                 [ngClass]="{'show-item': toggleDropdown}"
             >
                 <a 
-                    (click)="onLogout()"
                     routerLink="/login"
+                    (click)="onLogout()"
                     routerLinkActive="active" 
                 >Log out</a>
             </li>

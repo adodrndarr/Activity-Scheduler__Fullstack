@@ -95,6 +95,15 @@ export class NewActivityComponent implements OnInit {
     this.helperService.navigateTo('activities');
   }
 
+  // loadImage(event): void {
+  //   // const image: any = document.getElementById('outputImg');
+  //   const imgUrlInput: any = document.getElementById('imageUrl');
+  //   const imgSrc = URL.createObjectURL(event.target.files[0]);
+  //   // image.src = URL.createObjectURL(event.target.files[0]);
+  //   imgUrlInput.value = '';
+  //   imgUrlInput.value = imgSrc;
+  // }
+
   private resetState(): void {
     this.errorMessage = null;
   }

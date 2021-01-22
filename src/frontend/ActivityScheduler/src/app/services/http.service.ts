@@ -11,21 +11,23 @@ const activitiesUrl = `${environment.baseUrl}/activityEntities`;
   providedIn: 'root'
 })
 export class HttpService {
-  constructor(private htpp: HttpClient) { }
+  constructor(
+    private htpp: HttpClient
+  ) { }
 
 
   getActivityEntities(): Observable<ActivityEntity[]> {
     return this.htpp.get<ActivityEntity[]>(activitiesUrl);
   }
 
-  createActivityEntity(newActivityEntity: ActivityEntity): Observable<any> {
-    return this.htpp.post<any>(activitiesUrl, newActivityEntity);
-  }
-
   editActivityEntity(id: string, activityEntityToUpdate: ActivityEntity): Observable<any> {
     return this.htpp.put<any>(activitiesUrl, activityEntityToUpdate, {
       params: { 'activityId': id }
     });
+  }
+
+  createActivityEntity(newActivityEntity: ActivityEntity): Observable<any> {
+    return this.htpp.post<any>(activitiesUrl, newActivityEntity);
   }
 
   deleteActivityEntity(id: string): Observable<any> {

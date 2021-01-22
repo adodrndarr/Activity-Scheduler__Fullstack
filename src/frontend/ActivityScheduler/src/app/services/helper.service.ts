@@ -18,8 +18,7 @@ export class HelperService {
   }
 
   navigateAndUpdateTo(path: string): void {
-    this.navigateTo(path)
-      .then(_ => location.reload());
+    this.navigateTo(path).then(_ => location.reload());
   }
 
   createAlert(title: string, imageUrl: string)

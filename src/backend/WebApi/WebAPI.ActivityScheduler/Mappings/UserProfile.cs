@@ -17,6 +17,8 @@ namespace WebAPI.ActivityScheduler.Mappings
 
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<Activity, ActivityDTO>().ReverseMap();
+            
+            CreateMap<ActivityEntity, ActivityEntityDTO>().ReverseMap();
         }
     }
 }

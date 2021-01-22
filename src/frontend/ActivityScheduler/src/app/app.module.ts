@@ -21,6 +21,7 @@ import { GlobalErrorHandlerService } from './services/global-error-handler.servi
 import { NewActivityComponent } from './activityEntities/new-activity/new-activity.component';
 import { ViewActivityComponent } from './activityEntities/view-activity/view-activity.component';
 import { EditActivityComponent } from './activityEntities/edit-activity/edit-activity.component';
+import { ActivityContainerComponent } from './activityEntities/activity-container/activity-container.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { EditActivityComponent } from './activityEntities/edit-activity/edit-act
     FooterComponent,
     NewActivityComponent,
     ViewActivityComponent,
-    EditActivityComponent
+    EditActivityComponent,
+    ActivityContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +48,6 @@ import { EditActivityComponent } from './activityEntities/edit-activity/edit-act
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
-
-
   ],
   providers: [
     {

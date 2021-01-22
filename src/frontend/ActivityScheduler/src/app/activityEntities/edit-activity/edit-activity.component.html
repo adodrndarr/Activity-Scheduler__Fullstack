@@ -5,7 +5,7 @@
             [formGroup]="editActivityForm" 
             (ngSubmit)="onSubmit()"
         >
-            <h2 *ngIf="selectedActivity?.name">Modify - {{ selectedActivity.name }}</h2>
+            <h2 *ngIf="activity?.name">Modify - {{ activity.name }}</h2>
             <label for="name">Name:</label>
             <input 
                 type="name" 

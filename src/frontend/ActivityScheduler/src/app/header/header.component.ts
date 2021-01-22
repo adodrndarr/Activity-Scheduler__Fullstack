@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleDropdown = true;
 
   ngOnInit() {
+    this.checkUserRole();
+  }
+
+  private checkUserRole(): void {
     this.userSub = this.authService.user
       .subscribe(user => {
         if (user) {
