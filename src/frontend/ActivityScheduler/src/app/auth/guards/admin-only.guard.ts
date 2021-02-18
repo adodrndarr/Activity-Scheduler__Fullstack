@@ -25,7 +25,7 @@ export class AdminOnlyGuard implements CanActivate {
         take(1),
         map(user => {
           if (!user || !user.isAdmin) {
-            return this.router.createUrlTree(['/activities']);
+            return this.router.createUrlTree(['/not-found']);
           }
 
           return true;

@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System;
-using System.Linq;
-using WebAPI.ActivityScheduler.DataAccess;
-using WebAPI.ActivityScheduler.Entities;
-using WebAPI.ActivityScheduler.EntitiesDTO;
-using WebAPI.ActivityScheduler.Services;
-using AutoMapper;
+using ActivityScheduler.Domain.Structs;
+using ActivityScheduler.Services.Interfaces;
+using ActivityScheduler.Presentation.EntitiesDTO;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -18,42 +14,57 @@ namespace WebAPI.ActivityScheduler.Controllers
     public class ActivityEntitiesController : ControllerBase
     {
         public ActivityEntitiesController(
-            ActivitySchedulerDbContext dbContext, 
-            ILoggerManager logger,
-            IMapper mapper)
+            IActivityEntityService activityEntityService,
+            ILoggerManager logger)
         {
-            this._db = dbContext;
-            this._logger = logger;
-            this._mapper = mapper;
+            _logger = logger;
+            _activityEntityService = activityEntityService;
         }
 
 
-        private ActivitySchedulerDbContext _db;
         private ILoggerManager _logger;
-        private IMapper _mapper;
+        private IActivityEntityService _activityEntityService;
 
-        //[Authorize(Roles = UserRoles.StandardUser)]
+        [Authorize(Roles = UserRoles.StandardUser)]
+        // GET: activityEntities/all
+        [HttpGet("all")]
+        public ActionResult<IEnumerable<ActivityEntityDTO>> GetAllActivityEntities()
+        {
+            var getUsersProcess = _activityEntityService.GetAllActivityEntities();
+
+            return StatusCode(getUsersProcess.StatusCode, getUsersProcess.Payload);
+        }
+
+        [Authorize(Roles = UserRoles.StandardUser)]
         // GET: activityEntities
         [HttpGet]
-        public ActionResult<IEnumerable<ActivityEntityDTO>> GetActivityEntities()
+        public ActionResult<PagedList<ActivityEntityDTO>> GetActivityEntities([FromQuery] PaginationDTO pagination)
         {
-            this._logger.LogInfo("ActivityEntitiesController GetActivityEntities - Getting activity entities...");
-            var activities = GetActivities().ToList();
-
-            if (activities.Count > 0)
+            var getActivitiesProcess = _activityEntityService.GetAll(pagination, Response);
+           
+            if (getActivitiesProcess.IsSuccessful)
             {
-                this._logger.LogInfo($"ActivityEntitiesController GetActivityEntities - Returning {activities.Count} activity entities.");
-                return StatusCode(StatusCodes.Status200OK, activities);
+                return StatusCode(
+                    getActivitiesProcess.StatusCode, 
+                    getActivitiesProcess.Payload);
             }
 
-            this._logger.LogInfo("ActivityEntitiesController GetActivityEntities - No activity entities available 0.");
             return StatusCode(
-                StatusCodes.Status200OK, 
+                getActivitiesProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = "Currently there are no activities available."
-                }
-            );
+                    Info = getActivitiesProcess.Info
+                });
+        }
+
+        [Authorize(Roles = UserRoles.StandardUser)]
+        // GET: activityEntities/single
+        [HttpGet("single")]
+        public ActionResult<ActivityEntityDTO> GetActivityEntityById(Guid id)
+        {
+            var getUsersProcess = _activityEntityService.GetActivityEntityDTOById(id);
+
+            return StatusCode(getUsersProcess.StatusCode, getUsersProcess.Payload);
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -61,19 +72,14 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpPost]
         public ActionResult AddActivityEntity(ActivityEntityDTO newActivityEntity)
         {
-            var activityEntity = _mapper.Map<ActivityEntity>(newActivityEntity);
+            var additionProcess = _activityEntityService.Add(newActivityEntity);
 
-            _db.ActivityEntities.Add(activityEntity);
-            _db.SaveChanges();
-
-            this._logger.LogInfo("ActivityEntitiesController AddActivityEntity - Addition of a new activity entity was successful.");
             return StatusCode(
-                StatusCodes.Status201Created,
+                additionProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = $"The activity entity: {newActivityEntity.Name}, has been created."
-                }
-            );
+                    Info = additionProcess.Info
+                });
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -81,42 +87,25 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpPut]
         public ActionResult UpdateActivityEntity(Guid activityId, ActivityEntityDTO newActivity)
         {
-            this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Getting specific activity entity to update...");
-            var activityToBeUpdated = _db.ActivityEntities
-                .AsQueryable()
-                .FirstOrDefault(a => a.Id == activityId);
+            var activityFound = _activityEntityService.GetById(activityId);
+            var updateProcess = _activityEntityService.Update(activityFound, newActivity);
 
-            if (activityToBeUpdated != null)
+            if (updateProcess.IsSuccessful)
             {
-                activityToBeUpdated.Name = newActivity?.Name;
-                activityToBeUpdated.ImageUrl = newActivity?.ImageUrl;
-                activityToBeUpdated.ItemQuantity = newActivity.ItemQuantity;
-
-                activityToBeUpdated.MinUserCount = newActivity.MinUserCount;
-                activityToBeUpdated.MaxUserCount = newActivity.MaxUserCount;
-                activityToBeUpdated.Description = newActivity?.Description;
-                activityToBeUpdated.Location = newActivity?.Location;
-
-                _db.SaveChanges();
-
-                this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Update was successful.");
                 return StatusCode(
-                    StatusCodes.Status201Created,
+                    updateProcess.StatusCode,
                     new InfoResponseDTO
                     {
-                        Info = $"Update for {newActivity.Name} was successful."
-                    }
-                );
+                        Info = updateProcess.Info
+                    });
             }
 
-            this._logger.LogInfo("ActivityEntitiesController UpdateActivityEntity - Update failed.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
-                new InfoResponseDTO
-                {
-                    Info = $"Could not update the activity, please make sure you provided valid Id and body."
-                }
-            );
+                   updateProcess.StatusCode,
+                   new InfoResponseDTO
+                   {
+                       Info = updateProcess.Info
+                   });
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -124,38 +113,23 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpDelete]
         public ActionResult DeleteActivityEntity(Guid activityEntityId)
         {
-            this._logger.LogInfo("ActivityEntitiesController DeleteActivityEntity - Getting activity entity for deletion.");
-            var activityFound = GetActivities()
-                .FirstOrDefault(activityEntity => activityEntity.Id == activityEntityId);
-
-            if (activityFound != null)
+            var deletionProcess = _activityEntityService.Delete(activityEntityId);
+            if (deletionProcess.IsSuccessful)
             {
-                _db.ActivityEntities.Remove(activityFound);
-                _db.SaveChanges();
-
-                this._logger.LogInfo("ActivityEntitiesController DeleteActivityEntity - Deletion of an activity entity was successful.");
                 return StatusCode(
-                    StatusCodes.Status200OK,
+                    deletionProcess.StatusCode,
                     new InfoResponseDTO
                     {
-                        Info = $"The activity entity: {activityFound.Name}, has been deleted."
-                    }
-                );
+                        Info = deletionProcess.Info
+                    });
             }
 
-            this._logger.LogInfo("ActivityEntitiesController DeleteActivityEntity - Deletion of an activity entity failed.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
+                deletionProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = $"The activity entity with id: {activityEntityId}, could not be found."
-                }
-            );
-        }
-
-        private IEnumerable<ActivityEntity> GetActivities()
-        {
-            return _db.ActivityEntities;
+                    Info = deletionProcess.Info
+                });
         }
     }
 }

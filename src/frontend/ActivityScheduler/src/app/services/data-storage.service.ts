@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivityEntity } from '../auth/Entities/Models/activityEntity.model';
+import { Activity, ActivityEntity, BookedActivity } from '../auth/Entities/Models/activity.model';
+import { Pagination } from '../auth/Entities/Models/pagination.model';
+import { User } from '../auth/Entities/Models/user.model';
 
 
 @Injectable({
@@ -10,5 +12,12 @@ export class DataStorageService {
 
 
   activityEntities: ActivityEntity[] = [];
-  selectedActivity: ActivityEntity = null;
+  users: User[] = [];
+  activities: Activity[] = [];
+
+  pagination: Pagination = new Pagination(1, 1, 2);
+  bookedActivities: BookedActivity[] = [];
+
+  searchTerm: string;
+  checked = false;
 }

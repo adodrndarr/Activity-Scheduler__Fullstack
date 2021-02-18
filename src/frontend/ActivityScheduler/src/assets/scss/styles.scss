@@ -13,10 +13,18 @@
 @import './elements/footer';
 @import './elements/page';
 @import './elements/input';
+@import './elements/checkbox';
+
 
 // pages
-@import './pages/main-content.scss';
-@import './pages/login.scss';
-@import './pages/activityEntities.scss';
-@import './pages/view-activity.scss';
+@import './pages/main-content';
+@import './pages/login';
+@import './pages/activityEntities';
+@import './pages/view-activity';
+@import './pages/manage-users';
+@import './pages/register';
+@import './pages/view-user';
+@import './pages/common-view';
+@import './pages/schedule-activity';
+@import './pages/my-activities';
 

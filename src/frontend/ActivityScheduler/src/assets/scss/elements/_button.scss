@@ -14,6 +14,7 @@
     @extend .button;
     background-color: $aqua;
     color: $white;
+    margin-right: 10px;
     
     &:hover { opacity: 0.5; }
 }
@@ -29,6 +30,7 @@
     }
 }
 
+.new-user-button,
 .new-activity-button {
     @extend .view-button;
     font-size: 22px;
@@ -73,3 +75,47 @@
 }
 
 .clear-button { margin-right: 5px; }
+
+.availability__button--book,
+.availability__button--free {
+    @extend .view-button;
+    width: 110px;
+}
+
+.availability__button--booked {
+    @extend .delete-button;
+    width: 110px;
+    
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.availability__button--details {
+    @extend .button;
+    background-color: $darkAqua;
+    color: $white;
+    min-width: 100px;
+    
+    &:hover { 
+        background-color: darken($color: $darkAqua, $amount: 10%);
+        color: $white;
+    }
+}
+
+.availability__button--cancel {
+    @extend .button;
+    width: 50px;
+    height: 35px;
+    padding: 0px 5px 0px 5px;
+
+    background-color: $darkRed;
+    color: $lightGray;
+    margin-left: 10px;
+    
+    &:hover { 
+        background-color: darken($color: $darkRed, $amount: 10%);
+        color: $red;
+    }
+}
+

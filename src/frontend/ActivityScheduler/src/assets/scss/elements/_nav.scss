@@ -44,6 +44,12 @@
         }
 
         & a.active { opacity: 1; }
+
+        & .material-icons {
+            font-size: 40px;
+            
+            &:hover { opacity: 0.8; text-decoration: underline $white;}
+        }
     }
 }
 

@@ -1,9 +1,6 @@
-﻿using AutoMapper;
-using WebAPI.ActivityScheduler.Entities;
-using WebAPI.ActivityScheduler.EntitiesDTO;
-using WebAPI.ActivityScheduler.EntitiesDTO.Login;
-using WebAPI.ActivityScheduler.EntitiesDTO.ManageUsers;
-using WebAPI.ActivityScheduler.EntitiesDTO.Registration;
+﻿using ActivityScheduler.Domain.Entities;
+using ActivityScheduler.Presentation.EntitiesDTO;
+using AutoMapper;
 
 
 namespace WebAPI.ActivityScheduler.Mappings
@@ -16,9 +13,7 @@ namespace WebAPI.ActivityScheduler.Mappings
             CreateMap<UserToLoginDTO, User>().ReverseMap();
 
             CreateMap<User, UserDTO>().ReverseMap();
-            CreateMap<Activity, ActivityDTO>().ReverseMap();
-            
-            CreateMap<ActivityEntity, ActivityEntityDTO>().ReverseMap();
+            CreateMap<User, UserUpdateDTO>().ReverseMap();
         }
     }
 }

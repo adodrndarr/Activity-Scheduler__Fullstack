@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
-using WebAPI.ActivityScheduler.Configuration;
-using WebAPI.ActivityScheduler.Services;
 using NLog;
+using ActivityScheduler.Services.Interfaces;
+using ActivityScheduler.Services.HelperServices;
 
 
 namespace WebAPI.ActivityScheduler
@@ -19,7 +19,7 @@ namespace WebAPI.ActivityScheduler
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Logging/nlog.config"));
         }
 
         

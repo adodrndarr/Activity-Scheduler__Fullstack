@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { LoginResponseDTO, RegisterResponseDTO } from './Entities/Interfaces/auth-response';
-import { CurrentUser, UserToLoginDTO, UserToRegisterDTO } from './Entities/Models/user.model';
+import { User, UserToLoginDTO, UserToRegisterDTO } from './Entities/Models/user.model';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -23,7 +23,7 @@ export class AuthService {
   ) { }
 
 
-  user = new BehaviorSubject<CurrentUser>(null);
+  user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
   register(user: UserToRegisterDTO, registerAsAdmin = false): Observable<RegisterResponseDTO> {
@@ -48,7 +48,7 @@ export class AuthService {
     const user = this.cookieService.get('user');
     const tokenDate = this.cookieService.get('tokenExpirationDate');
 
-    const currentUser: CurrentUser = JSON.parse(user);
+    const currentUser: User = JSON.parse(user);
     const tokenExpirationDate = new Date(JSON.parse(tokenDate));
 
     const isTokenLifetimeValid = new Date() < tokenExpirationDate;
@@ -67,6 +67,8 @@ export class AuthService {
     this.cookieService.deleteAll('/');
     this.cookieService.deleteAll('/activity-entity');
     this.cookieService.deleteAll('/activity-entity/edit');
+    this.cookieService.deleteAll('/manage-user');
+    this.cookieService.deleteAll('/manage-user/edit');
   }
 
   autoLogout(expirationDuration: number): void {
@@ -79,10 +81,12 @@ export class AuthService {
   }
 
   handleLoginResponse(loginResponse: LoginResponseDTO): void {
-    const currentUser = new CurrentUser(
+    const currentUser = new User(
       loginResponse.userId,
       loginResponse.email,
-      loginResponse.isAdmin
+      loginResponse.isAdmin,
+      loginResponse.userName,
+      loginResponse.lastName
     );
 
     this.user.next(currentUser);

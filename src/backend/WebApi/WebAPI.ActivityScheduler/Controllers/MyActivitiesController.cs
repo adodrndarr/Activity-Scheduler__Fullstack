@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System;
-using System.Linq;
-using WebAPI.ActivityScheduler.DataAccess;
-using WebAPI.ActivityScheduler.Entities;
-using WebAPI.ActivityScheduler.EntitiesDTO;
-using WebAPI.ActivityScheduler.Services;
-using AutoMapper;
+using ActivityScheduler.Domain.Structs;
+using ActivityScheduler.Services.Interfaces;
+using ActivityScheduler.Presentation.EntitiesDTO;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -19,133 +15,82 @@ namespace WebAPI.ActivityScheduler.Controllers
     public class MyActivitiesController : ControllerBase
     {
         public MyActivitiesController(
-            ActivitySchedulerDbContext dbContext, 
-            IMapper mapper,
+            IUserService userService,
+            IActivityService activityService,
             ILoggerManager logger)
         {
-            this._db = dbContext;
-            this._mapper = mapper;
-            this._logger = logger;
+            _logger = logger;
+            _activityService = activityService;
+            _userService = userService;
         }
 
-
-        private readonly IMapper _mapper;
-        private ActivitySchedulerDbContext _db;
         private ILoggerManager _logger;
+        private IActivityService _activityService;
+        private IUserService _userService;
 
         [Authorize(Roles = UserRoles.Admin)]
         // GET: myActivities
         [HttpGet("all")]
-        public ActionResult<IEnumerable<ActivityDTO>> GetAllActivities()
+        public ActionResult<IEnumerable<ActivityRequestDTO>> GetAllActivities()
         {
-            this._logger.LogInfo("MyActivitiesController GetAllActivities - Getting all users...");
-            var users = _db.Users
-                .AsQueryable()
-                .Include(u => u.Activities)
-                .ThenInclude(a => a.ActivityEntity)
-                .ToList();
-
-            if (users.Count > 0)
+            var getActivitiesProcess = _userService.GetAllActivities();
+            if (getActivitiesProcess.IsSuccessful)
             {
-                this._logger.LogInfo("MyActivitiesController GetAllActivities - Getting activities from all users...");
-                var activities = users.SelectMany(u => u.Activities)
-                                    .AsQueryable()
-                                    .Include(a => a.User)
-                                    .ToList();
-
-                var activitiesDTOs = _mapper.Map<List<ActivityDTO>>(activities);
-                if (activitiesDTOs.Count > 0)
-                {
-                    this._logger.LogInfo($"MyActivitiesController GetAllActivities - Returning {activitiesDTOs.Count} activities.");
-                    return StatusCode(StatusCodes.Status200OK, activitiesDTOs);
-                }
+                return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
             }
 
-            this._logger.LogInfo("MyActivitiesController GetAllActivities - No activities available 0.");
             return StatusCode(
-                StatusCodes.Status200OK,
-                new InfoResponseDTO
-                {
-                    Info = "Currently there are no activities available."
-                }
-            );
+                    getActivitiesProcess.StatusCode,
+                    new InfoResponseDTO
+                    {
+                        Info = getActivitiesProcess.Info
+                    }
+                );
         }
 
         [Authorize(Roles = UserRoles.StandardUser)]
         // GET: myActivities, Params: userId
         [HttpGet]
-        public ActionResult<IEnumerable<ActivityDTO>> GetActivities(Guid userId)
+        public ActionResult<IEnumerable<ActivityResponseDTO>> GetActivities(Guid userId, [FromQuery] PaginationDTO pagination)
         {
-            this._logger.LogInfo("MyActivitiesController GetActivities - Getting specific user...");
-            var userFound = _db.Users
-                .AsQueryable()
-                .Include(u => u.Activities)
-                .ThenInclude(a => a.ActivityEntity)
-                .FirstOrDefault(u => u.Id == userId.ToString());
-
-            if (userFound != null)
+            var getActivitiesProcess = _userService.GetActivitiesByUserId(userId, pagination, Response);
+            if (getActivitiesProcess.IsSuccessful)
             {
-                this._logger.LogInfo("MyActivitiesController GetActivities - Getting activities from the specific user...");
-                var activities = userFound.Activities
-                                    .AsQueryable()                                    
-                                    .Include(a => a.User)
-                                    .ToList();
-
-                var activitiesDTOs = _mapper.Map<List<ActivityDTO>>(activities);
-                if (activitiesDTOs.Count > 0)
-                {
-                    this._logger.LogInfo($"MyActivitiesController GetAActivities - Returning {activitiesDTOs.Count} activities.");
-                    return StatusCode(StatusCodes.Status200OK, activitiesDTOs);
-                }
+                return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
             }
 
-            this._logger.LogInfo("MyActivitiesController GetAActivities - No activities available 0.");
             return StatusCode(
-                StatusCodes.Status200OK,
-                new InfoResponseDTO
-                {
-                    Info = "Currently there are no activities available."
-                }
-            );
+                    getActivitiesProcess.StatusCode,
+                    new InfoResponseDTO
+                    {
+                        Info = getActivitiesProcess.Info
+                    }
+                );
         }
 
-        [Authorize(Roles = UserRoles.StandardUser)]
+        [Authorize(Roles = UserRoles.Admin)]
         // PUT myActivities, Params: activityId
         [HttpPut]
-        public ActionResult UpdateActivity(Guid activityId, ActivityDTO newActivity)
+        public ActionResult UpdateActivity(Guid activityId, ActivityRequestDTO newActivity)
         {
-            this._logger.LogInfo("MyActivitiesController UpdateActivity - Getting specific activity to update...");
-            var activityToBeUpdated = _db.Activities
-                .AsQueryable()
-                .Include(a => a.ActivityEntity)
-                .FirstOrDefault(a => a.Id == activityId);
+            _logger.LogInfo("MyActivitiesController UpdateActivity - Getting specific activity to update...");
+            var activityToBeUpdated = _activityService.GetActivityById(activityId);
 
-            if (newActivity != null && activityToBeUpdated != null)
+            if (activityToBeUpdated != null)
             {
-                activityToBeUpdated.ActivityEntity.Name = newActivity.ActivityEntity?.Name;
-                activityToBeUpdated.BookedForDate = newActivity.BookedForDate;
-                activityToBeUpdated.ActivityEntity.Description = newActivity.ActivityEntity?.Description;
-                activityToBeUpdated.StartTime = newActivity.StartTime;
-                activityToBeUpdated.EndTime = newActivity.EndTime;
-                activityToBeUpdated.ActivityEntity.ImageUrl = newActivity.ActivityEntity?.ImageUrl;
-                activityToBeUpdated.ActivityEntity.Location = newActivity.ActivityEntity?.Location;
-                activityToBeUpdated.ActivityEntity.MinUserCount = newActivity.ActivityEntity.MinUserCount;
-                activityToBeUpdated.ActivityEntity.MaxUserCount = newActivity.ActivityEntity.MaxUserCount;
-                activityToBeUpdated.OrganizerName = newActivity.OrganizerName;
+                _activityService.Update(activityToBeUpdated, newActivity);
 
-                _db.SaveChanges();
-
-                this._logger.LogInfo("MyActivitiesController UpdateActivity - Update was successful.");
+                _logger.LogInfo("MyActivitiesController UpdateActivity - Update was successful.");
                 return StatusCode(
                     StatusCodes.Status201Created, 
                     new InfoResponseDTO
                     {
-                        Info = $"Update for {newActivity.ActivityEntity.Name} was successful."
+                        Info = $"Update for {newActivity.ActivityEntityName} was successful."
                     }
                 );
             }
 
-            this._logger.LogInfo("MyActivitiesController UpdateActivity - Update failed.");
+            _logger.LogInfo("MyActivitiesController UpdateActivity - Update failed.");
             return StatusCode(
                 StatusCodes.Status400BadRequest,
                 new InfoResponseDTO
@@ -160,41 +105,14 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpDelete]
         public ActionResult DeleteActivity(Guid activityId)
         {
-            this._logger.LogInfo("MyActivitiesController DeleteActivity - Getting specific activity to delete...");
-            var activityToRemove = GetDbActivities()
-                    .AsQueryable()
-                    .Include(a => a.ActivityEntity)
-                    .FirstOrDefault(a => a.Id == activityId);
+            var deleteProcess = _activityService.Delete(activityId);
 
-            if (activityToRemove != null)
-            {
-                _db.Activities.Remove(activityToRemove);
-                _db.ActivityEntities.Remove(activityToRemove.ActivityEntity);
-                _db.SaveChanges();
-
-                this._logger.LogInfo("MyActivitiesController DeleteActivity - Deletion was successful.");
-                return StatusCode(
-                    StatusCodes.Status200OK, 
-                    new InfoResponseDTO
-                    {
-                        Info = $"The activity: {activityToRemove.ActivityEntity?.Name}, has been deleted."
-                    }
-                );
-            }
-
-            this._logger.LogInfo("MyActivitiesController DeleteActivity - Deletion failed.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
+                deleteProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = $"The activity with id: {activityId}, could not be found."
-                }
-            );
-        }
-
-        private IEnumerable<Activity> GetDbActivities()
-        {
-            return _db.Activities;
+                    Info = deleteProcess.Info
+                });
         }
     }
 }

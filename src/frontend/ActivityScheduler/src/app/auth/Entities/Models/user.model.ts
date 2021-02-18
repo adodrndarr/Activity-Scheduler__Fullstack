@@ -15,10 +15,14 @@ export class UserToLoginDTO {
     ) { }
 }
 
-export class CurrentUser {
+export class User {
     constructor(
         public id: string,
         public email: string,
-        public isAdmin: boolean
+        public isAdmin: boolean,
+        public userName: string,
+        public lastName: string,
+        public normalizedUserName?: string,
+        public normalizedEmail?: string
     ) { }
 }

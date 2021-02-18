@@ -26,6 +26,28 @@
                     routerLinkActive="active"     
                 >Activities</a>
             </li>
+
+            <li 
+                class="nav__item" 
+                *ngIf="isLoggedIn"
+                [ngClass]="{'show-item': toggleDropdown}"
+            >
+                <a 
+                    routerLink="/schedule-activity"
+                    routerLinkActive="active"     
+                >Schedule</a>
+            </li>
+
+            <li 
+                class="nav__item" 
+                *ngIf="isLoggedIn"
+                [ngClass]="{'show-item': toggleDropdown}"
+            >
+                <a 
+                    routerLink="/my-activities"
+                    routerLinkActive="active"     
+                >My Activities</a>
+            </li>
             
             <li 
                 class="nav__item" 
@@ -44,9 +66,21 @@
                 [ngClass]="{'show-item': toggleDropdown}"
             >
                 <a 
-                    routerLink="/register-admin"
-                    routerLinkActive="active" 
-                >Register Admin</a>
+                    routerLink="/manage-users"
+                    routerLinkActive="active"     
+                >Manage users</a>
+            </li>
+
+            <li 
+                class="nav__item" 
+                *ngIf="isLoggedIn"
+                [ngClass]="{'show-item': toggleDropdown}"
+            >
+                <a 
+                    class="account"
+                    routerLink="/account"
+                    routerLinkActive="active"     
+                ><span class="material-icons">account_circle</span></a>
             </li>
 
             <li 

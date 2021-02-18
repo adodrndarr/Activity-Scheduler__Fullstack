@@ -26,7 +26,18 @@ export class ValidatorService {
   public isInvalidFormat(fieldName: string, form: FormGroup): boolean {
     const errors = form.controls[fieldName].errors;
 
-    return errors.pattern;
+    return errors.pattern || errors.email;
+  }
+
+  public hasInvalidLength(fieldName: string, form: FormGroup): boolean {
+    let hasInvalidLength = false;
+    const lengthError = form.controls[fieldName].errors.maxlength;
+
+    if (lengthError) {
+      hasInvalidLength = lengthError.actualLength > lengthError.requiredLength;
+    }
+
+    return hasInvalidLength;
   }
 
   public isInvalidMatch(fieldName: string, form: FormGroup): boolean {

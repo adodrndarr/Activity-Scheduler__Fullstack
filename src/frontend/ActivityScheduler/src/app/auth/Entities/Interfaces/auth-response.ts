@@ -9,6 +9,8 @@ export interface LoginResponseDTO {
     isLoginSuccessful: boolean;
     isAdmin: boolean;
     email: string;
+    userName: string;
+    lastName: string;
     token: string;
     tokenExpirationDate: Date;
     errorMessage: string;

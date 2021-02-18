@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { User } from '../auth/Entities/Models/user.model';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userSub: Subscription;
   isLoggedIn = false;
   toggleDropdown = true;
+  currentUser: User;
 
   ngOnInit() {
     this.checkUserRole();
@@ -26,6 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         if (user) {
           this.isAdmin = user.isAdmin;
           this.isLoggedIn = true;
+          this.currentUser = user;
         }
         else {
           this.isAdmin = false;

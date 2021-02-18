@@ -14,11 +14,9 @@
                 formControlName="userName"
             >
 
-            <span 
-                *ngIf="isInvalidInput('userName')"
-            
-            >
+            <span *ngIf="isInvalidInput('userName')">
                 <span *ngIf="isRequired('userName')">Username is required.</span>
+                <span *ngIf="hasInvalidLength('userName')">Maximum 20 characters are allowed.</span><br />
                 <span *ngIf="isInvalidFormat('userName')">First letter should be capital.</span>
             </span>
 
@@ -31,11 +29,9 @@
                 formControlName="lastName"
             >
 
-            <span 
-                *ngIf="isInvalidInput('lastName')"
-            
-            >
-                <span *ngIf="isRequired('lastName')">Lastname is required.</span> 
+            <span *ngIf="isInvalidInput('lastName')">
+                <span *ngIf="isRequired('lastName')">Last name is required.</span> 
+                <span *ngIf="hasInvalidLength('lastName')">Maximum 20 characters are allowed.</span><br />
                 <span *ngIf="isInvalidFormat('lastName')">First letter should be capital.</span>
             </span>
 
@@ -48,11 +44,9 @@
                 formControlName="email"
             >
 
-            <span 
-                *ngIf="isInvalidInput('email')"
-            
-            >
+            <span *ngIf="isInvalidInput('email')">
                 <span *ngIf="isRequired('email')">Email is required.</span> 
+                <span *ngIf="hasInvalidLength('email')">Maximum 20 characters are allowed.</span><br />
                 <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span>
             </span>
 
@@ -85,23 +79,16 @@
                 formControlName="confirmPassword" 
             >
             
-            <span
-                *ngIf="isInvalidInput('confirmPassword')"
-            
-            >
-                <span 
-                    *ngIf="isRequired('confirmPassword')"
-                >
+            <span *ngIf="isInvalidInput('confirmPassword')">
+                <span *ngIf="isRequired('confirmPassword')">
                     Confirming the password is required.
                 </span>                                         
-                <span 
-                    *ngIf="isInvalidMatch('confirmPassword')" 
-                >
+                <span *ngIf="isInvalidMatch('confirmPassword')">
                     The passwords must match.
                 </span>                    
             </span><br />
             
-            <div>
+            <div class="register__buttons">
                 <button 
                     class="primary-button"
                     type="submit" 
@@ -109,12 +96,14 @@
                 >
                     {{ isLoading ? 'Registering...' : 'Create new account' }}
                 </button>
+                <button 
+                    class="cancel-button" 
+                    (click)="onCancel()"
+                >
+                    Cancel
+                </button>
             </div>
-        </form><br />
-
-        <h2 *ngIf="registerResponse?.info" class="alert-info">
-            {{ registerResponse.info }}
-        </h2>    
+        </form><br />   
 
         <div *ngIf="!!registerResponse?.errorMessages" class="register-failed"> <br />
             <h1 class="register-failed__title">Registration failed:</h1>

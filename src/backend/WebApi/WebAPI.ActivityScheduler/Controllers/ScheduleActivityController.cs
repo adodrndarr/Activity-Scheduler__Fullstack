@@ -1,82 +1,78 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using WebAPI.ActivityScheduler.Entities;
-using WebAPI.ActivityScheduler.DataAccess;
-using WebAPI.ActivityScheduler.EntitiesDTO;
-using System.Linq;
 using System;
-using AutoMapper;
-using WebAPI.ActivityScheduler.Services;
+using ActivityScheduler.Domain.Structs;
+using ActivityScheduler.Services.Interfaces;
+using ActivityScheduler.Presentation.EntitiesDTO;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using ActivityScheduler.Domain.Entities;
+using System.Threading.Tasks;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
 {
+    [Authorize(Roles = UserRoles.StandardUser)]
     [Route("[controller]")]
     [ApiController]
     public class ScheduleActivityController : ControllerBase
     {
+        private readonly IActivityService _activityService;
+        private readonly IUserService _userService;
+        private readonly IActivityEntityService _activityEntityService;
+
         public ScheduleActivityController(
-            ActivitySchedulerDbContext dbContext, 
-            IMapper mapper, 
             IActivityService activityService,
-            ILoggerManager logger)
+            IUserService userService,
+            IActivityEntityService activityEntityService)
         {
-            this._db = dbContext;
-            this._mapper = mapper;
-            this._activityService = activityService;
-            this._logger = logger;
+            _activityService = activityService;
+            _userService = userService;
+            _activityEntityService = activityEntityService;
         }
 
 
-        private readonly ActivitySchedulerDbContext _db;
-        private readonly IActivityService _activityService;
-        private readonly IMapper _mapper;
-        private readonly ILoggerManager _logger;
-        
-        [Authorize(Roles = UserRoles.StandardUser)]
         // POST: scheduleActivity
         [HttpPost]
-        public ActionResult ScheduleActivity(Guid userId, [FromBody] ActivityDTO newActivityDTO)
+        public ActionResult ScheduleActivity(Guid userId, ActivityRequestDTO newActivityDTO)
         {
-            this._logger.LogInfo("ScheduleActivityController ScheduleActivity - Getting specific user...");
-            var userFound = _db.Users
-                .AsQueryable()
-                .Include(u => u.Activities)
-                .ThenInclude(u => u.ActivityEntity)
-                .FirstOrDefault(u => u.Id == userId.ToString());
+            var userFound = _userService.GetByIdWithDetails(userId);
+            var scheduleProcess = _activityService.ScheduleActivity(userFound, newActivityDTO);
 
-            if (newActivityDTO != null && userFound != null)
-            {
-                var newActivity = _mapper.Map<Activity>(newActivityDTO);
-                var duration = _activityService.CalculateDuration(newActivity.StartTime, newActivity.EndTime);
-
-                newActivity.User = userFound;
-                newActivity.Duration = duration;
-                newActivity.DateBooked = DateTime.Now;
-
-                _db.Activities.Add(newActivity);
-                _db.SaveChanges();
-
-                this._logger.LogInfo("ScheduleActivityController ScheduleActivity - Scheduling of an activity was successful.");
-                return StatusCode(
-                    StatusCodes.Status201Created, 
+            return StatusCode(
+                    scheduleProcess.StatusCode,
                     new InfoResponseDTO
                     {
-                        Info = $"The activity entity: {newActivityDTO.ActivityEntity?.Name}, has been scheduled."
+                        Info = scheduleProcess.Info
                     }
                 );
-            }
+        }
 
-            this._logger.LogInfo("ScheduleActivityController ScheduleActivity - Scheduling of an activity failed.");
+        // POST: scheduleActivity/multiple
+        [HttpPost("multiple")]
+        public ActionResult ScheduleActivities(Guid userId, List<ActivityRequestDTO> newActivityDTOs)
+        {
+            var userFound = _userService.GetByIdWithDetails(userId);
+            var scheduleResponse = _activityService.ScheduleActivities(userFound, newActivityDTOs);
+
             return StatusCode(
-                StatusCodes.Status400BadRequest, 
-                new InfoResponseDTO
-                {
-                    Info = $"Please provide a valid activity and id."
-                }
-            );
+                    StatusCodes.Status200OK,
+                    scheduleResponse
+                );
+        }
+
+        // GET: scheduleActivity
+        [HttpGet("booked-activities")]
+        public ActionResult GetBookedActivities(Guid activityEntityId, DateTime forDate)
+        {
+            var activityEntity = _activityEntityService.GetById(activityEntityId);
+            var checkProcess = _activityService.CheckAvailability(activityEntity, forDate);
+
+            return StatusCode(
+                    checkProcess.StatusCode,
+                    checkProcess.Payload
+                );
         }
     }
 }

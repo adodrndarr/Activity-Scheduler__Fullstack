@@ -1,17 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System;
-using System.Linq;
-using WebAPI.ActivityScheduler.DataAccess;
-using WebAPI.ActivityScheduler.Entities;
-using WebAPI.ActivityScheduler.EntitiesDTO.ManageUsers;
-using WebAPI.ActivityScheduler.EntitiesDTO;
-using WebAPI.ActivityScheduler.Services;
-using AutoMapper;
+using ActivityScheduler.Domain.Structs;
+using ActivityScheduler.Services.Interfaces;
+using ActivityScheduler.Presentation.EntitiesDTO;
+using Microsoft.AspNetCore.Identity;
+using ActivityScheduler.Domain.Entities;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -20,92 +16,74 @@ namespace WebAPI.ActivityScheduler.Controllers
     [ApiController]
     public class ManageUsersController : ControllerBase
     {
+        private readonly ILoggerManager _logger;
+        private readonly IUserService _userService;
+        private readonly UserManager<User> _userManager;
+
         public ManageUsersController(
-            ActivitySchedulerDbContext dbContext, 
-            IMapper mapper,
-            ILoggerManager logger)
+            IUserService userService,
+            ILoggerManager logger,
+            UserManager<User> userManager)
         {
-            this._db = dbContext;
-            this._mapper = mapper;
-            this._logger = logger;
+            _logger = logger;
+            _userService = userService;
+            _userManager = userManager;
         }
 
 
-        private readonly ActivitySchedulerDbContext _db;
-        private readonly IMapper _mapper;
-        private readonly ILoggerManager _logger;
-
-        [Authorize(Roles = UserRoles.Admin)] 
+        [Authorize(Roles = UserRoles.Admin)]
         // GET: manageUsers
         [HttpGet]
-        public ActionResult<IEnumerable<UserDTO>> GetUsers()
+        public ActionResult<IEnumerable<UserDTO>> GetUsers([FromQuery] PaginationDTO pagination)
         {
-            this._logger.LogInfo("ManageUsersController GetUsers - Getting users with activities and activity entities...");
-            var users = GetDbUsers()
-                    .AsQueryable()
-                    .Include(u => u.Activities)
-                    .ThenInclude(a => a.ActivityEntity)
-                    .AsEnumerable();
-            var usersDTO = _mapper.Map<List<UserDTO>>(users);
-  
-            if (usersDTO.Count > 0)
+            var getUsersProcess = _userService.GetAllDTOsWithDetails(pagination, Response);
+            if (getUsersProcess.IsSuccessful)
             {
-                this._logger.LogInfo($"ManageUsersController GetUsers - Returning {usersDTO.Count} users.");
-                return StatusCode(StatusCodes.Status200OK, usersDTO);
+                return StatusCode(getUsersProcess.StatusCode, getUsersProcess.Payload);
             }
 
-            this._logger.LogInfo("ManageUsersController GetUsers - No users available 0.");
             return StatusCode(
-                StatusCodes.Status404NotFound, 
+                getUsersProcess.StatusCode, 
                 new InfoResponseDTO
                 {
-                    Info = "Currently there are no users available."
-                }
-            );
+                    Info = getUsersProcess.Info
+                });
         }
 
-        // PUT manageUsers, Params: userId  !!! danger: any user can update other users? :O how to prevent user to update any other users?
-        [Authorize(Roles = UserRoles.StandardUser)]
-        [HttpPut]
-        public ActionResult UpdateUser(Guid userId, [FromBody] UserUpdateDTO newUser)
+        [Authorize(Roles = UserRoles.Admin)]
+        // GET: manageUsers/single
+        [HttpGet("single")]
+        public ActionResult<ActivityEntityDTO> GetUserById(Guid id)
         {
-            this._logger.LogInfo("ManageUsersController UpdateUser - Getting a user to update...");
-            var userToBeUpdated = GetDbUsers().FirstOrDefault(u => u.Id == userId.ToString());
-            if (newUser != null && userToBeUpdated != null)
-            {                
-                userToBeUpdated.UserName = newUser.UserName;
-                userToBeUpdated.NormalizedUserName = newUser.NormalizedUserName;
-                userToBeUpdated.Email = newUser.Email;
-                userToBeUpdated.NormalizedEmail = newUser.NormalizedEmail;
-                userToBeUpdated.LastName = newUser.LastName;
+            var getUserProcess = _userService.GetUserDTOById(id);
 
-                var hasher = new PasswordHasher<User>();
-                string PwdHash = string.Empty;
+            return StatusCode(getUserProcess.StatusCode, getUserProcess.Payload);
+        }
 
-                if (newUser.Password != null)
-                {
-                    PwdHash = hasher.HashPassword(userToBeUpdated, newUser.Password);
-                }
+        [Authorize(Roles = UserRoles.StandardUser)]
+        // PUT manageUsers, Params: userId 
+        [HttpPut]
+        public async Task<ActionResult> UpdateUser(Guid userId, UserUpdateDTO newUser)
+        {
+            var userToUpdate = _userService.GetById(userId);
+            var updateProcess = await _userService.Update(userToUpdate, newUser, HttpContext);
 
-                userToBeUpdated.PasswordHash = (newUser.Password == null) ? userToBeUpdated.PasswordHash : PwdHash;                
-                _db.SaveChanges();
-
-                this._logger.LogInfo("ManageUsersController UpdateUser - Update was successful.");
+            if (updateProcess.IsSuccessful)
+            {
                 return StatusCode(
-                    StatusCodes.Status201Created,
+                    updateProcess.StatusCode,
                     new InfoResponseDTO
                     {
-                        Info = $"Update for {newUser.UserName} was successful."
+                        Info = updateProcess.Info
                     }
                 );
             }
 
-            this._logger.LogInfo("ManageUsersController UpdateUser - Update failed.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
+                updateProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = "Could not update the user, please make sure you provided a valid user and that the user exists."
+                    Info = updateProcess.Info
                 }
             );
         }
@@ -115,45 +93,27 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpDelete]
         public ActionResult DeleteUser(Guid userId)
         {
-            this._logger.LogInfo("ManageUsersController DeleteUser - Getting a user for deletion...");
-            var userFound = GetDbUsers()
-                .AsQueryable()
-                .Include(u => u.Activities)
-                .ThenInclude(a => a.ActivityEntity)
-                .FirstOrDefault(u => u.Id == userId.ToString());
+            var userFound = _userService.GetByIdWithDetails(userId);
+            var deletionProcess = _userService.Delete(userFound);
 
-            if (userFound != null)
+            if (deletionProcess.IsSuccessful)
             {
-                var userActivityEntities = userFound.Activities.Select(a => a.ActivityEntity);
-
-                _db.ActivityEntities.RemoveRange(userActivityEntities);
-                _db.Activities.RemoveRange(userFound.Activities);                
-                _db.Users.Remove(userFound);
-                _db.SaveChanges();
-
-                this._logger.LogInfo("ManageUsersController DeleteUser - Deletion was successful.");
                 return StatusCode(
-                    StatusCodes.Status200OK,
+                    deletionProcess.StatusCode,
                     new InfoResponseDTO
                     {
-                        Info = $"The user: {userFound.UserName}, has been deleted."
+                        Info = deletionProcess.Info
                     }
                 );
             }
 
-            this._logger.LogInfo("ManageUsersController DeleteUser - Deletion failed.");
             return StatusCode(
-                StatusCodes.Status400BadRequest,
+                deletionProcess.StatusCode,
                 new InfoResponseDTO
                 {
-                    Info = $"The user with id: {userId}, could not be found."
+                    Info = deletionProcess.Info
                 }
             );
-        }
-
-        private IEnumerable<User> GetDbUsers()
-        {
-            return _db.Users;
         }
     }
 }
