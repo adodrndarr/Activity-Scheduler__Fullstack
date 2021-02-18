@@ -1,0 +1,85 @@
+<div class="edit-user__page">
+    <div class="edit-user__container">
+        <form 
+            class="edit-user__form"
+            [formGroup]="editUserForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <h2 *ngIf="user?.userName" >Modify Information</h2>
+            <label for="userName">Name:</label>
+            <input 
+                type="userName" 
+                class="form__input" 
+                id="userName" 
+                formControlName="userName"
+            >
+
+            <span *ngIf="isInvalidInput('userName')">
+                <span *ngIf="isRequired('userName')">Name is required.</span>
+                <span *ngIf="hasInvalidLength('userName')">Maximum 20 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('userName')">First letter should be capital.</span>
+            </span>
+
+
+            <label for="lastName">Last name:</label>
+            <input 
+                type="text" 
+                class="form__input"  
+                id="lastName" 
+                formControlName="lastName"
+            >
+
+            <span *ngIf="isInvalidInput('lastName')">
+                <span *ngIf="isRequired('lastName')">Last name is required.</span> 
+                <span *ngIf="hasInvalidLength('lastName')">Maximum 20 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('lastName')">First letter should be capital.</span>
+            </span>
+
+
+            <label for="email">E-Mail:</label>
+            <input 
+                type="email" 
+                class="form__input"  
+                id="email" email 
+                formControlName="email"
+            >
+
+            <span *ngIf="isInvalidInput('email')">
+                <span *ngIf="isRequired('email')">Email is required.</span> 
+                <span *ngIf="hasInvalidLength('email')">Maximum 20 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span>
+            </span>
+
+            <label class="checkbox" *ngIf="isAdmin">
+                Admin
+                <input 
+                    type="checkbox" 
+                    formControlName="isAdmin"
+                />
+            </label><br />
+
+            <div>
+                <button 
+                    class="update-button" 
+                    type="submit" 
+                    [disabled]="!editUserForm.valid || isLoading"
+                >
+                    {{ isLoading ? 'Updating...' : 'Update' }}
+                </button>
+                <button 
+                    class="cancel-button" 
+                    (click)="onCancel()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form><br />
+
+        <app-error
+            *ngIf="!!errorMessage"
+            [error]="errorMessage"
+        ></app-error>                         
+        <app-loading-spinner *ngIf="isLoading">
+        </app-loading-spinner>
+    </div>
+</div>

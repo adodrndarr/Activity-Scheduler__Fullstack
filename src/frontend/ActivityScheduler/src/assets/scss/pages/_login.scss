@@ -1,0 +1,25 @@
+.login-failed,
+.login__page h2 {
+    text-align: center;
+}
+
+.register-failed,
+.login-failed {
+    display: flex;
+    flex-direction: column;
+    
+    & h2 {
+        color: $red;
+    }
+
+    &__title {
+        color: $red;
+        text-decoration: underline;
+    }
+    
+    &__message {
+        color: $red;
+
+        &::before{ content: '\25CF'; }
+    }
+}
