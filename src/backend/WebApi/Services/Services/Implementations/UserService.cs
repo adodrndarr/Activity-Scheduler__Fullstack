@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using ActivityScheduler.Domain.Structs;
 using ActivityScheduler.Presentation.EntitiesDTO;
 using Newtonsoft.Json;
-using System.Security.Claims;
 
 
 namespace ActivityScheduler.Services
@@ -28,8 +27,7 @@ namespace ActivityScheduler.Services
             IRepositoryContainer repositoryContainer,
             IMapper mapper,
             ILoggerManager logger,
-            IAccountService accountService
-            )
+            IAccountService accountService)
         {
             _repos = repositoryContainer;
             _mapper = mapper;
@@ -102,23 +100,36 @@ namespace ActivityScheduler.Services
             return user;
         }
 
-        public ResultDetails GetUserDTOById(Guid id)
+        public async Task<ResultDetails> GetUserDTOById(Guid id, HttpContext context)
         {
             var user = GetById(id);
-            var userDTO = _mapper.Map<UserDTO>(user);
+            if (user != null)
+            {
+                var userDTO = _mapper.Map<UserDTO>(user);
+
+                var canRetrieveUser = await CheckCurrentUserValidity(context, user);
+                if (canRetrieveUser)
+                {
+                    return new ResultDetails
+                    {
+                        StatusCode = StatusCodes.Status200OK,
+                        IsSuccessful = true,
+                        Payload = userDTO
+                    };
+                }
+            }
 
             return new ResultDetails
             {
-                StatusCode = StatusCodes.Status200OK,
-                IsSuccessful = true,
-                Payload = userDTO
+                StatusCode = StatusCodes.Status404NotFound,
+                IsSuccessful = false,
             };
         }
 
         public async Task<ResultDetails> Update(User userToUpdate, UserUpdateDTO newUser, HttpContext context)
         {
-            bool canUpdateUser = await CheckCurrentUserValidity(context, userToUpdate.Id);
-            if (userToUpdate != null && canUpdateUser)
+            bool canUpdate = await CheckCurrentUserValidity(context, userToUpdate);
+            if (userToUpdate != null && canUpdate)
             {
                 userToUpdate.UserName = newUser?.UserName ?? userToUpdate.UserName;
                 userToUpdate.NormalizedUserName = newUser?.NormalizedUserName ?? userToUpdate.NormalizedUserName;
@@ -127,14 +138,14 @@ namespace ActivityScheduler.Services
                 userToUpdate.LastName = newUser?.LastName ?? userToUpdate.LastName;
 
                 var hasher = new PasswordHasher<User>();
-                string PwdHash = string.Empty;
+                string pwdHash = string.Empty;
 
                 if (newUser.Password != null)
                 {
-                    PwdHash = hasher.HashPassword(userToUpdate, newUser.Password);
+                    pwdHash = hasher.HashPassword(userToUpdate, newUser.Password);
                 }
 
-                userToUpdate.PasswordHash = (newUser.Password == null) ? userToUpdate.PasswordHash : PwdHash;
+                userToUpdate.PasswordHash = (newUser.Password == null) ? userToUpdate.PasswordHash : pwdHash;
 
                 _repos.UserRepo.Update(userToUpdate);
                 SaveChanges();
@@ -159,16 +170,22 @@ namespace ActivityScheduler.Services
             };
         }
 
-        private async Task<bool> CheckCurrentUserValidity(HttpContext context, string id)
+        private async Task<bool> CheckCurrentUserValidity(HttpContext context, User user)
         {
-            var currentUserEmail = context.User.FindFirstValue(ClaimTypes.Email);
-            var currentUser = _repos.UserRepo.GetByCondition(u => u.Email == currentUserEmail)
+            string userId = _accountService.GetCurrentUserId(context);
+            var currentUser = _repos.UserRepo.GetByCondition(u => u.Id == userId)
                                              .SingleOrDefault();
+
+            if (user == null || currentUser == null)
+            {
+                return false;
+            }
+
             var curreUserRoles = await _accountService.GetRolesAsync(currentUser);
-
             bool isAdmin = curreUserRoles.Any(role => role == UserRoles.Admin);
-            bool isValid = currentUser.Id == id || isAdmin;
+            bool updateCurrentUser = currentUser.Id == user.Id;
 
+            bool isValid = updateCurrentUser || isAdmin;
             return isValid;
         }
 

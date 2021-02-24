@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,11 @@ namespace ActivityScheduler.Services.HelperServices
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<ICommonService, CommonService>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ActivityScheduler", Version = "v1" });
+            });
         }
 
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)

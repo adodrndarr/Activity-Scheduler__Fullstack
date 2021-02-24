@@ -14,7 +14,7 @@ namespace ActivityScheduler.Services.Interfaces
         IEnumerable<User> GetAllWithDetails();
 
         User GetById(Guid userId);
-        ResultDetails GetUserDTOById(Guid id);
+        Task<ResultDetails> GetUserDTOById(Guid id, HttpContext context);
 
         User GetByIdWithDetails(Guid userId);
         Task<ResultDetails> Update(User userToUpdate, UserUpdateDTO newUser, HttpContext context);

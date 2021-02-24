@@ -122,7 +122,7 @@ namespace ActivityScheduler.Services
         {
             _repos.SaveChanges();
         }
-        
+
         public ResultDetails ScheduleActivity(User user, ActivityRequestDTO newActivityDTO)
         {
             UpdateActivityTime(newActivityDTO);
@@ -144,7 +144,7 @@ namespace ActivityScheduler.Services
                 newActivityDTO.ActivityEntityName = activityEntity.Name;
                 newActivityDTO.OrganizerName = user.UserName;
 
-                var bookedActivities = GetBookedActivities(activityEntity);
+                var bookedActivities = GetBookedActivities(activityEntity, newActivityDTO.BookedForDate);
                 var isTimeSlotAvailable = IsScheduleTimeAvailable(newActivityDTO, bookedActivities);
 
                 if (isTimeSlotAvailable)
@@ -226,7 +226,7 @@ namespace ActivityScheduler.Services
 
                 if (newActivityDTO != null)
                 {
-                    var bookedActivities = GetBookedActivities(activityEntity);
+                    var bookedActivities = GetBookedActivities(activityEntity, forDate);
                     if (bookedActivities.Count > 0)
                     {
                         var bookedDetails = _mapper.Map<IEnumerable<BookedActivityDTO>>(bookedActivities);
@@ -322,7 +322,7 @@ namespace ActivityScheduler.Services
             return canBeBooked;
         }
 
-        public List<Activity> GetBookedActivities(ActivityEntity activityEntity)
+        public List<Activity> GetBookedActivities(ActivityEntity activityEntity, DateTime forDate)
         {
             var allActivitites = _repos.ActivityRepo.GetByCondition(a => a.Name.ToLower() == 
                                                                          activityEntity.Name.ToLower())
@@ -334,7 +334,7 @@ namespace ActivityScheduler.Services
             for (int i = 0; i < allActivitites.Count; i++)
             {
                 var currentActivity = allActivitites[i];
-                var currentDate = currentActivity.BookedForDate.Date;
+                var currentDate = forDate.Date; // currentActivity.BookedForDate.Date;
                 var currentStartHour = currentActivity.StartTime.Hour;
                 var currentEndhour = currentActivity.EndTime.Hour;
 

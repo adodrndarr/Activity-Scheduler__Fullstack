@@ -100,7 +100,6 @@ namespace Tests.Services
             Assert.That(expectedToSucceed, Is.EqualTo(result.IsSuccessful));
         }
 
-
         [Test]
         public void GetAllActivityEntities_WhenCalled_ReturnsResultDetailsWithActivityEntities()
         {
@@ -146,8 +145,8 @@ namespace Tests.Services
             Assert.That(result.Count, Is.EqualTo(expectedCount));
         }
 
-        [Test]
 
+        [Test]
         public void GetById_UnknownGuidPassed_ReturnsNoActivityEntity()
         {
             // Arrange

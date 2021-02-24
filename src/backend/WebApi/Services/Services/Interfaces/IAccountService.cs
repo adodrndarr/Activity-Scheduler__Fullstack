@@ -21,7 +21,8 @@ namespace ActivityScheduler.Services.Interfaces
         Task<LoginResponseDTO> CreateLoginResponse(User user, IList<string> roles);
         void AppendCookies(string token, string userName, HttpResponse response);
         Task<User> FindByEmailAsync(string email);
-        
+        string GetCurrentUserId(HttpContext context);
+
         Task<IList<string>> GetRolesAsync(User user);
         string HashPassword(User user, string password);
         Task<SignInResult> PasswordSignInAsync(string userName, string password);

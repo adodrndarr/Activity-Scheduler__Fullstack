@@ -53,18 +53,7 @@ export class EditUserComponent implements OnInit {
       email: null,
       isAdmin: false
     });
-
-    if (!this.user) {
-      this.getUser();
-      return;
-    }
-
-    this.populateEditUserForm({
-      name: this.user.userName,
-      lastName: this.user.lastName,
-      email: this.user.email,
-      isAdmin: this.user.isAdmin
-    });
+    this.getUser();
   }
 
   private getUser(): void {

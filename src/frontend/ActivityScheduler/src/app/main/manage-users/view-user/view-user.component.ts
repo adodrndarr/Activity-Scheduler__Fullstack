@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/auth/Entities/Models/user.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
@@ -18,7 +19,8 @@ export class ViewUserComponent implements OnInit {
     private helperService: HelperService,
     private route: ActivatedRoute,
     private httpService: HttpService,
-    private errorHandlerService: ErrorHandlerService
+    private errorHandlerService: ErrorHandlerService,
+    private authService: AuthService
   ) { }
 
 
@@ -26,10 +28,12 @@ export class ViewUserComponent implements OnInit {
   id: string;
   errorMessage: string;
   isLoading = false;
+  isAdmin = false;
 
   ngOnInit() {
     this.initializeId();
     this.getUsers();
+    this.checkUserRole();
   }
 
   private getUsers(): void {
@@ -71,6 +75,15 @@ export class ViewUserComponent implements OnInit {
   }
 
   onGoBack(): void {
-    this.helperService.navigateTo('activities');
+    if (this.isAdmin) {
+      this.helperService.navigateTo('manage-users');
+    }
+    else {
+      this.helperService.navigateTo('account');
+    }
+  }
+
+  checkUserRole(): void {
+    this.isAdmin = this.authService.user.value.isAdmin;
   }
 }

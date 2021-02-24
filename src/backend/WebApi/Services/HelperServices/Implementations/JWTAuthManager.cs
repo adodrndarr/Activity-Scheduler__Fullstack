@@ -43,7 +43,8 @@ namespace ActivityScheduler.Services.HelperServices
             claims.AddRange(new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.NameIdentifier, user.Id)
             });
 
             var userRoles = await _userManager.GetRolesAsync(user);

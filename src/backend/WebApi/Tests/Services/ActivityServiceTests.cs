@@ -40,412 +40,17 @@ namespace Services.Test.Services
         }
 
 
-        User testUser;
-        ActivityRequestDTO testNewActivityDTO;
-        ActivityEntity testActivityEntity;
-        Activity testActivity;
-        List<Activity> testActivities;
+        private User _testUser;
+        private ActivityRequestDTO _testNewActivityDTO;
+        private ActivityEntity _testActivityEntity;
+        private Activity _testActivity;
+        private List<Activity> _testActivities;
 
         [SetUp]
         public void Init()
         {
             InitializeEntities();
         }
-
-        #region Assert.That() syntax
-
-        //[Test]
-        //public void GetActivityById_UnknownGuidPassed_ReturnsNoActivity()
-        //{
-        //    // Arrange
-        //    var unknownGuid = new Guid();
-        //    SetupGetActivityById(null);
-
-        //    // Act
-        //    var expectedActivity = _activityService.GetActivityById(unknownGuid);
-
-        //    // Assert
-        //    Assert.That(null, Is.EqualTo(expectedActivity));
-        //}
-
-        //[Test]
-        //public void GetActivityById_ExistingGuidPassed_ReturnsCorrectActivity()
-        //{
-        //    // Arrange
-        //    var testGuid = new Guid("ab2bd817-98cd-4cf3-a80a-53ea0cd9c200");
-        //    var activity = new Activity
-        //    {
-        //        Id = testGuid
-        //    };
-
-        //    SetupGetActivityById(activity);
-
-        //    // Act
-        //    var resultActivity = _activityService.GetActivityById(testGuid);
-
-        //    // Assert
-        //    Assert.That(resultActivity, Is.InstanceOf<Activity>());
-        //    Assert.That(resultActivity.Id, Is.EqualTo(testGuid));
-        //}
-
-
-        //[Test]
-        //public void ScheduleActivity_InvalidUserPassed_ReturnsUnsuccessfulResult()
-        //{
-        //    // Arrange
-        //    var expectedToSucceed = false;
-
-        //    // Act
-        //    var result = _activityService.ScheduleActivity(null, testNewActivityDTO);
-
-        //    // Assert
-        //    Assert.That(expectedToSucceed, Is.EqualTo(result.IsSuccessful));
-        //    // Assert.AreEqual(expectedToSucceed, result.IsSuccessful);
-        //}
-
-        //[Test]
-        //public void ScheduleActivity_InvalidDatePassed_ReturnsUnsuccessfulResult()
-        //{
-        //    // Arrange
-        //    testNewActivityDTO.BookedForDate = testNewActivityDTO.BookedForDate.AddDays(-2);
-
-        //    // Act
-        //    var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
-
-        //    // Assert
-        //    Assert.That(result.IsSuccessful, Is.False);
-        //}
-
-        //[Test]
-        //public void ScheduleActivity_InvalidActivityEntityPassed_ReturnsUnsuccessfulResult()
-        //{
-        //    // Arrange
-        //    SetupGetActivityEntityByName(null);
-        //    testNewActivityDTO.ActivityEntityId = null;
-
-        //    // Act
-        //    var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
-
-        //    // Assert
-        //    Assert.That(result.IsSuccessful, Is.False);
-        //}
-
-        //[Test]
-        //public void ScheduleActivity_WhenTimeSlotIsNotAvailable_ReturnsUnsuccessfulResult()
-        //{
-        //    // Arrange
-        //    SetupGetActivityEntityByName(testActivityEntity);
-        //    SetupActivityGetByCondition();
-
-        //    // Act
-        //    var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
-
-        //    // Assert
-        //    Assert.That(result.IsSuccessful, Is.False);
-        //}
-
-        //[Test]
-        //public void ScheduleActivity_WhenThereAreNoBookedActivities_ReturnsSuccessfulResult()
-        //{
-        //    // Arrange
-        //    testActivityEntity.ItemQuantity = 3;
-
-        //    SetupGetActivityEntityByName(testActivityEntity);
-        //    SetupActivityGetByCondition();
-        //    SetupActivityMap(testActivity, testNewActivityDTO);
-
-        //    // Act
-        //    var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
-
-        //    // Assert
-        //    Assert.That(result.IsSuccessful, Is.True);
-        //}
-
-
-        //[Test]
-        //public void IsScheduleTimeAvailable_WhenTimeSlotIsNotAvailable_ReturnsFalse()
-        //{
-        //    // Arrange
-        //    var expectedToSucceed = false;
-
-        //    // Act
-        //    var result = _activityService.IsScheduleTimeAvailable(testNewActivityDTO, testActivities);
-
-        //    // Assert
-        //    Assert.That(expectedToSucceed, Is.EqualTo(result));
-        //}
-
-        //[Test]
-        //public void IsScheduleTimeAvailable_WhenTimeSlotIsAvailable_ReturnsTrue()
-        //{
-        //    // Arrange
-        //    foreach (var testActivity in testActivities)
-        //    {
-        //        testActivity.StartTime = testNewActivityDTO.EndTime;
-        //        testActivity.StartTime = testActivity.StartTime.AddHours(2);
-
-        //        testActivity.EndTime = testActivity.StartTime;
-        //        testActivity.EndTime = testActivity.EndTime.AddHours(2);
-        //    }
-
-        //    // Act
-        //    bool result = _activityService.IsScheduleTimeAvailable(testNewActivityDTO, testActivities);
-
-        //    // Assert
-        //    Assert.That(result, Is.True);
-        //}
-
-
-        //[Test]
-        //public void GetBookedActivities_WhenAllQuantitiesAreNotTaken_ReturnsNoBookedActivities()
-        //{
-        //    // Arrange
-        //    var expectToHaveNoActivities = true;
-
-        //    // Act
-        //    testActivityEntity.ItemQuantity = 3;
-        //    SetupActivityGetByCondition();
-
-        //    var activities = _activityService.GetBookedActivities(testActivityEntity);
-        //    bool activitiesResult = activities.Count < 1;
-
-        //    // Assert
-        //    Assert.That(expectToHaveNoActivities, Is.EqualTo(activitiesResult));
-        //}
-
-        //[Test]
-        //public void GetBookedActivities_WhenAllQuantitiesAreTaken_ReturnsBookedActivities()
-        //{
-        //    // Arrange
-        //    SetupActivityGetByCondition();
-
-        //    // Act
-        //    var resultActivities = _activityService.GetBookedActivities(testActivityEntity);
-        //    bool haveBookedActivities = resultActivities.Count > 0;
-
-        //    // Assert
-        //    Assert.That(haveBookedActivities, Is.True);
-        //}
-
-
-        //[Test]
-        //public void CheckAvailability_InvalidActivityEntityPassed_ReturnsInvalidResultDetails()
-        //{
-        //    // Arrange
-        //    ActivityEntity invalidActivityEntity = null;
-
-        //    // Act
-        //    var resultDetails = _activityService.CheckAvailability(invalidActivityEntity, DateTime.Now);
-
-        //    // Assert
-        //    Assert.That(resultDetails, Is.InstanceOf<ResultDetails>());
-        //    Assert.That(resultDetails.Payload.IsValid, Is.False);
-        //}
-
-        //[Test]
-        //public void CheckAvailability_InvalidDatePassed_ReturnsInvalidResultDetails()
-        //{
-        //    // Arrange
-        //    var invalidDate = DateTime.Now.AddDays(-1);
-
-        //    // Act
-        //    var resultDetails = _activityService.CheckAvailability(testActivityEntity, invalidDate);
-
-        //    // Assert
-        //    Assert.That(resultDetails, Is.InstanceOf<ResultDetails>());
-        //    Assert.That(resultDetails.Payload.IsValid, Is.False);
-        //}
-
-        //[Test]
-        //public void CheckAvailability_ActivityEntityDoesNotExist_ReturnsInvalidResultDetails()
-        //{
-        //    // Arrange
-        //    SetupActivityGetByCondition();
-        //    SetupActivityRequestMap(testActivity, null);
-
-        //    // Act
-        //    var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
-
-        //    // Assert
-        //    Assert.That(resultDetails, Is.InstanceOf<ResultDetails>());
-        //    Assert.That(resultDetails.Payload.IsValid, Is.False);
-        //}
-
-        //[Test]
-        //public void CheckAvailability_WhenNoBookedActivities_ReturnsValidResultDetails()
-        //{
-        //    // Arrange
-        //    testActivityEntity.ItemQuantity = 3;
-
-        //    SetupActivityGetByCondition();
-        //    SetupActivityRequestMap(testActivity, testNewActivityDTO);
-
-        //    // Act
-        //    var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
-
-        //    // Assert
-        //    Assert.That(resultDetails, Is.InstanceOf<ResultDetails>());
-        //    Assert.That(resultDetails.Payload.IsValid, Is.True);
-        //}
-
-        //[Test]
-        //public void CheckAvailability_WhenHaveBookedActivities_ReturnsBookedDetails()
-        //{
-        //    // Arrange
-        //    SetupActivityGetByCondition();
-        //    SetupActivityRequestMap(testActivity, testNewActivityDTO);
-        //    SetupBookedActivityMap(testActivities, new List<BookedActivityDTO>());
-
-        //    // Act
-        //    var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
-
-        //    // Assert
-        //    Assert.That(resultDetails, Is.InstanceOf<ResultDetails>());
-        //    Assert.That(resultDetails.Payload, Is.InstanceOf<IEnumerable<BookedActivityDTO>>());
-        //}
-
-
-        //[Test]
-        //public void Delete_UnknownGuidPassed_ReturnsInvalidResultDetails()
-        //{
-        //    // Arrange
-        //    var unknownGuid = new Guid();
-        //    SetupGetActivityById(null);
-
-        //    // Act
-        //    var deleteResult = _activityService.Delete(unknownGuid);
-
-        //    // Assert
-        //    Assert.That(deleteResult.IsSuccessful, Is.False);
-        //}
-
-        //[Test]
-        //public void Delete_ExistingGuidPassed_ReturnsCorrectResultDetails()
-        //{
-        //    // Arrange
-        //    var testGuid = new Guid("ab2bd817-98cd-4cf3-a80a-53ea0cd9c200");
-        //    var activity = new Activity
-        //    {
-        //        Id = testGuid
-        //    };
-
-        //    SetupGetActivityById(activity);
-
-        //    // Act
-        //    var deleteResult = _activityService.Delete(testGuid);
-
-        //    // Assert
-        //    Assert.That(deleteResult.IsSuccessful, Is.True);
-        //}
-
-
-        //[Test]
-        //public void ActivityEntityExists_UnknownNamePassed_ReturnsFalse()
-        //{
-        //    // Arrange
-        //    var invalidName = "Non existing Name";
-        //    SetupGetActivityEntityByName(null);
-
-        //    // Act
-        //    bool existsResult = _activityService.ActivityEntityExists(invalidName);
-
-        //    // Assert
-        //    Assert.That(existsResult, Is.False);
-        //}
-
-        //[Test]
-        //public void ActivityEntityExists_ExistingNamePassed_ReturnsTrue()
-        //{
-        //    // Arrange
-        //    var existingName = "Billiard";
-        //    SetupGetActivityEntityByName(testActivityEntity);
-
-        //    // Act
-        //    bool existsResult = _activityService.ActivityEntityExists(existingName);
-
-        //    // Assert
-        //    Assert.That(existsResult, Is.True);
-        //}
-
-
-        //[Test]
-        //public void Add_WhenCalled_CreatesNewActivity()
-        //{
-        //    // Arrange
-        //    var activityRequestDTO = testNewActivityDTO;
-        //    SetupActivityMap(testActivity, activityRequestDTO);
-        //    SetupGetActivityEntityByName(testActivityEntity);
-        //    SetupActivityCreate();
-
-        //    // Act
-        //    _activityService.Add(activityRequestDTO, testUser);
-
-        //    // Assert
-        //    _mockRepos.Verify(container => container.ActivityRepo.Create(testActivity), Times.Once);
-        //}
-
-        //[Test]
-        //[Order(1)]
-        //public void AddMany_WhenCreatingNewActivities_ExecutesSaveChangesOnce()
-        //{
-        //    // Arrange
-        //    var activityRequestDTOs = new List<ActivityRequestDTO>()
-        //    {
-        //        testNewActivityDTO,
-        //        testNewActivityDTO
-        //    };
-
-        //    SetupActivityMap(testActivity, testNewActivityDTO);
-        //    SetupGetActivityEntityByName(testActivityEntity);
-        //    SetupActivityCreate();
-
-        //    // Act
-        //    _activityService.AddMany(activityRequestDTOs, testUser);
-
-        //    // Assert
-        //    _mockRepos.Verify(container => container.ActivityRepo.Create(testActivity),
-        //                                   Times.Exactly(activityRequestDTOs.Count));
-
-        //    _mockRepos.Verify(container => container.SaveChanges(), Times.Once);
-        //}
-
-        //[Test]
-        //public void Update_WhenCalled_ShouldUpdateActivity()
-        //{
-        //    // Arrange
-        //    SetupGetActivityEntityByName(testActivityEntity);
-        //    SetupActivityUpdate();
-
-        //    // Act
-        //    _activityService.Update(testActivity, testNewActivityDTO);
-
-        //    // Assert
-        //    _mockRepos.Verify(container => container.ActivityRepo.Update(testActivity), Times.Once);
-        //}
-
-        //[Test]
-        //public void Update_InvalidItemPassed_ShouldThrowNullReferenceException()
-        //{
-        //    // Arrange
-        //    SetupActivityUpdate();
-        //    SetupGetActivityEntityByName(testActivityEntity);
-
-        //    // Act
-        //    Action updateWithInvalidActivity = () => _activityService.Update(null, testNewActivityDTO);
-        //    Action updateWithInvalidActivityRequest = () => _activityService.Update(testActivity, null);
-        //    Action updateWithInvalidParams = () => _activityService.Update(null, null);
-
-        //    // Assert
-        //    Assert.Throws<NullReferenceException>(() => updateWithInvalidActivity());
-        //    Assert.Throws<NullReferenceException>(() => updateWithInvalidActivityRequest());
-        //    Assert.Throws<NullReferenceException>(() => updateWithInvalidParams());
-        //}
-
-        #endregion
-
-
-
-        #region Fluent Assert syntax
 
         [Test]
         public void GetActivityById_UnknownGuidPassed_ReturnsNoActivity()
@@ -458,7 +63,7 @@ namespace Services.Test.Services
             var expectedActivity = _activityService.GetActivityById(unknownGuid);
 
             // Assert
-            expectedActivity.Should().Be(null);
+            expectedActivity.Should().Be(null, because: "invalid Guid was passed");
         }
 
         [Test]
@@ -489,7 +94,7 @@ namespace Services.Test.Services
             var expectedToSucceed = false;
 
             // Act
-            var result = _activityService.ScheduleActivity(null, testNewActivityDTO);
+            var result = _activityService.ScheduleActivity(null, _testNewActivityDTO);
 
             // Assert
             expectedToSucceed.Should().Be(result.IsSuccessful);
@@ -499,10 +104,10 @@ namespace Services.Test.Services
         public void ScheduleActivity_InvalidDatePassed_ReturnsUnsuccessfulResult()
         {
             // Arrange
-            testNewActivityDTO.BookedForDate = testNewActivityDTO.BookedForDate.AddDays(-2);
+            _testNewActivityDTO.BookedForDate = _testNewActivityDTO.BookedForDate.AddDays(-2);
 
             // Act
-            var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
+            var result = _activityService.ScheduleActivity(_testUser, _testNewActivityDTO);
 
             // Assert
             result.IsSuccessful.Should().Be(false);
@@ -513,10 +118,10 @@ namespace Services.Test.Services
         {
             // Arrange
             SetupGetActivityEntityByName(null);
-            testNewActivityDTO.ActivityEntityId = null;
+            _testNewActivityDTO.ActivityEntityId = null;
 
             // Act
-            var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
+            var result = _activityService.ScheduleActivity(_testUser, _testNewActivityDTO);
 
             // Assert
             result.IsSuccessful.Should().Be(false);
@@ -526,11 +131,11 @@ namespace Services.Test.Services
         public void ScheduleActivity_WhenTimeSlotIsNotAvailable_ReturnsUnsuccessfulResult()
         {
             // Arrange
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupGetActivityEntityByName(_testActivityEntity);
             SetupActivityGetByCondition();
 
             // Act
-            var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
+            var result = _activityService.ScheduleActivity(_testUser, _testNewActivityDTO);
 
             // Assert
             result.IsSuccessful.Should().Be(false);
@@ -540,14 +145,15 @@ namespace Services.Test.Services
         public void ScheduleActivity_WhenThereAreNoBookedActivities_ReturnsSuccessfulResult()
         {
             // Arrange
-            testActivityEntity.ItemQuantity = 3;
+            _testActivityEntity.ItemQuantity = 3;
 
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupGetActivityEntityByName(_testActivityEntity);
             SetupActivityGetByCondition();
-            SetupActivityMap(testActivity, testNewActivityDTO);
+            SetupActivityMap(_testActivity, _testNewActivityDTO);
+            _mockRepos.Setup(container => container.SaveChanges());
 
             // Act
-            var result = _activityService.ScheduleActivity(testUser, testNewActivityDTO);
+            var result = _activityService.ScheduleActivity(_testUser, _testNewActivityDTO);
 
             // Assert
             result.IsSuccessful.Should().Be(true);
@@ -561,7 +167,7 @@ namespace Services.Test.Services
             var expectedToSucceed = false;
 
             // Act
-            var result = _activityService.IsScheduleTimeAvailable(testNewActivityDTO, testActivities);
+            var result = _activityService.IsScheduleTimeAvailable(_testNewActivityDTO, _testActivities);
 
             // Assert
             expectedToSucceed.Should().Be(result);
@@ -571,9 +177,9 @@ namespace Services.Test.Services
         public void IsScheduleTimeAvailable_WhenTimeSlotIsAvailable_ReturnsTrue()
         {
             // Arrange
-            foreach (var testActivity in testActivities)
+            foreach (var testActivity in _testActivities)
             {
-                testActivity.StartTime = testNewActivityDTO.EndTime;
+                testActivity.StartTime = _testNewActivityDTO.EndTime;
                 testActivity.StartTime = testActivity.StartTime.AddHours(2);
 
                 testActivity.EndTime = testActivity.StartTime;
@@ -581,7 +187,7 @@ namespace Services.Test.Services
             }
 
             // Act
-            bool result = _activityService.IsScheduleTimeAvailable(testNewActivityDTO, testActivities);
+            bool result = _activityService.IsScheduleTimeAvailable(_testNewActivityDTO, _testActivities);
 
             // Assert
             result.Should().Be(true);
@@ -595,10 +201,10 @@ namespace Services.Test.Services
             var expectToHaveNoActivities = true;
 
             // Act
-            testActivityEntity.ItemQuantity = 3;
+            _testActivityEntity.ItemQuantity = 3;
             SetupActivityGetByCondition();
 
-            var activities = _activityService.GetBookedActivities(testActivityEntity);
+            var activities = _activityService.GetBookedActivities(_testActivityEntity, _testNewActivityDTO.BookedForDate);
             bool activitiesResult = activities.Count < 1;
 
             // Assert
@@ -612,7 +218,7 @@ namespace Services.Test.Services
             SetupActivityGetByCondition();
 
             // Act
-            var resultActivities = _activityService.GetBookedActivities(testActivityEntity);
+            var resultActivities = _activityService.GetBookedActivities(_testActivityEntity, _testNewActivityDTO.BookedForDate);
             bool haveBookedActivities = resultActivities.Count > 0;
 
             // Assert
@@ -642,7 +248,7 @@ namespace Services.Test.Services
             var invalidDate = DateTime.Now.AddDays(-1);
 
             // Act
-            var resultDetails = _activityService.CheckAvailability(testActivityEntity, invalidDate);
+            var resultDetails = _activityService.CheckAvailability(_testActivityEntity, invalidDate);
             bool isValidResult = resultDetails.Payload.IsValid;
 
             // Assert
@@ -655,10 +261,10 @@ namespace Services.Test.Services
         {
             // Arrange
             SetupActivityGetByCondition();
-            SetupActivityRequestMap(testActivity, null);
+            SetupActivityRequestMap(_testActivity, null);
 
             // Act
-            var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
+            var resultDetails = _activityService.CheckAvailability(_testActivityEntity, DateTime.Now);
             bool isValidResult = resultDetails.Payload.IsValid;
 
             // Assert
@@ -670,13 +276,13 @@ namespace Services.Test.Services
         public void CheckAvailability_WhenNoBookedActivities_ReturnsValidResultDetails()
         {
             // Arrange
-            testActivityEntity.ItemQuantity = 3;
+            _testActivityEntity.ItemQuantity = 3;
 
             SetupActivityGetByCondition();
-            SetupActivityRequestMap(testActivity, testNewActivityDTO);
+            SetupActivityRequestMap(_testActivity, _testNewActivityDTO);
 
             // Act
-            var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
+            var resultDetails = _activityService.CheckAvailability(_testActivityEntity, DateTime.Now);
             bool isValidResult = resultDetails.Payload.IsValid;
 
             // Assert
@@ -689,11 +295,11 @@ namespace Services.Test.Services
         {
             // Arrange
             SetupActivityGetByCondition();
-            SetupActivityRequestMap(testActivity, testNewActivityDTO);
-            SetupBookedActivityMap(testActivities, new List<BookedActivityDTO>());
+            SetupActivityRequestMap(_testActivity, _testNewActivityDTO);
+            SetupBookedActivityMap(_testActivities, new List<BookedActivityDTO>());
 
             // Act
-            var resultDetails = _activityService.CheckAvailability(testActivityEntity, DateTime.Now);
+            var resultDetails = _activityService.CheckAvailability(_testActivityEntity, _testActivity.BookedForDate);
 
             // Assert
             resultDetails.Should().BeOfType(typeof(ResultDetails));
@@ -754,13 +360,13 @@ namespace Services.Test.Services
         {
             // Arrange
             var existingName = "Billiard";
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupGetActivityEntityByName(_testActivityEntity);
 
             // Act
             bool existsResult = _activityService.ActivityEntityExists(existingName);
 
             // Assert
-            existsResult.Should().Be(true);
+            existsResult.Should().Be(true, because: "existing name was passed");
         }
 
 
@@ -768,16 +374,16 @@ namespace Services.Test.Services
         public void Add_WhenCalled_CreatesNewActivity()
         {
             // Arrange
-            var activityRequestDTO = testNewActivityDTO;
-            SetupActivityMap(testActivity, activityRequestDTO);
-            SetupGetActivityEntityByName(testActivityEntity);
+            var activityRequestDTO = _testNewActivityDTO;
+            SetupActivityMap(_testActivity, activityRequestDTO);
+            SetupGetActivityEntityByName(_testActivityEntity);
             SetupActivityCreate();
 
             // Act
-            _activityService.Add(activityRequestDTO, testUser);
+            _activityService.Add(activityRequestDTO, _testUser);
 
             // Assert
-            _mockRepos.Verify(container => container.ActivityRepo.Create(testActivity), Times.Once);
+            _mockRepos.Verify(container => container.ActivityRepo.Create(_testActivity), Times.Once);
         }
 
         [Test]
@@ -787,19 +393,19 @@ namespace Services.Test.Services
             // Arrange
             var activityRequestDTOs = new List<ActivityRequestDTO>()
             {
-                testNewActivityDTO,
-                testNewActivityDTO
+                _testNewActivityDTO,
+                _testNewActivityDTO
             };
 
-            SetupActivityMap(testActivity, testNewActivityDTO);
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupActivityMap(_testActivity, _testNewActivityDTO);
+            SetupGetActivityEntityByName(_testActivityEntity);
             SetupActivityCreate();
 
             // Act
-            _activityService.AddMany(activityRequestDTOs, testUser);
+            _activityService.AddMany(activityRequestDTOs, _testUser);
 
             // Assert
-            _mockRepos.Verify(container => container.ActivityRepo.Create(testActivity),
+            _mockRepos.Verify(container => container.ActivityRepo.Create(_testActivity),
                                            Times.Exactly(activityRequestDTOs.Count));
 
             _mockRepos.Verify(container => container.SaveChanges(), Times.Once);
@@ -809,14 +415,15 @@ namespace Services.Test.Services
         public void Update_WhenCalled_ShouldUpdateActivity()
         {
             // Arrange
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupGetActivityEntityByName(_testActivityEntity);
             SetupActivityUpdate();
+            _mockRepos.Setup(container => container.SaveChanges());
 
             // Act
-            _activityService.Update(testActivity, testNewActivityDTO);
+            _activityService.Update(_testActivity, _testNewActivityDTO);
 
             // Assert
-            _mockRepos.Verify(container => container.ActivityRepo.Update(testActivity), Times.Once);
+            _mockRepos.Verify(container => container.ActivityRepo.Update(_testActivity), Times.Once);
         }
 
         [Test]
@@ -824,30 +431,31 @@ namespace Services.Test.Services
         {
             // Arrange
             SetupActivityUpdate();
-            SetupGetActivityEntityByName(testActivityEntity);
+            SetupGetActivityEntityByName(_testActivityEntity);
 
             // Act
-            Action updateWithInvalidActivity = () => _activityService.Update(null, testNewActivityDTO);
-            Action updateWithInvalidActivityRequest = () => _activityService.Update(testActivity, null);
+            Action updateWithInvalidActivity = () => _activityService.Update(null, _testNewActivityDTO);
+            Action updateWithInvalidActivityRequest = () => _activityService.Update(_testActivity, null);
             Action updateWithInvalidParams = () => _activityService.Update(null, null);
 
-            // Assert
+            // Assert           
             updateWithInvalidActivity.Should().Throw<NullReferenceException>();
             updateWithInvalidActivityRequest.Should().Throw<NullReferenceException>();
             updateWithInvalidParams.Should().Throw<NullReferenceException>();
         }
-        #endregion
 
+        [Test]
+        public void SaveChanges_WhenUnableToSaveChanges_ShouldThrowInvalidOperationException()
+        {
+            // Arrange
+            SetupSaveChanges();
 
+            // Act
+            Action saveChangesUnsuccessfully = () => _activityService.SaveChanges();
 
-
-
-
-
-
-
-
-
+            // Assert           
+            saveChangesUnsuccessfully.Should().Throw<InvalidOperationException>();
+        }
 
 
 
@@ -870,7 +478,7 @@ namespace Services.Test.Services
         {
             _mockRepos.Setup(container => 
                              container.ActivityRepo.GetByCondition(It.IsAny<Expression<Func<Activity, bool>>>()))
-                      .Returns(testActivities.AsQueryable());
+                      .Returns(_testActivities.AsQueryable());
         }
 
 
@@ -903,9 +511,16 @@ namespace Services.Test.Services
             _mockRepos.Setup(container => container.ActivityRepo.Update(It.IsAny<Activity>()));
         }
 
+        private void SetupSaveChanges()
+        {
+            _mockRepos.Setup(container => container.SaveChanges())
+                .Throws<InvalidOperationException>();
+        }
+
+
         private void InitializeEntities()
         {
-            testUser = new User
+            _testUser = new User
             {
                 Id = "ab2bd817-98cd-4cf3-a80a-53ea0cd9c200",
                 UserName = "Bob",
@@ -914,7 +529,7 @@ namespace Services.Test.Services
                 LastName = "Bobsky"
             };
 
-            testNewActivityDTO = new ActivityRequestDTO
+            _testNewActivityDTO = new ActivityRequestDTO
             {
                 ActivityEntityId = "ab2bd817-98cd-4cf3-a80a-53ea0cd9c201",
                 BookedForDate = DateTime.Now.AddDays(2),
@@ -923,10 +538,10 @@ namespace Services.Test.Services
                 ActivityEntityName = "Billiard"
             };
 
-            testActivityEntity = new ActivityEntity
+            _testActivityEntity = new ActivityEntity
             {
                 Name = "Billiard",
-                Id = new Guid(testNewActivityDTO.ActivityEntityId),
+                Id = new Guid(_testNewActivityDTO.ActivityEntityId),
                 Description = "Test description",
                 ImageUrl = "Test url",
                 ItemQuantity = 2,
@@ -935,25 +550,26 @@ namespace Services.Test.Services
                 MinUserCount = 2
             };
 
-            testActivity = new Activity
+            _testActivity = new Activity
             {
                 Id = new Guid("ab2bd817-98cd-4cf3-a80a-53ea0cd9c202"),
-                ActivityEntityId = testActivityEntity.Id.ToString(),
-                BookedForDate = testNewActivityDTO.BookedForDate,
+                ActivityEntityId = _testActivityEntity.Id.ToString(),
+                BookedForDate = _testNewActivityDTO.BookedForDate,
                 DateBooked = DateTime.Now,
                 Duration = "Test duration",
-                EndTime = testNewActivityDTO.EndTime,
+                EndTime = _testNewActivityDTO.EndTime,
                 Name = "Billiard",
-                OrganizerName = testUser.UserName,
-                StartTime = testNewActivityDTO.StartTime,
-                UserId = testUser.Id
+                OrganizerName = _testUser.UserName,
+                StartTime = _testNewActivityDTO.StartTime,
+                UserId = _testUser.Id
             };
 
-            testActivities = new List<Activity>
+            _testActivities = new List<Activity>
             {
-                testActivity,
-                testActivity
+                _testActivity,
+                _testActivity
             };
         }
+
     }
 }

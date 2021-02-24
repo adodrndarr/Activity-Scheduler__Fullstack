@@ -28,9 +28,9 @@ namespace WebAPI.ActivityScheduler
         {
             services.AddControllers();
 
-            services.ConfigureDbContext(this.Configuration);
+            services.ConfigureDbContext(Configuration);
             services.ConfigureIdentity();
-            services.ConfigureAuthentication(this.Configuration);
+            services.ConfigureAuthentication(Configuration);
             services.ConfigureServices();
 
             services.AddAutoMapper(typeof(Startup));
@@ -61,6 +61,12 @@ namespace WebAPI.ActivityScheduler
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Activity Scheduler");
             });
         }
     }

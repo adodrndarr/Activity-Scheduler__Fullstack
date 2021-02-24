@@ -50,12 +50,12 @@ namespace WebAPI.ActivityScheduler.Controllers
                 });
         }
 
-        [Authorize(Roles = UserRoles.Admin)]
+        [Authorize(Roles = UserRoles.StandardUser)]
         // GET: manageUsers/single
         [HttpGet("single")]
-        public ActionResult<ActivityEntityDTO> GetUserById(Guid id)
+        public async Task<ActionResult<UserDTO>> GetUserById(Guid id)
         {
-            var getUserProcess = _userService.GetUserDTOById(id);
+            var getUserProcess = await _userService.GetUserDTOById(id, HttpContext);
 
             return StatusCode(getUserProcess.StatusCode, getUserProcess.Payload);
         }

@@ -18,7 +18,7 @@ namespace ActivityScheduler.Services.Interfaces
         ResultDetails ScheduleActivity(User user, ActivityRequestDTO newActivityDTO);
         ScheduleResponseDTO ScheduleActivities(User user, List<ActivityRequestDTO> newActivityDTOs);
         ResultDetails CheckAvailability(ActivityEntity activityEntity, DateTime forDate);
-        List<Activity> GetBookedActivities(ActivityEntity activityEntity);
+        List<Activity> GetBookedActivities(ActivityEntity activityEntity, DateTime forDate);
 
         string CalculateDuration(DateTime startTime, DateTime endTime);
         bool ActivityEntityExists(string name);

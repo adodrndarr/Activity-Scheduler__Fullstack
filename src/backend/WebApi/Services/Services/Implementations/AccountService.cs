@@ -263,6 +263,11 @@ namespace ActivityScheduler.Services
             return response;
         }
 
+        public string GetCurrentUserId(HttpContext context)
+        {
+            return _userManager.GetUserId(context.User);
+        }
+
         public void AppendCookies(string token, string userName, HttpResponse response)
         {
             response.Cookies.Append("X-Access-Token", token,  // --
