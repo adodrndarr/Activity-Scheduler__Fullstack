@@ -6,9 +6,6 @@ using ActivityScheduler.Services.Interfaces;
 using ActivityScheduler.Presentation.EntitiesDTO;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using ActivityScheduler.Domain.Entities;
-using System.Threading.Tasks;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -62,7 +59,7 @@ namespace WebAPI.ActivityScheduler.Controllers
                 );
         }
 
-        // GET: scheduleActivity
+        // GET: scheduleActivity/booked-activities
         [HttpGet("booked-activities")]
         public ActionResult GetBookedActivities(Guid activityEntityId, DateTime forDate)
         {

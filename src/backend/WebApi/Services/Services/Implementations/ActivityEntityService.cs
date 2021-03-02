@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Http.Headers;
 
 
 namespace ActivityScheduler.Services
@@ -149,7 +151,7 @@ namespace ActivityScheduler.Services
             {
                 StatusCode = StatusCodes.Status400BadRequest,
                 IsSuccessful = false,
-                Info = $"Could not update the activity, please make sure you provided valid Id and body."
+                Info = $"Could not update the activity, please make sure you provided valid Id"
             };
         }
 
@@ -208,6 +210,74 @@ namespace ActivityScheduler.Services
             var activityEntitiesDTOs = _mapper.Map<IEnumerable<ActivityEntityDTO>>(activityEntities);
 
             return activityEntitiesDTOs;
+        }
+
+        public ResultDetails UploadFile(IFormFile file, string currentDirectory)
+        {
+            if (file.Length > 0)
+            {
+                var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var pathToSaveFile = Path.Combine("Ressources", "Images");
+                var serverFilePath = Path.Combine(pathToSaveFile, fileName);
+
+                var fullPathToSaveFile = Path.Combine(currentDirectory, pathToSaveFile);
+                var fullPathWithFileName = Path.Combine(fullPathToSaveFile, fileName);
+
+                using (var stream = new FileStream(fullPathWithFileName, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+
+                CheckForFileCleanUp(fullPathToSaveFile, fullPathWithFileName, currentDirectory);
+
+                return new ResultDetails
+                {
+                    StatusCode = StatusCodes.Status200OK,
+                    IsSuccessful = true,
+                    Payload = serverFilePath
+                };
+            }
+
+            return new ResultDetails
+            {
+                StatusCode = StatusCodes.Status400BadRequest,
+                IsSuccessful = false,
+                Info = "Invalid file provided."
+            };
+        }
+
+        private void CheckForFileCleanUp(string fullPathToSaveFile, string fullPathWithCurrentFileName, string currentDirectory)
+        {
+            var activityEntities = GetAllAsDTOs();
+            bool imageIsUsed = false;
+
+            var fullImageFilesPaths = Directory.GetFiles(fullPathToSaveFile);
+            foreach (var fullImgFilePath in fullImageFilesPaths)
+            {
+                if (fullImgFilePath == fullPathWithCurrentFileName)
+                {
+                    continue;
+                }
+
+                foreach (var activityEntity in activityEntities)
+                {
+                    var activityEntityImgPath = activityEntity?.ImagePath ?? "";
+                    string currentActivityFullImgPath = Path.Combine(currentDirectory, activityEntityImgPath);
+
+                    if (fullImgFilePath == currentActivityFullImgPath)
+                    {
+                        imageIsUsed = true;
+                        break;
+                    }
+
+                    imageIsUsed = false;
+                }
+
+                if (!imageIsUsed)
+                {
+                    File.Delete(fullImgFilePath);
+                }
+            }
         }
     }
 }

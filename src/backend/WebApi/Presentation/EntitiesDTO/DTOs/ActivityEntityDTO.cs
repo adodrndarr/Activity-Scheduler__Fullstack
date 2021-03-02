@@ -10,7 +10,7 @@ namespace ActivityScheduler.Presentation.EntitiesDTO
 
         [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
-        public string ImageUrl { get; set; }
+        public string ImagePath { get; set; }
 
         [Required(ErrorMessage = "Item quantity is required.")]
         public int ItemQuantity { get; set; }

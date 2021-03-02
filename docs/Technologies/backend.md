@@ -1,5 +1,7 @@
 # Backend Technologies &#128187; - Activity Scheduler 
 
+- ## .NET Core version 3.1
+    - ### C#
 - ## Architecture
     - ### 3-Tier Architecture
 - ## .NET Core Web API 
@@ -7,8 +9,6 @@
     - ### Entity Framework - Code First Approach
 - ## Testing
     - ### nUnit Framework
-- ## .NET Core version 3.1
-    - ### C#
 <br /><br />
 
 ## *Application Components* 

@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ActivityEntity } from 'src/app/auth/Entities/Models/activity.model';
-import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { HttpService } from 'src/app/services/http.service';
@@ -14,7 +13,6 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ViewActivityComponent implements OnInit {
   constructor(
-    private dataStorageService: DataStorageService,
     private helperService: HelperService,
     private route: ActivatedRoute,
     private httpService: HttpService,
@@ -29,13 +27,10 @@ export class ViewActivityComponent implements OnInit {
 
   ngOnInit() {
     this.initializeId();
-    this.activity = this.getActivityById();
-    if (!this.activity) {
-      this.getActivityEntities();
-    }
+    this.getActivityEntity();
   }
 
-  private getActivityEntities(): void {
+  private getActivityEntity(): void {
     this.isLoading = true;
     this.httpService.getActivityEntityById(this.id)
       .subscribe(newActivity => {
@@ -51,11 +46,6 @@ export class ViewActivityComponent implements OnInit {
         });
   }
 
-  private getActivityById(): ActivityEntity {
-    return this.dataStorageService.activityEntities
-      .find(activityEntity => activityEntity.id === this.id);
-  }
-
   private initializeId(): void {
     this.route.params
       .subscribe(
@@ -69,4 +59,12 @@ export class ViewActivityComponent implements OnInit {
     this.helperService.navigateTo('activities');
   }
 
+  createImagePath(imgPath: any): string {
+    if (!imgPath) {
+      return;
+    }
+
+    const fullImgPath = this.httpService.createImagePath(imgPath); 
+    return fullImgPath;
+  }
 }

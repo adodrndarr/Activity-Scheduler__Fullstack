@@ -5,6 +5,9 @@ using System;
 using ActivityScheduler.Domain.Structs;
 using ActivityScheduler.Services.Interfaces;
 using ActivityScheduler.Presentation.EntitiesDTO;
+using System.IO;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
 
 
 namespace WebAPI.ActivityScheduler.Controllers
@@ -79,6 +82,33 @@ namespace WebAPI.ActivityScheduler.Controllers
                 new InfoResponseDTO
                 {
                     Info = additionProcess.Info
+                });
+        }
+
+        [Authorize(Roles = UserRoles.Admin)]
+        // PUT activityEntities/upload
+        [HttpPost("upload")]
+        public ActionResult UploadFile()
+        {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var file = Request.Form.Files[0];
+
+            var uploadProcess = _activityEntityService.UploadFile(file, currentDirectory);
+            if (uploadProcess.IsSuccessful)
+            {
+                return StatusCode(
+                    uploadProcess.StatusCode, 
+                    new 
+                    { 
+                        serverFilePath = uploadProcess.Payload 
+                    });
+            }
+
+            return StatusCode(
+                uploadProcess.StatusCode, 
+                new InfoResponseDTO
+                {
+                    Info = uploadProcess.Info
                 });
         }
 

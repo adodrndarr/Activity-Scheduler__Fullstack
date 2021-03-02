@@ -257,29 +257,12 @@ namespace Services.Test.Services
         }
 
         [Test]
-        public void CheckAvailability_ActivityEntityDoesNotExist_ReturnsInvalidResultDetails()
-        {
-            // Arrange
-            SetupActivityGetByCondition();
-            SetupActivityRequestMap(_testActivity, null);
-
-            // Act
-            var resultDetails = _activityService.CheckAvailability(_testActivityEntity, DateTime.Now);
-            bool isValidResult = resultDetails.Payload.IsValid;
-
-            // Assert
-            resultDetails.Should().BeOfType(typeof(ResultDetails));
-            isValidResult.Should().Be(false);
-        }
-
-        [Test]
         public void CheckAvailability_WhenNoBookedActivities_ReturnsValidResultDetails()
         {
             // Arrange
             _testActivityEntity.ItemQuantity = 3;
 
             SetupActivityGetByCondition();
-            SetupActivityRequestMap(_testActivity, _testNewActivityDTO);
 
             // Act
             var resultDetails = _activityService.CheckAvailability(_testActivityEntity, DateTime.Now);
@@ -295,7 +278,6 @@ namespace Services.Test.Services
         {
             // Arrange
             SetupActivityGetByCondition();
-            SetupActivityRequestMap(_testActivity, _testNewActivityDTO);
             SetupBookedActivityMap(_testActivities, new List<BookedActivityDTO>());
 
             // Act
@@ -488,12 +470,6 @@ namespace Services.Test.Services
                 .Returns(activity);
         }
 
-        private void SetupActivityRequestMap(Activity activity, ActivityRequestDTO activityDTO)
-        {
-            _mockMapper.Setup(mapper => mapper.Map<ActivityRequestDTO>(activity))
-                .Returns(activityDTO);
-        }
-
         private void SetupBookedActivityMap(List<Activity> bookedActivities, IEnumerable<BookedActivityDTO> bookedActivityDTOs)
         {
             _mockMapper.Setup(mapper => mapper.Map<IEnumerable<BookedActivityDTO>>(bookedActivities))
@@ -543,7 +519,7 @@ namespace Services.Test.Services
                 Name = "Billiard",
                 Id = new Guid(_testNewActivityDTO.ActivityEntityId),
                 Description = "Test description",
-                ImageUrl = "Test url",
+                ImagePath = "Test url",
                 ItemQuantity = 2,
                 Location = "Test Location",
                 MaxUserCount = 3,

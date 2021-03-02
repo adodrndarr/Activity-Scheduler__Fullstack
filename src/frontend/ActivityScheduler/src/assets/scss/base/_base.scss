@@ -20,4 +20,9 @@ body {
 li { font-size: 20px; }
 
 .red-text { color: $red; }
+.green-text { 
+    color: $green !important;
+    font-weight: bold; 
+}
+
 .full-opacity { opacity: 1 !important; }

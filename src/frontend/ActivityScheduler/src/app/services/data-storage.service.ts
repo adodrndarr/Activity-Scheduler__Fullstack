@@ -20,4 +20,5 @@ export class DataStorageService {
 
   searchTerm: string;
   checked = false;
+  currentImagePath: string;
 }

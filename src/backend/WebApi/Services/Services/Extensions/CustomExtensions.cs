@@ -19,7 +19,7 @@ namespace ActivityScheduler.Services.Extensions
         private static void MapActivityEntityDetails(dynamic obj1, dynamic obj2)
         {
             obj1.Name = obj2?.Name;
-            obj1.ImageUrl = obj2?.ImageUrl;
+            obj1.ImagePath = obj2?.ImagePath ?? obj1?.ImagePath;
             obj1.ItemQuantity = obj2?.ItemQuantity;
             obj1.MinUserCount = obj2?.MinUserCount;
             obj1.MaxUserCount = obj2?.MaxUserCount;

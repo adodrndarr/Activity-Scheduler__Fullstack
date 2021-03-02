@@ -7,7 +7,8 @@ export class ActivityEntity {
         public minUserCount: number,
         public maxUserCount: number,
         public description: string,
-        public location: string
+        public location: string,
+        public imagePath: string
     ) { }
 }
 

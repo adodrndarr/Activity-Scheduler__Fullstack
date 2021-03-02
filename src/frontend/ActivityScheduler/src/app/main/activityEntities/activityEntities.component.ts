@@ -101,7 +101,7 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
     this.isLoading = true;
     const title = `Delete ${activity.name}?`;
 
-    this.helperService.createAlert(title, activity.imageUrl)
+    this.helperService.createAlert(title, this.createImagePath(activity.imagePath))
       .then((choice) => {
         if (choice.isConfirmed) {
           this.deleteActivity(activity);
@@ -209,6 +209,15 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
     dataStore.pagination.currentPage = currentPage;
     this.totalPages = dataStore.pagination.totalPages;
     this.totalCount = dataStore.pagination.totalCount;
+  }
+
+  createImagePath(imgPath: any): string {
+    if (!imgPath) {
+      return;
+    }
+
+    const fullImgPath = this.httpService.createImagePath(imgPath); 
+    return fullImgPath;
   }
 
   ngOnDestroy(): void {

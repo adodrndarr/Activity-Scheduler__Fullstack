@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -20,7 +20,7 @@ const myActivitiesUrl = `${environment.baseUrl}/myActivities`;
 })
 export class HttpService {
   constructor(
-    private htpp: HttpClient,
+    private http: HttpClient,
     private dataStorageService: DataStorageService,
     private helperService: HelperService
   ) { }
@@ -37,7 +37,7 @@ export class HttpService {
     size = this.helperService.validateNumber(size, '2');
     searchTerm = this.helperService.validateString(searchTerm, '');
 
-    return this.htpp.get<ActivityEntity[]>(activitiesUrl, {
+    return this.http.get<ActivityEntity[]>(activitiesUrl, {
       params: {
         'userId': userId,
         'pageNumber': page,
@@ -56,11 +56,11 @@ export class HttpService {
   }
 
   getAllActivityEntities(): Observable<ActivityEntity[]> {
-    return this.htpp.get<ActivityEntity[]>(`${activitiesUrl}/all`);
+    return this.http.get<ActivityEntity[]>(`${activitiesUrl}/all`);
   }
 
   getActivityEntityById(id: string): Observable<ActivityEntity> {
-    return this.htpp.get<ActivityEntity>(`${activitiesUrl}/single`, {
+    return this.http.get<ActivityEntity>(`${activitiesUrl}/single`, {
       params: {
         'id': id
       }
@@ -68,28 +68,40 @@ export class HttpService {
   }
 
   editActivityEntity(id: string, activityEntityToUpdate: ActivityEntity): Observable<any> {
-    return this.htpp.put<any>(activitiesUrl, activityEntityToUpdate, {
+    return this.http.put<any>(activitiesUrl, activityEntityToUpdate, {
       params: { 'activityId': id }
     });
   }
 
   createActivityEntity(newActivityEntity: ActivityEntity): Observable<any> {
-    return this.htpp.post<any>(activitiesUrl, newActivityEntity);
+    return this.http.post<any>(activitiesUrl, newActivityEntity);
   }
 
   deleteActivityEntity(id: string): Observable<any> {
-    return this.htpp.delete<any>(activitiesUrl, {
+    return this.http.delete<any>(activitiesUrl, {
       params: { 'activityEntityId': id }
     });
   }
 
+
+  uploadFile(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${activitiesUrl}/upload`, formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
+  
+  createImagePath(imgPath: any): string {
+    return `${environment.baseUrl}/${imgPath}`;
+  }
+  
 
   getBookedActivities(
     activityEntityId: string,
     forDate: Date
   ): Observable<BookedActivity[]> {
 
-    return this.htpp.get<BookedActivity[]>(`${scheduleUrl}/booked-activities`, {
+    return this.http.get<BookedActivity[]>(`${scheduleUrl}/booked-activities`, {
       params: {
         'activityEntityId': activityEntityId,
         'forDate': forDate.toJSON()
@@ -103,7 +115,7 @@ export class HttpService {
   }
 
   bookActivities(userId: string, activities: ScheduleActivity[]): Observable<any> {
-    return this.htpp.post<Observable<any>>(`${scheduleUrl}/multiple`, activities, {
+    return this.http.post<Observable<any>>(`${scheduleUrl}/multiple`, activities, {
       params: {
         'userId': userId
       }
@@ -121,7 +133,7 @@ export class HttpService {
     size = this.helperService.validateNumber(size, '2');
     searchTerm = this.helperService.validateString(searchTerm, '');
 
-    return this.htpp.get<Activity[]>(myActivitiesUrl, {
+    return this.http.get<Activity[]>(myActivitiesUrl, {
       params: {
         'userId': userId,
         'pageNumber': page,
@@ -140,7 +152,7 @@ export class HttpService {
   }
 
   cancelActivity(activityId: string): Observable<any> {
-    return this.htpp.delete<Observable<any>>(myActivitiesUrl, {
+    return this.http.delete<Observable<any>>(myActivitiesUrl, {
       params: {
         'activityId': activityId
       }
@@ -160,7 +172,7 @@ export class HttpService {
     searchTerm = this.helperService.validateString(searchTerm, '');
     includeAdmin = this.helperService.validateString(includeAdmin, 'false');
 
-    return this.htpp.get<User[]>(usersUrl, {
+    return this.http.get<User[]>(usersUrl, {
       params: {
         'pageNumber': page,
         'pageSize': size,
@@ -179,7 +191,7 @@ export class HttpService {
   }
 
   getUserById(id: string): Observable<User> {
-    return this.htpp.get<User>(`${usersUrl}/single`, {
+    return this.http.get<User>(`${usersUrl}/single`, {
       params: {
         'id': id
       }
@@ -187,13 +199,13 @@ export class HttpService {
   }
 
   editUser(id: string, userToUpdate: User): Observable<any> {
-    return this.htpp.put<any>(usersUrl, userToUpdate, {
+    return this.http.put<any>(usersUrl, userToUpdate, {
       params: { 'userId': id }
     });
   }
 
   deleteUser(id: string): Observable<any> {
-    return this.htpp.delete<any>(usersUrl, {
+    return this.http.delete<any>(usersUrl, {
       params: { 'userId': id }
     });
   }

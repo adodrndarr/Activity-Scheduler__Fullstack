@@ -21,5 +21,7 @@ namespace ActivityScheduler.Services.Interfaces
 
         ResultDetails Update(ActivityEntity entityToUpdate, ActivityEntityDTO newActivityEntity);
         ResultDetails Delete(Guid activityEntityId);
+
+        ResultDetails UploadFile(IFormFile file, string currentDirectory);
     }
 }

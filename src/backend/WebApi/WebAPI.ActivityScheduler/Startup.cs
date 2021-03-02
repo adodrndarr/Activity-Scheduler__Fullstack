@@ -9,6 +9,8 @@ using System.IO;
 using NLog;
 using ActivityScheduler.Services.Interfaces;
 using ActivityScheduler.Services.HelperServices;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Http;
 
 
 namespace WebAPI.ActivityScheduler
@@ -43,6 +45,15 @@ namespace WebAPI.ActivityScheduler
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"Ressources")
+                ),
+                RequestPath = new PathString("/Ressources")
+            });
 
             app.ConfigureExceptionHandler(logger);
 

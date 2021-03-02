@@ -16,9 +16,9 @@ export class ScheduleActivityService {
   createDefaultDates(): DefaultDate[] {
     const defaultDates: DefaultDate[] = [];
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 11; i++) {
       const date = new Date();
-      date.setHours(12 + i, 0, 0, 0);
+      date.setHours(7 + i, 0, 0, 0);
 
       const defaultDate = new DefaultDate(date, false, false);
       defaultDates.push(defaultDate);

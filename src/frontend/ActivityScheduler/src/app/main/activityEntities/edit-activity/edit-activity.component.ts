@@ -1,7 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { ActivityEntity } from 'src/app/auth/Entities/Models/activity.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
@@ -31,6 +32,12 @@ export class EditActivityComponent implements OnInit {
   errorMessage: string = null;
   activity: ActivityEntity;
   id: string;
+
+  uploadMessage: string;
+  progress: number;
+  uploadResponse: any;
+  fileToUpload: File;
+  uploadFinished = new BehaviorSubject<boolean>(false);
 
   ngOnInit() {
     this.initializeId();
@@ -98,42 +105,90 @@ export class EditActivityComponent implements OnInit {
         });
   }
 
+  saveFileForUpload(file): void {
+    const files = file.files;
+    if (files.length === 0) {
+      this.progress = 0;
+      this.uploadMessage = null;
+      return;
+    }
+
+    this.fileToUpload = <File>files[0];
+  }
+
+  uploadFile(): void {
+    if (!this.fileToUpload) {
+      this.uploadFinished.next(true);
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', this.fileToUpload, this.fileToUpload.name);
+
+    this.isLoading = true;
+    this.httpService.uploadFile(formData)
+      .subscribe(event => {
+        if (event.type === HttpEventType.UploadProgress) {
+          const uploadProgress = (event.loaded / event.total) * 100;
+          this.progress = Math.round(uploadProgress);
+        }
+        else if (event.type === HttpEventType.Response) {
+          this.uploadMessage = 'Upload finished.';
+          this.uploadResponse = event.body;
+
+          console.log(this.uploadResponse);
+          this.dataStorageService.currentImagePath = this.uploadResponse.serverFilePath;
+
+          this.uploadFinished.next(true);
+          this.isLoading = false;
+        }
+      });
+  }
+
+
   private handleSubmittedEditActivityForm(): void {
     if (!this.editActivityForm.valid) {
       return;
     }
 
-    const updatedctivityEntity: ActivityEntity = this.editActivityForm.value;
+    this.uploadFile();
+    this.uploadFinished.subscribe(uploadFinished => {
+      if (uploadFinished) {
+        const updatedctivityEntity: ActivityEntity = this.editActivityForm.value;
 
-    updatedctivityEntity.itemQuantity = +updatedctivityEntity.itemQuantity;
-    updatedctivityEntity.minUserCount = +updatedctivityEntity.minUserCount;
-    updatedctivityEntity.maxUserCount = +updatedctivityEntity.maxUserCount;
+        updatedctivityEntity.itemQuantity = +updatedctivityEntity.itemQuantity;
+        updatedctivityEntity.minUserCount = +updatedctivityEntity.minUserCount;
+        updatedctivityEntity.maxUserCount = +updatedctivityEntity.maxUserCount;
+        updatedctivityEntity.imagePath = this.dataStorageService.currentImagePath;
 
-    const updateObs = this.httpService.editActivityEntity
-      (
-        this.activity.id,
-        updatedctivityEntity
-      );
+        const updateObs = this.httpService.editActivityEntity
+          (
+            this.activity.id,
+            updatedctivityEntity
+          );
 
-    updateObs.subscribe(
-      (updateResponse) => {
-        console.log(updateResponse);
+        updateObs.subscribe(
+          (updateResponse) => {
+            console.log(updateResponse);
 
-        this.editActivityForm.reset();
-        this.resetActivityEntities();
+            this.editActivityForm.reset();
+            this.resetActivityEntities();
 
-        this.helperService.navigateTo('activities');
-        this.isLoading = false;
-      },
-      (errorResponse: HttpErrorResponse) => {
-        console.log(errorResponse);
+            this.helperService.navigateTo('activities');
+            this.isLoading = false;
+          },
+          (errorResponse: HttpErrorResponse) => {
+            console.log(errorResponse);
 
-        this.errorHandlerService.handleError(errorResponse);
-        this.errorMessage = this.errorHandlerService.errorMessage;
+            this.errorHandlerService.handleError(errorResponse);
+            this.errorMessage = this.errorHandlerService.errorMessage;
 
-        this.isLoading = false;
+            this.isLoading = false;
+          }
+        );
       }
-    );
+    });
+
   }
 
   private initializeId(): void {
@@ -175,7 +230,7 @@ export class EditActivityComponent implements OnInit {
         Validators.maxLength(20)
       ]
       ],
-      'imageUrl': [imageUrl, Validators.required],
+      // 'imageUrl': [imageUrl, Validators.required],
       'itemQuantity': [itemQuantity, [
         Validators.required,
         Validators.pattern(`^[-+]?\\d+$`),
@@ -209,6 +264,7 @@ export class EditActivityComponent implements OnInit {
 
   resetActivityEntities(): void {
     this.dataStorageService.activityEntities.length = 0;
+    this.dataStorageService.currentImagePath = null;
   }
 
   public isInvalidInput(fieldName: string): boolean {

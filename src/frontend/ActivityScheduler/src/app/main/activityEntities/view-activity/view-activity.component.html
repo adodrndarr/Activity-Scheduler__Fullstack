@@ -7,7 +7,9 @@
             <h2 class="activityEntity__name">{{ activity.name }}</h2>
             <img 
                 class="activityEntity__image"
-                [src]="activity.imageUrl" 
+                [src]="(createImagePath(activity?.imagePath) == null) ? 
+                    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.vpQMS81c3HJVFG5xOrqZnwHaHa%26pid%3DApi&f=1' : 
+                    createImagePath(activity?.imagePath)"
                 alt="{{ activity.name }}"  
             >
             <p class="activityEntity__description">{{ activity.description }}</p>

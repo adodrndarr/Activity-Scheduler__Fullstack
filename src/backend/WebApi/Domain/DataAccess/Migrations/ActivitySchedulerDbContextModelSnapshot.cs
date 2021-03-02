@@ -68,7 +68,7 @@ namespace ActivityScheduler.Domain.DataAccess.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ItemQuantity")
@@ -166,17 +166,17 @@ namespace ActivityScheduler.Domain.DataAccess.Migrations
                         {
                             Id = "b90f5900-6d5a-4f71-b4b5-aa2424a60a5d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b8ab74ac-200c-4508-96da-dce32077df75",
+                            ConcurrencyStamp = "350bd93d-ad51-45df-898d-2bdeedba6726",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
-                            IsAdmin = false,
+                            IsAdmin = true,
                             LastName = "adminsky",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKj+nvDxxiVvg7r120hPYBMeIME4lmIASovSon2dzTmqzkkEPMZ9n3yW4f36bwqLAw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEyFjkaqEUOV5InvCEW7oQJSfrzpd8zQbHTL0P94NYOJlcZV3OGz8RlkAYkU3WMcVQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bdf6abc6-490a-411f-95ac-582043987e91",
+                            SecurityStamp = "9b0a806a-8262-494f-b78a-e600e764d007",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -212,21 +212,21 @@ namespace ActivityScheduler.Domain.DataAccess.Migrations
                         new
                         {
                             Id = "489184c8-447c-4d0b-9d82-1b4bd5a16b5a",
-                            ConcurrencyStamp = "a2b6221f-6e98-4d82-8707-d11e6e7a3b26",
+                            ConcurrencyStamp = "d1735f6c-1b79-40ec-a5d1-42d3ff8a1406",
                             Name = "Standard User",
                             NormalizedName = "STANDARD USER"
                         },
                         new
                         {
                             Id = "eaed2ed5-57ac-44b1-8c1d-0aab8388b1b9",
-                            ConcurrencyStamp = "ff73219c-d5ec-4e23-8c43-7b48227921a1",
+                            ConcurrencyStamp = "db306834-cd76-4940-be28-bfd5c4875dc0",
                             Name = "Premium User",
                             NormalizedName = "PREMIUM USER"
                         },
                         new
                         {
                             Id = "06ea2e08-bd95-4121-960a-650bd14fc326",
-                            ConcurrencyStamp = "93e88219-0b92-4507-b6d9-a01a17d31c7a",
+                            ConcurrencyStamp = "a086c01b-2918-40b7-9423-711feadd070c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

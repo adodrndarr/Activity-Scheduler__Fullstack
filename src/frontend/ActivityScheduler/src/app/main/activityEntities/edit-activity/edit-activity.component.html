@@ -20,19 +20,20 @@
             </span>
 
 
-            <label for="imageUrl">Image Url:</label>
+            <label for="uploadFile">Upload file:</label>
             <input 
-                type="text" 
-                class="form__input" 
-                id="imageUrl" 
-                formControlName="imageUrl"
+                #file
+                type="file" 
+                class="form__input"
+                id="uploadFile"
+                (change)="saveFileForUpload(file)" 
             >
+            
+            <p class="green-text" *ngIf="progress > 0 && uploadMessage">
+                {{ progress }}% {{ uploadMessage }}
+            </p>
 
-            <span *ngIf="isInvalidInput('imageUrl')">
-                <span *ngIf="isRequired('imageUrl')">Image Url is required.</span>
-            </span>
-
-
+            
             <label for="itemQuantity">Item Quantity:</label>
             <input 
                 type="text" 

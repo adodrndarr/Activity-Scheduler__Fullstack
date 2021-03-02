@@ -219,40 +219,32 @@ namespace ActivityScheduler.Services
                     };
                 }
 
-                var newActivity = _repos.ActivityRepo.GetByCondition(a => a.ActivityEntityId ==
-                                                                          activityEntity.Id.ToString())
-                                                     .FirstOrDefault();
-                var newActivityDTO = _mapper.Map<ActivityRequestDTO>(newActivity);
-
-                if (newActivityDTO != null)
+                var bookedActivities = GetBookedActivities(activityEntity, forDate);
+                if (bookedActivities.Count > 0)
                 {
-                    var bookedActivities = GetBookedActivities(activityEntity, forDate);
-                    if (bookedActivities.Count > 0)
+                    var bookedDetails = _mapper.Map<IEnumerable<BookedActivityDTO>>(bookedActivities);
+                    foreach (var details in bookedDetails)
                     {
-                        var bookedDetails = _mapper.Map<IEnumerable<BookedActivityDTO>>(bookedActivities);
-                        foreach (var details in bookedDetails)
-                        {
-                            details.IsValid = true;
-                            details.Info = "Booked for the given time periods.";
-                        }
-
-                        return new ResultDetails
-                        {
-                            StatusCode = StatusCodes.Status200OK,
-                            Payload = bookedDetails
-                        };
+                        details.IsValid = true;
+                        details.Info = "Booked for the given time periods.";
                     }
 
                     return new ResultDetails
                     {
                         StatusCode = StatusCodes.Status200OK,
-                        Payload = new BookedActivityDTO
-                        {
-                            IsValid = true,
-                            Info = "Free to book anytime, there are no booked times for this date."
-                        }
+                        Payload = bookedDetails
                     };
                 }
+
+                return new ResultDetails
+                {
+                    StatusCode = StatusCodes.Status200OK,
+                    Payload = new BookedActivityDTO
+                    {
+                        IsValid = true,
+                        Info = "Free to book anytime, there are no booked times for this date."
+                    }
+                };
             }
 
             return new ResultDetails
