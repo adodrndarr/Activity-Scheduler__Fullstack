@@ -59,6 +59,3 @@
         - **Edit** button enables the admin to **modify** and update an existing user.
         - **Delete** button enables the admin to **remove** the specific user completely.
 <br /><br />
-- ## Try the app out:
-Email: admin@gmail.com <br />
-Pwd: Admin#3

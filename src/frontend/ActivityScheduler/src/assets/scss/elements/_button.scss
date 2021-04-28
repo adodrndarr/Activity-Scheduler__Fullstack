@@ -1,0 +1,121 @@
+.button {
+    background-color: transparent;
+    border: 1px solid $black;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:disabled { 
+        cursor: not-allowed;
+        opacity: 0.5; 
+    }
+}
+
+.primary-button {
+    @extend .button;
+    background-color: $aqua;
+    color: $white;
+    margin-right: 10px;
+    
+    &:hover { opacity: 0.5; }
+}
+
+.view-button {
+    @extend .button;
+    background-color: $darkGreen;
+    color: $lightGray;
+
+    &:hover { 
+        background-color: darken($color: $darkGreen, $amount: 16%);
+        color: $lightGreen;
+    }
+}
+
+.new-user-button,
+.new-activity-button {
+    @extend .view-button;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.edit-button {
+    @extend .button;
+    background-color: $darkYellow;
+    color: $lightGray;
+    
+    &:hover { 
+        background-color: darken($color: $darkYellow, $amount: 10%);
+        color: $yellow;
+    }
+}
+
+.cancel-button,
+.delete-button {
+    @extend .button;
+    background-color: $darkRed;
+    color: $lightGray;
+    
+    &:hover { 
+        background-color: darken($color: $darkRed, $amount: 10%);
+        color: $red;
+    }
+}
+
+.create-button,
+.update-button,
+.back-button,
+.clear-button {
+    @extend .button;
+    background-color: $darkAqua;
+    color: $lightGray;
+    font-weight: bold;
+    
+    &:hover { 
+        background-color: darken($darkAqua, $amount: 20%);
+    }
+}
+
+.clear-button { margin-right: 5px; }
+
+.availability__button--book,
+.availability__button--free {
+    @extend .view-button;
+    width: 110px;
+}
+
+.availability__button--booked {
+    @extend .delete-button;
+    width: 110px;
+    
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.availability__button--details {
+    @extend .button;
+    background-color: $darkAqua;
+    color: $white;
+    min-width: 100px;
+    
+    &:hover { 
+        background-color: darken($color: $darkAqua, $amount: 10%);
+        color: $white;
+    }
+}
+
+.availability__button--cancel {
+    @extend .button;
+    width: 50px;
+    height: 35px;
+    padding: 0px 5px 0px 5px;
+
+    background-color: $darkRed;
+    color: $lightGray;
+    margin-left: 10px;
+    
+    &:hover { 
+        background-color: darken($color: $darkRed, $amount: 10%);
+        color: $red;
+    }
+}
+

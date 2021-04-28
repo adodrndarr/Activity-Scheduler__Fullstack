@@ -1,0 +1,1309 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>ActivityScheduler</title>
+  <style type="text/css">
+    body {
+      font-family: Trebuchet MS, sans-serif;
+      font-size: 15px;
+      color: #444;
+      margin-right: 24px;
+    }
+
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    hr {
+      height: 1px;
+      border: 0;
+      color: #ddd;
+      background-color: #ddd;
+    }
+
+    .app-desc {
+      clear: both;
+      margin-left: 20px;
+    }
+
+    .param-name {
+      width: 100%;
+    }
+
+    .license-info {
+      margin-left: 20px;
+    }
+
+    .license-url {
+      margin-left: 20px;
+    }
+
+    .model {
+      margin: 0 0 0px 20px;
+    }
+
+    .method {
+      margin-left: 20px;
+    }
+
+    .method-notes {
+      margin: 10px 0 20px 0;
+      font-size: 90%;
+      color: #555;
+    }
+
+    pre {
+      padding: 10px;
+      margin-bottom: 2px;
+    }
+
+    .http-method {
+      text-transform: uppercase;
+    }
+
+    pre.get {
+      background-color: #0f6ab4;
+    }
+
+    pre.post {
+      background-color: #10a54a;
+    }
+
+    pre.put {
+      background-color: #c5862b;
+    }
+
+    pre.delete {
+      background-color: #a41e22;
+    }
+
+    .huge {
+      color: #fff;
+    }
+
+    pre.example {
+      background-color: #f3f3f3;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    code {
+      white-space: pre;
+    }
+
+    .nickname {
+      font-weight: bold;
+    }
+
+    .method-path {
+      font-size: 1.5em;
+      background-color: #0f6ab4;
+    }
+
+    .up {
+      float: right;
+    }
+
+    .parameter {
+      width: 500px;
+    }
+
+    .param {
+      width: 500px;
+      padding: 10px 0 0 20px;
+      font-weight: bold;
+    }
+
+    .param-desc {
+      width: 700px;
+      padding: 0 0 0 20px;
+      color: #777;
+    }
+
+    .param-type {
+      font-style: italic;
+    }
+
+    .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+    }
+
+    .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+    }
+
+    .field-label {
+      padding: 0;
+      margin: 0;
+      clear: both;
+    }
+
+    .field-items {
+      padding: 0 0 15px 0;
+      margin-bottom: 15px;
+    }
+
+    .return-type {
+      clear: both;
+      padding-bottom: 10px;
+    }
+
+    .param-header {
+      font-weight: bold;
+    }
+
+    .method-tags {
+      text-align: right;
+    }
+
+    .method-tag {
+      background: none repeat scroll 0% 0% #24A600;
+      border-radius: 3px;
+      padding: 2px 10px;
+      margin: 2px;
+      color: #FFF;
+      display: inline-block;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Activity Scheduler</h1>
+  <div class="app-desc">An API documentation for Activity Scheduler.</div>
+  <div class="app-desc">Version: v1</div>
+  <div class="license-info">All rights reserved</div>
+  <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+
+
+  <br /> <br />
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+
+
+  <h4><a href="#Account">Account</a></h4>
+  <ul>
+    <li><a href="#accountLoginPost"><code><span class="http-method">post</span> /Account/login</code></a></li>
+    <li><a href="#accountLogoutGet"><code><span class="http-method">get</span> /Account/logout</code></a></li>
+    <li><a
+        href="#accountRegisterAdminPost"><code><span class="http-method">post</span> /Account/register-admin</code></a>
+    </li>
+    <li><a href="#accountRegisterPost"><code><span class="http-method">post</span> /Account/register</code></a></li>
+  </ul>
+
+
+  <br /><br />
+  <h4><a href="#ActivityEntities">ActivityEntities</a></h4>
+  <ul>
+    <li><a href="#activityEntitiesAllGet"><code><span class="http-method">get</span> /ActivityEntities/all</code></a>
+    </li>
+    <li><a href="#activityEntitiesDelete"><code><span class="http-method">delete</span> /ActivityEntities</code></a>
+    </li>
+    <li><a href="#activityEntitiesGet"><code><span class="http-method">get</span> /ActivityEntities</code></a></li>
+    <li><a href="#activityEntitiesPost"><code><span class="http-method">post</span> /ActivityEntities</code></a></li>
+    <li><a href="#activityEntitiesPut"><code><span class="http-method">put</span> /ActivityEntities</code></a></li>
+    <li><a
+        href="#activityEntitiesSingleGet"><code><span class="http-method">get</span> /ActivityEntities/single</code></a>
+    </li>
+  </ul>
+
+
+  <br /><br />
+  <h4><a href="#ManageUsers">ManageUsers</a></h4>
+  <ul>
+    <li><a href="#manageUsersDelete"><code><span class="http-method">delete</span> /ManageUsers</code></a></li>
+    <li><a href="#manageUsersGet"><code><span class="http-method">get</span> /ManageUsers</code></a></li>
+    <li><a href="#manageUsersPut"><code><span class="http-method">put</span> /ManageUsers</code></a></li>
+    <li><a href="#manageUsersSingleGet"><code><span class="http-method">get</span> /ManageUsers/single</code></a></li>
+  </ul>
+  <h4><a href="#MyActivities">MyActivities</a></h4>
+  <ul>
+    <li><a href="#myActivitiesAllGet"><code><span class="http-method">get</span> /MyActivities/all</code></a></li>
+    <li><a href="#myActivitiesDelete"><code><span class="http-method">delete</span> /MyActivities</code></a></li>
+    <li><a href="#myActivitiesGet"><code><span class="http-method">get</span> /MyActivities</code></a></li>
+    <li><a href="#myActivitiesPut"><code><span class="http-method">put</span> /MyActivities</code></a></li>
+  </ul>
+
+
+  <br /><br />
+  <h4><a href="#ScheduleActivity">ScheduleActivity</a></h4>
+  <ul>
+    <li><a
+        href="#scheduleActivityBookedActivitiesGet"><code><span class="http-method">get</span> /ScheduleActivity/booked-activities</code></a>
+    </li>
+    <li><a
+        href="#scheduleActivityMultiplePost"><code><span class="http-method">post</span> /ScheduleActivity/multiple</code></a>
+    </li>
+    <li><a href="#scheduleActivityPost"><code><span class="http-method">post</span> /ScheduleActivity</code></a></li>
+  </ul>
+
+
+
+
+
+  <br /><br />
+  <h1><a name="Account">Account</a></h1> <!-- ----------------------------------------------------  -->
+  <div class="method"><a name="accountLoginPost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /Account/login</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">accountLoginPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#UserToLoginDTO">UserToLoginDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="accountLogoutGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /Account/logout</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">accountLogoutGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="accountRegisterAdminPost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /Account/register-admin</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">accountRegisterAdminPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#UserToRegisterDTO">UserToRegisterDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#RegistrationResponseDTO">RegistrationResponseDTO</a>
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "errorMessages" : [ "errorMessages", "errorMessages" ],
+  "isRegistrationSuccessful" : true,
+  "info" : "info"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#RegistrationResponseDTO">RegistrationResponseDTO</a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="accountRegisterPost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /Account/register</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">accountRegisterPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#UserToRegisterDTO">UserToRegisterDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  
+
+
+
+
+  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+  <hr />
+  <h1><a name="ActivityEntities">ActivityEntities</a></h1> <!-- ----------------------------------------------------  -->
+  <div class="method"><a name="activityEntitiesAllGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /ActivityEntities/all</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesAllGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ActivityEntityDTO">ActivityEntityDTO</a>]
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "itemQuantity" : 0,
+  "minUserCount" : 6,
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "description" : "description",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+}, {
+  "itemQuantity" : 0,
+  "minUserCount" : 6,
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "description" : "description",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="activityEntitiesDelete"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="delete"><code class="huge"><span class="http-method">delete</span> /ActivityEntities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">activityEntityId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="activityEntitiesGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /ActivityEntities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">PageNumber (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">PageSize (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">IncludeAdmin (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+      <div class="param">IncludeName (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ActivityEntityDTO">ActivityEntityDTO</a>]
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "itemQuantity" : 0,
+  "minUserCount" : 6,
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "description" : "description",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+}, {
+  "itemQuantity" : 0,
+  "minUserCount" : 6,
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "description" : "description",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="activityEntitiesPost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /ActivityEntities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ActivityEntityDTO">ActivityEntityDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="activityEntitiesPut"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="put"><code class="huge"><span class="http-method">put</span> /ActivityEntities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesPut</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ActivityEntityDTO">ActivityEntityDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">activityId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="activityEntitiesSingleGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /ActivityEntities/single</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">activityEntitiesSingleGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ActivityEntityDTO">ActivityEntityDTO</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "itemQuantity" : 0,
+  "minUserCount" : 6,
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "description" : "description",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#ActivityEntityDTO">ActivityEntityDTO</a>
+  </div> <!-- method -->
+  <hr />
+
+
+
+
+  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+  <h1><a name="ManageUsers">ManageUsers</a></h1><!-- ----------------------------------------------------  -->
+  <div class="method"><a name="manageUsersDelete"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="delete"><code class="huge"><span class="http-method">delete</span> /ManageUsers</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">manageUsersDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="manageUsersGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /ManageUsers</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">manageUsersGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">PageNumber (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">PageSize (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">IncludeAdmin (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+      <div class="param">IncludeName (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#UserDTO">UserDTO</a>]
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "lastName" : "lastName",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+  "isAdmin" : true,
+  "userName" : "userName",
+  "email" : "email"
+}, {
+  "lastName" : "lastName",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+  "isAdmin" : true,
+  "userName" : "userName",
+  "email" : "email"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="manageUsersPut"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="put"><code class="huge"><span class="http-method">put</span> /ManageUsers</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">manageUsersPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#UserUpdateDTO">UserUpdateDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="manageUsersSingleGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /ManageUsers/single</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">manageUsersSingleGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#UserDTO">UserDTO</a>
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "lastName" : "lastName",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+  "isAdmin" : true,
+  "userName" : "userName",
+  "email" : "email"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#UserDTO">UserDTO</a>
+  </div> <!-- method -->
+
+
+
+
+  <br /> <br /><br /> <br /> <br /> <br /> <br /> <br /> 
+  <hr />
+  <h1><a name="MyActivities">MyActivities</a></h1><!-- ----------------------------------------------------  -->
+  <div class="method"><a name="myActivitiesAllGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /MyActivities/all</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">myActivitiesAllGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ActivityRequestDTO">ActivityRequestDTO</a>]
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "activityEntityName" : "activityEntityName",
+  "activityEntityId" : "activityEntityId",
+  "organizerName" : "organizerName",
+  "bookedForDate" : "2000-01-23T04:56:07.000+00:00",
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "endTime" : "2000-01-23T04:56:07.000+00:00"
+}, {
+  "activityEntityName" : "activityEntityName",
+  "activityEntityId" : "activityEntityId",
+  "organizerName" : "organizerName",
+  "bookedForDate" : "2000-01-23T04:56:07.000+00:00",
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "endTime" : "2000-01-23T04:56:07.000+00:00"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="myActivitiesDelete"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="delete"><code class="huge"><span class="http-method">delete</span> /MyActivities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">myActivitiesDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">activityId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="myActivitiesGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="get"><code class="huge"><span class="http-method">get</span> /MyActivities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">myActivitiesGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+      <div class="param">PageNumber (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">PageSize (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: int32</div>
+      <div class="param">IncludeAdmin (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+      <div class="param">IncludeName (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ActivityResponseDTO">ActivityResponseDTO</a>]
+
+    </div>
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "itemQuantity" : 0,
+  "description" : "description",
+  "bookedForDate" : "2000-01-23T04:56:07.000+00:00",
+  "userId" : "userId",
+  "duration" : "duration",
+  "minUserCount" : 6,
+  "activityEntityId" : "activityEntityId",
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "organizerName" : "organizerName",
+  "dateBooked" : "2000-01-23T04:56:07.000+00:00",
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+  "endTime" : "2000-01-23T04:56:07.000+00:00"
+}, {
+  "itemQuantity" : 0,
+  "description" : "description",
+  "bookedForDate" : "2000-01-23T04:56:07.000+00:00",
+  "userId" : "userId",
+  "duration" : "duration",
+  "minUserCount" : 6,
+  "activityEntityId" : "activityEntityId",
+  "imageUrl" : "imageUrl",
+  "name" : "name",
+  "organizerName" : "organizerName",
+  "dateBooked" : "2000-01-23T04:56:07.000+00:00",
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "maxUserCount" : 1,
+  "location" : "location",
+  "id" : "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+  "endTime" : "2000-01-23T04:56:07.000+00:00"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/plain</code></li>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="myActivitiesPut"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="put"><code class="huge"><span class="http-method">put</span> /MyActivities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">myActivitiesPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ActivityRequestDTO">ActivityRequestDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">activityId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+
+
+
+  <br /> <br /><br /> <br /> <br /> <br /> <br /> <br /> 
+  <hr />
+  <h1><a name="ScheduleActivity">ScheduleActivity</a></h1><!-- ----------------------------------------------------  -->
+  <div class="method"><a name="scheduleActivityBookedActivitiesGet"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre
+        class="get"><code class="huge"><span class="http-method">get</span> /ScheduleActivity/booked-activities</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">scheduleActivityBookedActivitiesGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">activityEntityId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+      <div class="param">forDate (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: date-time</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="scheduleActivityMultiplePost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /ScheduleActivity/multiple</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">scheduleActivityMultiplePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ActivityRequestDTO">ActivityRequestDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+  <div class="method"><a name="scheduleActivityPost"></a>
+    <div class="method-path">
+      <a class="up" href="#__Methods">Up</a>
+      <pre class="post"><code class="huge"><span class="http-method">post</span> /ScheduleActivity</code></pre>
+    </div>
+    <div class="method-summary"> (<span class="nickname">scheduleActivityPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>text/json</code></li>
+      <li><code>application/*+json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ActivityRequestDTO">ActivityRequestDTO</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; </div>
+    </div> <!-- field-items -->
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; format: uuid</div>
+    </div> <!-- field-items -->
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+    <a href="#"></a>
+  </div> <!-- method -->
+  <hr />
+
+
+
+
+  <br /> <br />
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ActivityEntityDTO"><code>ActivityEntityDTO</code></a></li>
+    <li><a href="#ActivityRequestDTO"><code>ActivityRequestDTO</code></a></li>
+    <li><a href="#ActivityResponseDTO"><code>ActivityResponseDTO</code></a></li>
+    <li><a href="#RegistrationResponseDTO"><code>RegistrationResponseDTO</code></a></li>
+    <li><a href="#UserDTO"><code>UserDTO</code></a></li>
+    <li><a href="#UserToLoginDTO"><code>UserToLoginDTO</code></a></li>
+    <li><a href="#UserToRegisterDTO"><code>UserToRegisterDTO</code></a></li>
+    <li><a href="#UserUpdateDTO"><code>UserUpdateDTO</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ActivityEntityDTO"><code>ActivityEntityDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#UUID">UUID</a></span> format: uuid</div>
+      <div class="param">name </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">imageUrl (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">itemQuantity </div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">minUserCount </div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">maxUserCount </div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">description (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">location </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ActivityRequestDTO"><code>ActivityRequestDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">bookedForDate (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">startTime (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">endTime (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">activityEntityName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">activityEntityId (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">organizerName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ActivityResponseDTO"><code>ActivityResponseDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#UUID">UUID</a></span> format: uuid</div>
+      <div class="param">dateBooked (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">bookedForDate (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">startTime (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">endTime (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> format: date-time</div>
+      <div class="param">activityEntityId (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">name (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">imageUrl (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">itemQuantity (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">minUserCount (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">maxUserCount (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> format: int32</div>
+      <div class="param">description (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">location (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">userId (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">organizerName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">duration (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="RegistrationResponseDTO"><code>RegistrationResponseDTO</code></a> <a class="up" href="#__Models">Up</a>
+    </h3>
+
+    <div class="field-items">
+      <div class="param">isRegistrationSuccessful (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> </div>
+      <div class="param">info (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">errorMessages (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UserDTO"><code>UserDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#UUID">UUID</a></span> format: uuid</div>
+      <div class="param">userName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">lastName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">email (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">isAdmin (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UserToLoginDTO"><code>UserToLoginDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">email </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">password </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UserToRegisterDTO"><code>UserToRegisterDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">userName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">lastName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">email </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">password </div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">confirmPassword (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UserUpdateDTO"><code>UserUpdateDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#UUID">UUID</a></span> format: uuid</div>
+      <div class="param">userName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">normalizedUserName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">email (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">normalizedEmail (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">lastName (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">password (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#string">String</a></span> </div>
+      <div class="param">isAdmin (optional)</div>
+      <div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> </div>
+    </div> <!-- field-items -->
+  </div>
+</body>
+</html>

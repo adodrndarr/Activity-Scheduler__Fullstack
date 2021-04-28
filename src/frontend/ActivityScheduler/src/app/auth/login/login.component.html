@@ -1,0 +1,64 @@
+<div class="login__page">
+    <div class="form__container">
+        <form 
+            class="form"
+            [formGroup]="loginForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <h2>Login</h2>
+            <label for="email">E-Mail:</label>
+            <input 
+                type="email" 
+                class="form__input" 
+                id="email" 
+                formControlName="email"
+            >
+
+            <span 
+                *ngIf="isInvalidInput('email')"
+            >
+                <span *ngIf="isRequired('email')">Email is required.</span>
+                <span *ngIf="isInvalidFormat('email')">Please provide a valid email format.</span>
+            </span>
+
+
+            <label for="password">Password:</label>
+            <input 
+                type="password" 
+                class="form__input" 
+                id="password" 
+                formControlName="password"
+            >
+
+            <span 
+                *ngIf="isInvalidInput('password')"
+            >
+                <span *ngIf="isRequired('password')">Password is required.</span>
+            </span>               
+
+
+            <div>
+                <button 
+                    class="primary-button" 
+                    type="submit" 
+                    [disabled]="!loginForm.valid || isLoading"
+                >{{ isLoading ? 'Logging in...' : 'Login' }}</button>
+            </div>
+        </form><br />
+
+        <div *ngIf="!!loginResponse?.errorMessage" class="login-failed">
+            <h2 class="login-failed__title">Login failed:</h2>
+            <ul>
+                <li class="login-failed__message">
+                    {{ loginResponse?.errorMessage }}
+                </li>
+            </ul>
+        </div>
+
+        <app-error
+            *ngIf="!!errorMessage && !loginResponse?.errorMessage"
+            [error]="errorMessage"
+        ></app-error>                         
+        <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+    </div>
+</div>

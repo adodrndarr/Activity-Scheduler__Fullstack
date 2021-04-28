@@ -1,0 +1,94 @@
+<div class="schedule-activity__page">
+    <div class="schedule-activity__container">
+        <form 
+            class="schedule__form" 
+            [formGroup]="dropdownForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <div class="form__content">
+                <select class="activity-dropdown" formControlName="activityEntity">
+                    <option [ngValue]="null" disabled>Choose activity...</option>
+                    <option 
+                        *ngFor="let activity of activities;" 
+                        [ngValue]="activity.id"
+                    >
+                        {{ activity.name }}
+                    </option>
+                </select>
+                <input class="activity-date" formControlName="date" type="date" />
+            
+                <button 
+                    class="primary-button" 
+                    type="submit" 
+                    [disabled]="!dropdownForm.valid"
+                >Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div 
+    class="schedule-activity__page" 
+    *ngIf="(scheduleMode && defaultTimes.length > 0) && 
+            !isLoading && !errorMessage">
+    <div 
+        *ngIf="canBook"
+        class="availability__button--book"
+        (click)="onBook()"
+    >Book</div>
+
+    <div class="schedule-activity__container">
+        <div class="schedule-availability">
+            <div class="schedule-availability__header">
+                <div class="header__time">Time</div>
+                <div class="header__availability">Availability</div>
+            </div>
+
+            <div class="availability" *ngFor="let defaultDate of defaultTimes; let i = index;">
+                <div class="availability__time">
+                    {{ defaultDate.date.getHours() }}:{{ defaultDate.date.getMinutes() }}0 -
+                    {{ defaultDate.date.getHours() + 1 }}:{{ defaultDate.date.getMinutes() }}0
+                </div>
+
+                <div 
+                    *ngIf="!defaultDate.isFreeToSchedule"
+                    class="availability__button--booked"
+                >Booked</div>
+
+                <div 
+                    *ngIf="defaultDate.isFreeToSchedule && !defaultDate.isScheduled"
+                    class="availability__button--free"
+                    (click)="onSchedule(defaultDate, i)"
+                >Schedule</div>
+                
+                <div class="availability__details" 
+                    *ngIf="defaultDate.isScheduled"
+                >
+                    <div 
+                        class="availability__button--details"
+                        (click)="onDetails()"
+                    >To book</div>
+                    <div 
+                        class="availability__button--cancel"
+                        (click)="onCancel(i)"
+                    >X</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span
+    id="arrow-up"
+    title="Go to top" 
+    (click)="onToTop()" 
+>&#8593;</span>
+
+<app-error 
+    *ngIf="!!errorMessage" 
+    [error]="errorMessage"
+></app-error> 
+<app-loading-spinner *ngIf="isLoading">
+</app-loading-spinner>

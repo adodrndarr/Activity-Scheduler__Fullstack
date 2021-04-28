@@ -1,0 +1,20 @@
+.header { margin-bottom: 50px; }
+
+.show-item { display: inline; }
+#dropdown {
+    display: none; 
+    font-size: 40px;
+    margin-left: 6%;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .show-item { display: none; }
+    #dropdown { display: inline; }
+
+    .nav {
+        &__item { margin-left: 10%; }
+    }
+}
