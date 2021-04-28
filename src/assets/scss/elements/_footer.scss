@@ -1,0 +1,11 @@
+.footer {
+    margin-top: 25px;
+    padding: 25px 0 25px 0;
+    background-color: $black;
+    color: white;
+
+    &__list {
+        display: flex;
+        justify-content: center;
+    }        
+}
