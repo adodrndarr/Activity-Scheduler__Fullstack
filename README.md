@@ -59,3 +59,13 @@
         - **Edit** button enables the admin to **modify** and update an existing user.
         - **Delete** button enables the admin to **remove** the specific user completely.
 <br /><br />
+
+## *Try the app out* 
+
+**Admin user:**<br />
+- Email: admin@gmail.com <br />
+- Pwd: Admin#3
+
+**Regular user:**<br />
+- Email: greg@gmail.com <br />
+- Pwd: Greg123#
