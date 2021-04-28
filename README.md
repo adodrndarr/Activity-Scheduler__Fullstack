@@ -1,61 +1,27 @@
-# Activity Scheduler &#128198;
+# ActivityScheduler
 
-## *Overview* 
-- Activity Scheduler is an application built with the main *goal* of providing the user a **nice** and **convenient** way of **scheduling** an activity. <br /><br />
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
+## Development server
 
-## *Features* 
-- ## Authentication 
-    - ### **Register**
-        - A new user could register to *Activity Scheduler*, by providing it's personal information, setting up a password and e-mail address.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-    - ### **Login**
-        - When a particular user is registered, then by providing the registered e-mail address and password, the user can successfully login and start using the *Activity Scheduler* application.
+## Code scaffolding
 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-- ## Functionalities - Regular User
-    - ### **Activities**
-        Displays the available activities, that can be scheduled by the user:
-        - Information like the **name**, available **quantity** and **location** of the activities are shown.
-        - The user can **search** for a particular activity by writing some keywords.
-        - A **clear** button exists to allow the user a nice & fast way of clearing the input.
-        - **View** button enables the user to view more information about the specific activity.
+## Build
 
-    - ### **Schedule**
-        Functionality for scheduling an activity:
-        - The user can choose **activity** and **date** to **search** for *available* activities for the date.
-        - A list with **time** and **availability** appears for the chosen activity.
-        - The user can schedule the desired **time** from the list, keep track of the scheduled activities and proceed to **book** the activity.
-        - The booking of the activity is done by clicking the **book** button, which appears once an activity was scheduled, on the top right corner of the list. 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-    - ### **My Activities**
-        Displays the booked activities, that the current user has scheduled:
-        - Information like the **name**, scheduled period **duration** and **booked date** of the activities are shown.
-        - The user can **search** for a particular booked activity by writing some keywords.
-        - A **clear** button exists to allow the user a nice & fast way of clearing the input.
-        - **View** button enables the user to view more information about the specific activity.
-        - **Cancel** button enables the user to cancel the event for the booked activity.
+## Running unit tests
 
-    - ### **User Account**
-        Shows account information about the user:
-        - The user could **edit** his information by clicking on the **edit** button.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 
-- ## Functionalities - Admin User
-    - ### **Activities**
-        The admin is able to **edit**, **create** or **delete** activities:
-        - **New activity** button allows the admin to **create** a completely new activity, by providing all the necessary information.
-        - **Edit** button enables the admin, to **modify** and update an existing activity.
-        - **Delete** button prompts the admin in case he/she wants to **remove** the activity completely.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-    - ### **Manage Users**
-        Displays all the users, that are registered to the *Activity Scheduler* application:
-        - Information like the **name**, status as **admin** and **e-mail** address of the users are shown.
-        - The admin can **search** for a particular user by writing some keywords.
-        - A **clear** button exists to allow the admin a nice way of clearing the input.
-        - An **Admins** checkbox exists to allow the admin a nice and fast way of **finding** all the application *admins*. <br /><br />
-        - **New user** button allows the admin to **register** a new user to the application, by providing all the necessary information.
-        - **View** button enables the admin to view more account information about the specific user.
-        - **Edit** button enables the admin to **modify** and update an existing user.
-        - **Delete** button enables the admin to **remove** the specific user completely.
-<br /><br />
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

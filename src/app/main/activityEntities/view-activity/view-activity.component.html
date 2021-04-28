@@ -1,0 +1,50 @@
+<div 
+    class="view-activity__page"
+    *ngIf="activity"
+>
+    <div class="view-activity__container">
+        <div class="activityEntity">
+            <h2 class="activityEntity__name">{{ activity.name }}</h2>
+            <img 
+                class="activityEntity__image"
+                [src]="(createImagePath(activity?.imagePath) == null) ? 
+                    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.vpQMS81c3HJVFG5xOrqZnwHaHa%26pid%3DApi&f=1' : 
+                    createImagePath(activity?.imagePath)"
+                alt="{{ activity.name }}"  
+            >
+            <p class="activityEntity__description">{{ activity.description }}</p>
+
+           <div class="content__info">
+                <p>Item quantity: 
+                    <span class="activityEntity__info">{{ activity.itemQuantity }}</span>
+                </p>
+                <p>Minimum user count: 
+                    <span class="activityEntity__info">{{ activity.minUserCount }}</span>
+                </p>
+                <p>Maximum user count: 
+                    <span class="activityEntity__info">{{ activity.maxUserCount }}</span>
+                </p>
+                <p>Location: 
+                    <span class="activityEntity__info">{{ activity.location }}</span>
+                </p>
+           </div>
+        </div>
+        <button 
+            class="back-button" 
+            (click)="onGoBack()"
+        >
+            Go back
+        </button>
+    </div>
+</div>
+
+<div *ngIf="!activity && !errorMessage && !isLoading">
+    <app-not-found></app-not-found>
+</div>
+
+<app-error 
+    *ngIf="!!errorMessage" 
+    [error]="errorMessage"
+></app-error> 
+<app-loading-spinner *ngIf="isLoading">
+</app-loading-spinner>

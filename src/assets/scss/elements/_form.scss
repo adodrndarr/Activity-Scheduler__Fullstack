@@ -1,0 +1,111 @@
+.new-activity__container,
+.edit-activity__container,
+.edit-user__container,
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $white;
+    border: 2px solid $gray;
+    color: $black;
+    box-shadow: 3px 3px 5px 3px $gray;
+
+    width: 75%;
+}
+
+.new-activity__form,
+.edit-activity__form,
+.edit-user__form,
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    h2 { 
+        margin-bottom: 40px;
+        color: $blue;
+        font-weight: bold;
+    }
+
+    &__input {
+        background-color: $lightGray;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid $gray;
+        margin-bottom: 20px;
+
+        width: 100%;
+    }
+
+    & span {
+        color: $red;
+        margin-bottom: 5px;
+    }
+
+    & button,
+    & label {
+        font-weight: bold;
+        align-self: flex-start;
+    }
+
+    & .create-button,
+    & .update-button { 
+        margin-top: 30px; 
+        margin-right: 20px; 
+    }
+}
+
+.new-activity__form h2,
+.edit-activity__form h2,
+.edit-user__form h2 {
+    color: $black;
+    text-decoration: underline; 
+}
+
+/* Responsiveness */
+@media (max-width: 400px) {
+    .edit-user__form h2,
+    .new-activity__form h2,
+    .edit-activity__form h2,
+    .form h2 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .new-activity__container,
+    .edit-activity__container,
+    .edit-user__container,
+    .form__container { width: 50%; }
+
+    .new-activity__form,
+    .edit-activity__form,
+    .edit-user__form,
+    .form { & > * { width: 50%; } }
+
+    .new-activity__form label,
+    .edit-activity__form label,
+    .edit-user__form label,
+    .form label {
+        align-self: center;
+    }
+}
+
+@media (min-width: 2000px) {
+    .new-activity__container,
+    .edit-activity__container,
+    .edit-user__container,
+    .form__container { width: 40%; }
+
+    .new-activity__form,
+    .edit-activity__form,
+    .edit-user__form
+    .form { & > * { width: 40%; } }
+}
+
+

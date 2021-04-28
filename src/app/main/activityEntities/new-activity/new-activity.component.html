@@ -1,0 +1,135 @@
+<div class="new-activity__page">
+    <div class="new-activity__container">
+        <form 
+            class="new-activity__form"
+            [formGroup]="newActivityForm" 
+            (ngSubmit)="onSubmit()"
+        >
+            <h2>Create Activity</h2>
+            <label for="name">Name:</label>
+            <input 
+                type="name" 
+                class="form__input" 
+                id="name" 
+                formControlName="name"
+            >
+
+            <span *ngIf="isInvalidInput('name')">
+                <span *ngIf="isRequired('name')">Name is required.</span>
+                <span *ngIf="hasInvalidLength('name')">Maximum 20 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('name')">First letter should be capital.</span>
+            </span>
+
+
+            <label for="uploadFile">Upload file:</label>
+            <input 
+                #file
+                type="file" 
+                class="form__input"
+                id="uploadFile"
+                (change)="saveFileForUpload(file)" 
+            >
+            
+            <p class="green-text" *ngIf="progress > 0 && uploadMessage">
+                {{ progress }}% {{ uploadMessage }}
+            </p>
+            
+
+            <label for="itemQuantity">Item Quantity:</label>
+            <input 
+                type="text" 
+                class="form__input" 
+                id="itemQuantity" 
+                formControlName="itemQuantity"
+            >
+
+            <span *ngIf="isInvalidInput('itemQuantity')">
+                <span *ngIf="isRequired('itemQuantity')">Item Quantity is required.</span>
+                <span *ngIf="hasInvalidLength('itemQuantity')">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('itemQuantity')">Item Quantity should be a number.</span>
+            </span>
+
+
+            <label for="minUserCount">Min user count:</label>
+            <input 
+                type="text" 
+                class="form__input" 
+                id="minUserCount" 
+                formControlName="minUserCount"
+            >
+
+            <span *ngIf="isInvalidInput('minUserCount')">
+                <span *ngIf="isRequired('minUserCount')">User count is required.</span>
+                <span *ngIf="hasInvalidLength('minUserCount')">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('minUserCount')">User count should be a number.</span>
+            </span>
+
+
+            <label for="maxUserCount">Max user count:</label>
+            <input 
+                type="text" 
+                class="form__input" 
+                id="maxUserCount" 
+                formControlName="maxUserCount"
+            >
+
+            <span *ngIf="isInvalidInput('maxUserCount')">
+                <span *ngIf="isRequired('maxUserCount')">User count is required.</span>
+                <span *ngIf="hasInvalidLength('maxUserCount')">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('maxUserCount')">User count should be a number.</span>
+            </span>
+
+
+            <label for="description">Description:</label>
+            <input 
+                type="text" 
+                class="form__input" 
+                id="description" 
+                formControlName="description"
+            >
+
+            <span *ngIf="isInvalidInput('description')">
+                <span *ngIf="isRequired('description')">Description is required.</span>
+                <span *ngIf="hasInvalidLength('description')">Maximum 400 characters are allowed.</span>
+            </span>
+
+
+            <label for="location">Location:</label>
+            <input 
+                type="text" 
+                class="form__input" 
+                id="location" 
+                formControlName="location"
+            >
+
+            <span *ngIf="isInvalidInput('location')">
+                <span *ngIf="isRequired('location')">Location is required.</span>
+                <span *ngIf="hasInvalidLength('location')">Maximum 100 characters are allowed.</span>
+            </span>
+
+
+            <div>
+                <button 
+                    class="create-button" 
+                    type="submit" 
+                    [disabled]="!newActivityForm.valid || isLoading"
+                >
+                    {{ isLoading ? 'Creating...' : 'Create' }}
+                </button>
+                <button 
+                    class="cancel-button" 
+                    (click)="onCancel()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form><br />
+
+        <app-error
+            *ngIf="!!errorMessage"
+            [error]="errorMessage"
+        ></app-error>                         
+        <app-loading-spinner *ngIf="isLoading">
+        </app-loading-spinner>
+    </div>
+</div>
