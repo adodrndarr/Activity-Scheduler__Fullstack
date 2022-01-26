@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ScheduleActivity } from 'src/app/auth/Entities/Models/activity.model';
+import { CreateActivity, ScheduleActivity } from 'src/app/auth/Entities/Models/activity.model';
 import { DefaultDate } from 'src/app/auth/Entities/Models/date.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 
@@ -77,13 +77,9 @@ export class ScheduleActivityService {
     return timeDetails;
   }
 
-  createActivity(
-    defaultDate: DefaultDate,
-    date: Date,
-    activityId: string,
-    userId: string,
-    index: number
-  ): ScheduleActivity {
+  createActivity(createActivity: CreateActivity): ScheduleActivity {
+    let { defaultDate, date, activityId, userId, index } = createActivity;
+
     const bookedDateHour = defaultDate.date.getHours();
     date.setHours(bookedDateHour);
 
@@ -93,24 +89,14 @@ export class ScheduleActivityService {
     const endTime = new Date(date);
     endTime.setHours(date.getHours() + 1);
 
-    const scheduleActivity = new ScheduleActivity(
-      bookedForDate,
-      startTime,
-      endTime,
-      activityId,
-      userId,
-      index
-    );
-
-    return scheduleActivity;
+    return new ScheduleActivity(bookedForDate, startTime, endTime, activityId, userId, index);
   }
 
   onScrollDownShowArrow(): void {
     var arrowUp = document.getElementById("arrow-up");
 
     window.onscroll = (ev => {
-      const userScrolledDown = document.body.scrollTop > 450 ||
-                               document.documentElement.scrollTop > 450;
+      const userScrolledDown = document.body.scrollTop > 450 || document.documentElement.scrollTop > 450;
 
       if (userScrolledDown) {
         arrowUp.style.display = "block";

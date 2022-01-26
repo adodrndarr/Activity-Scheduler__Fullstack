@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
-import { ActivityEntity, ScheduleActivity } from 'src/app/auth/Entities/Models/activity.model';
+import { ActivityEntity, CreateActivity, ScheduleActivity } from 'src/app/auth/Entities/Models/activity.model';
 import { DefaultDate } from 'src/app/auth/Entities/Models/date.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
@@ -53,20 +53,22 @@ export class ScheduleActivityComponent implements OnInit {
   initializeActivityEntities(): void {
     this.isLoading = true;
     this.httpService.getAllActivityEntities()
-        .subscribe(newActivities => {
-          this.activities = newActivities;
-          this.dataStorageService.activityEntities = newActivities;
+      .subscribe(newActivities => {
 
+        this.activities = newActivities;
+        this.dataStorageService.activityEntities = newActivities;
+
+        this.isLoading = false;
+        this.errorMessage = null;
+      },
+        (errorRes: HttpErrorResponse) => {
+
+          console.log(errorRes);
+          this.errorHandlerService.handleError(errorRes);
+
+          this.errorMessage = this.errorHandlerService.errorMessage;
           this.isLoading = false;
-          this.errorMessage = null;
-        },
-          (errorRes: HttpErrorResponse) => {
-            console.log(errorRes);
-            this.errorHandlerService.handleError(errorRes);
-
-            this.errorMessage = this.errorHandlerService.errorMessage;
-            this.isLoading = false;
-          });
+        });
   }
 
   initializeDropdownForm(): void {
@@ -95,6 +97,7 @@ export class ScheduleActivityComponent implements OnInit {
 
     this.httpService.getBookedActivities(activityEntityId, date)
       .subscribe((bookedActivitiesRes: any) => {
+
         console.log(bookedActivitiesRes);
         this.scheduleMode = true;
 
@@ -117,6 +120,7 @@ export class ScheduleActivityComponent implements OnInit {
         this.errorMessage = null;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
 
@@ -132,8 +136,8 @@ export class ScheduleActivityComponent implements OnInit {
     const activityId = this.dropdownForm.controls['activityEntity'].value;
     const userId = this.authService.user.value.id;
 
-    const scheduleActivity = this.scheduleService
-      .createActivity(defaultDate, date, activityId, userId, index);
+    const createActivity = new CreateActivity(defaultDate, date, activityId, userId, index);
+    const scheduleActivity = this.scheduleService.createActivity(createActivity);
 
     this.activitiesToBook = [...this.activitiesToBook, scheduleActivity];
     this.defaultTimes[index].isScheduled = true;

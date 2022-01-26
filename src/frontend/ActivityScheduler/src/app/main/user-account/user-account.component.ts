@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/auth/Entities/Models/user.model';
-import { HelperService } from 'src/app/services/helper.service';
 
 
 @Component({
@@ -10,7 +9,6 @@ import { HelperService } from 'src/app/services/helper.service';
 })
 export class UserAccountComponent implements OnInit {
   constructor(
-    private helperService: HelperService,
     private authService: AuthService
   ) { }
 
@@ -19,8 +17,7 @@ export class UserAccountComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUser = this.authService.user.value;
-    if (currentUser) {
+    if (currentUser)
       this.user = currentUser;
-    }
   }
 }

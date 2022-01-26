@@ -8,3 +8,12 @@ export class Pagination {
         public hasNext?: boolean
     ) { }
 }
+
+export class PaginationInfo {
+    constructor(
+        public value: string,
+        public selectedPage: number,
+        public currentPage: number,
+        public totalPages: number
+    ) { }
+}

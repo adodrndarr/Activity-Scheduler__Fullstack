@@ -2,12 +2,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/auth/Entities/Models/user.model';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { HttpService } from 'src/app/services/http.service';
 import { ValidatorService } from 'src/app/services/validator.service';
+import * as constants from 'src/app/shared/constants';
 
 
 @Component({
@@ -22,7 +24,8 @@ export class EditUserComponent implements OnInit {
     private errorHandlerService: ErrorHandlerService,
     private helperService: HelperService,
     private route: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private cookieService: CookieService
   ) { }
 
 
@@ -35,7 +38,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     this.initializeId();
-    this.user = this.getCurrentUser();
+    this.user = this.authService.user.value;
     this.checkUserRole();
     this.initializeEditUserForm();
   }
@@ -47,12 +50,7 @@ export class EditUserComponent implements OnInit {
   }
 
   private initializeEditUserForm(): void {
-    this.populateEditUserForm({
-      name: null,
-      lastName: null,
-      email: null,
-      isAdmin: false
-    });
+    this.populateEditUserForm({} as User);
     this.getUser();
   }
 
@@ -64,26 +62,22 @@ export class EditUserComponent implements OnInit {
         this.user = newUser;
 
         if (this.user) {
-          this.populateEditUserForm({
-            name: this.user.userName,
-            lastName: this.user.lastName,
-            email: this.user.email,
-            isAdmin: this.user.isAdmin
-          });
-
+          this.populateEditUserForm(this.user);
           this.isLoading = false;
+
           return;
         }
 
         this.helperService.navigateTo('not-found');
       },
-      (errorRes: HttpErrorResponse) => {
-        console.log(errorRes);
-        this.isLoading = false;
+        (errorRes: HttpErrorResponse) => {
 
-        this.errorHandlerService.handleError(errorRes);
-        this.errorMessage = this.errorHandlerService.errorMessage;
-      });
+          console.log(errorRes);
+          this.isLoading = false;
+
+          this.errorHandlerService.handleError(errorRes);
+          this.errorMessage = this.errorHandlerService.errorMessage;
+        });
   }
 
   private handleSubmittedEditUserForm(): void {
@@ -96,7 +90,10 @@ export class EditUserComponent implements OnInit {
     updatedUser.normalizedEmail = updatedUser.email.toUpperCase();
 
     const updateObs = this.httpService.editUser(this.user.id, updatedUser);
+    this.updateUser(updateObs, updatedUser);
+  }
 
+  private updateUser(updateObs, updatedUser: User) {
     updateObs.subscribe(
       (updateResponse) => {
         console.log(updateResponse);
@@ -104,6 +101,12 @@ export class EditUserComponent implements OnInit {
         const updateCurrentUser = this.authService.user.value.id === this.user.id;
         if (updateCurrentUser) {
           updatedUser.id = this.user.id;
+
+          const userCookieExists = this.cookieService.check('user');
+          if (userCookieExists)
+            this.cookieService.delete('user');
+
+          this.cookieService.set('user', JSON.stringify(updatedUser));
           this.authService.user.next(updatedUser);
         }
 
@@ -124,16 +127,7 @@ export class EditUserComponent implements OnInit {
   }
 
   private initializeId(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = params.id;
-        }
-      );
-  }
-
-  private getCurrentUser(): User {
-    return this.authService.user.value;
+    this.route.params.subscribe((params: Params) => this.id = params.id);
   }
 
   onCancel(): void {
@@ -144,32 +138,24 @@ export class EditUserComponent implements OnInit {
     this.errorMessage = null;
   }
 
-  private populateEditUserForm(
-    {
-      name,
-      lastName,
-      email,
-      isAdmin
-    }
-  ): void {
+  private populateEditUserForm(user: User): void {
     this.editUserForm = this.formBuilder.group({
-      'userName': [name, [
+      'userName': [user.userName, [
         Validators.required,
-        Validators.pattern('^[A-Z]+.*$'),
+        Validators.pattern(constants.MATCH_FIRST_LETTER_CAPITAL),
         Validators.maxLength(20)
       ]],
-      'lastName': [lastName, [
+      'lastName': [user.lastName, [
         Validators.required,
-        Validators.pattern('^[A-Z]+.*$'),
+        Validators.pattern(constants.MATCH_FIRST_LETTER_CAPITAL),
         Validators.maxLength(20)
       ]],
-      'email': [email, [
+      'email': [user.email, [
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'),
+        Validators.pattern(constants.MATCH_VALID_EMAIL),
         Validators.maxLength(20)
-      ]
-      ],
-      'isAdmin': [isAdmin]
+      ]],
+      'isAdmin': [user.isAdmin]
     });
   }
 
@@ -177,9 +163,8 @@ export class EditUserComponent implements OnInit {
     this.isAdmin = this.authService.user.value.isAdmin;
     const updateCurrentUser = this.authService.user.value.id === this.id;
 
-    if (!this.isAdmin && !updateCurrentUser) {
+    if (!this.isAdmin && !updateCurrentUser)
       this.helperService.navigateTo('not-found');
-    }
   }
 
   checkUserAndNavigate(): void {

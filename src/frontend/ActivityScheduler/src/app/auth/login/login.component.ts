@@ -7,7 +7,7 @@ import { ValidatorService } from '../../services/validator.service';
 import { AuthService } from '../auth.service';
 import { LoginResponseDTO } from '../Entities/Interfaces/auth-response';
 import { UserToLoginDTO } from '../Entities/Models/user.model';
-
+import * as constants from '../../shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginResponse: LoginResponseDTO;
+
   errorMessage: string = null;
   isLoading = false;
 
@@ -36,10 +37,9 @@ export class LoginComponent implements OnInit {
   private initializeLoginForm(): void {
     this.loginForm = this.formBuilder.group({
       'email': [null, [
-          Validators.required,
-          Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')
-        ]
-      ],
+        Validators.required,
+        Validators.pattern(constants.MATCH_VALID_EMAIL)
+      ]],
       'password': [null, Validators.required]
     });
   }
@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
 
     loginObs.subscribe(
       (loginResponse) => {
+
         console.log(loginResponse);
         this.authService.handleLoginResponse(loginResponse);
         this.loginResponse = loginResponse;
@@ -69,6 +70,7 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
       },
       (errorResponse: HttpErrorResponse) => {
+
         console.log(errorResponse);
         this.errorHandlerService.handleError(errorResponse);
 

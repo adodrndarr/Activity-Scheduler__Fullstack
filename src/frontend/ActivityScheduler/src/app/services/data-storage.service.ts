@@ -11,14 +11,14 @@ export class DataStorageService {
   constructor() { }
 
 
-  activityEntities: ActivityEntity[] = [];
-  users: User[] = [];
-  activities: Activity[] = [];
-
   pagination: Pagination = new Pagination(1, 1, 2);
+  users: User[] = [];
+
+  activities: Activity[] = [];
+  activityEntities: ActivityEntity[] = [];
   bookedActivities: BookedActivity[] = [];
 
   searchTerm: string;
-  checked = false;
   currentImagePath: string;
+  checked = false;
 }

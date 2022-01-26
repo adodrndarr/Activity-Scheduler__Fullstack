@@ -1,10 +1,11 @@
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Activity, ActivityEntity, BookedActivity, ScheduleActivity } from '../auth/Entities/Models/activity.model';
 import { Pagination } from '../auth/Entities/Models/pagination.model';
+import { PaginationRequest } from '../auth/Entities/Models/requests/pagination-request.model';
 import { User } from '../auth/Entities/Models/user.model';
 import { DataStorageService } from './data-storage.service';
 import { HelperService } from './helper.service';
@@ -26,26 +27,23 @@ export class HttpService {
   ) { }
 
 
-  getActivityEntities(
-    userId: string,
-    page?: string,
-    size?: string,
-    searchTerm?: string
-  ): Observable<ActivityEntity[]> {
+  getActivityEntities(userId: string, paginationRequest: PaginationRequest): Observable<ActivityEntity[]> {
+
+    let { page, size, searchTerm } = paginationRequest;
 
     page = this.helperService.validateNumber(page, '1');
     size = this.helperService.validateNumber(size, '2');
     searchTerm = this.helperService.validateString(searchTerm, '');
 
-    return this.http.get<ActivityEntity[]>(activitiesUrl, {
-      params: {
-        'userId': userId,
-        'pageNumber': page,
-        'pageSize': size,
-        'includeName': searchTerm
-      },
-      observe: 'response'
-    })
+    const params = {
+      'userId': userId,
+      'pageNumber': page,
+      'pageSize': size,
+      'includeName': searchTerm
+    };
+
+    return this.http
+      .get<ActivityEntity[]>(activitiesUrl, { params: params, observe: 'response' })
       .pipe(
         tap(res => {
           const obj: Pagination = JSON.parse(res.headers.get('x-pagination'));
@@ -90,27 +88,21 @@ export class HttpService {
       observe: 'events'
     });
   }
-  
+
   createImagePath(imgPath: any): string {
     return `${environment.baseUrl}/${imgPath}`;
   }
-  
 
-  getBookedActivities(
-    activityEntityId: string,
-    forDate: Date
-  ): Observable<BookedActivity[]> {
 
-    return this.http.get<BookedActivity[]>(`${scheduleUrl}/booked-activities`, {
-      params: {
-        'activityEntityId': activityEntityId,
-        'forDate': forDate.toJSON()
-      }
-    })
+  getBookedActivities(activityEntityId: string, forDate: Date): Observable<BookedActivity[]> {
+    const params = {
+      'activityEntityId': activityEntityId,
+      'forDate': forDate.toJSON()
+    };
+
+    return this.http.get<BookedActivity[]>(`${scheduleUrl}/booked-activities`, { params: params })
       .pipe(
-        tap(bookedActivities => {
-          this.dataStorageService.bookedActivities = bookedActivities;
-        })
+        tap(bookedActivities => this.dataStorageService.bookedActivities = bookedActivities)
       );
   }
 
@@ -122,26 +114,23 @@ export class HttpService {
     });
   }
 
-  getActivities(
-    userId: string,
-    page?: string,
-    size?: string,
-    searchTerm?: string
-  ): Observable<Activity[]> {
+  getActivities(userId: string, paginationRequest: PaginationRequest): Observable<Activity[]> {
+
+    let { page, size, searchTerm } = paginationRequest;
 
     page = this.helperService.validateNumber(page, '1');
     size = this.helperService.validateNumber(size, '2');
     searchTerm = this.helperService.validateString(searchTerm, '');
 
-    return this.http.get<Activity[]>(myActivitiesUrl, {
-      params: {
-        'userId': userId,
-        'pageNumber': page,
-        'pageSize': size,
-        'includeName': searchTerm
-      },
-      observe: 'response'
-    })
+    const params = {
+      'userId': userId,
+      'pageNumber': page,
+      'pageSize': size,
+      'includeName': searchTerm
+    };
+
+    return this.http
+      .get<Activity[]>(myActivitiesUrl, { params: params, observe: 'response' })
       .pipe(
         tap(res => {
           const obj: Pagination = JSON.parse(res.headers.get('x-pagination'));
@@ -150,6 +139,8 @@ export class HttpService {
         map(res => res.body)
       );
   }
+
+
 
   cancelActivity(activityId: string): Observable<any> {
     return this.http.delete<Observable<any>>(myActivitiesUrl, {
@@ -160,27 +151,25 @@ export class HttpService {
   }
 
 
-  getUsers(
-    page?: string,
-    size?: string,
-    includeAdmin?: string,
-    searchTerm?: string
-  ): Observable<User[]> {
+  getUsers(includeAdmin?: boolean, paginationRequest?: PaginationRequest): Observable<User[]> {
 
-    page = this.helperService.validateNumber(page, '1');
-    size = this.helperService.validateNumber(size, '2');
-    searchTerm = this.helperService.validateString(searchTerm, '');
-    includeAdmin = this.helperService.validateString(includeAdmin, 'false');
+    if (!paginationRequest)
+      paginationRequest = new PaginationRequest('1', '2', '');
+    else {
+      paginationRequest.page = this.helperService.validateNumber(paginationRequest.page, '1');
+      paginationRequest.size = this.helperService.validateNumber(paginationRequest.size, '2');
+      paginationRequest.searchTerm = this.helperService.validateString(paginationRequest.searchTerm, '');
+    }
 
-    return this.http.get<User[]>(usersUrl, {
-      params: {
-        'pageNumber': page,
-        'pageSize': size,
-        'includeAdmin': includeAdmin,
-        'includeName': searchTerm
-      },
-      observe: 'response'
-    })
+    const params = {
+      'pageNumber': paginationRequest.page,
+      'pageSize': paginationRequest.size,
+      'includeAdmin': this.helperService.validateString(String(includeAdmin), 'false'),
+      'includeName': paginationRequest.searchTerm
+    };
+
+    return this.http
+      .get<User[]>(usersUrl, { params: params, observe: 'response' })
       .pipe(
         tap(res => {
           const obj: Pagination = JSON.parse(res.headers.get('x-pagination'));

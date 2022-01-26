@@ -5,11 +5,10 @@ import { UserToRegisterDTO } from 'src/app/auth/Entities/Models/user.model';
 import { AuthService } from '../../../auth/auth.service';
 import { RegisterResponseDTO } from '../../../auth/Entities/Interfaces/auth-response';
 import { matchPassword } from '../../../auth/register/match.validator';
-import { DataStorageService } from '../../../services/data-storage.service';
 import { ErrorHandlerService } from '../../../services/error-handler.service';
 import { HelperService } from '../../../services/helper.service';
 import { ValidatorService } from '../../../services/validator.service';
-
+import * as constants from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-register-admin',
@@ -21,7 +20,6 @@ export class RegisterAdminComponent implements OnInit {
     private authService: AuthService,
     private validatorService: ValidatorService,
     private errorHandlerService: ErrorHandlerService,
-    private dataStorageService: DataStorageService,
     private helperService: HelperService
   ) { }
 
@@ -29,8 +27,8 @@ export class RegisterAdminComponent implements OnInit {
   registerAdminForm: FormGroup;
   registerResponse: RegisterResponseDTO;
   errorMessage: string = null;
-  isLoading = false;
 
+  isLoading = false;
   registerAdmin = false;
 
   ngOnInit(): void {
@@ -48,24 +46,23 @@ export class RegisterAdminComponent implements OnInit {
     this.registerAdminForm = this.formBuilder.group({
       'userName': [null, [
         Validators.required,
-        Validators.pattern('^[A-Z]+.*$'),
+        Validators.pattern(constants.MATCH_FIRST_LETTER_CAPITAL),
         Validators.maxLength(20)
       ]],
       'lastName': [null, [
         Validators.required,
-        Validators.pattern('^[A-Z]+.*$'),
+        Validators.pattern(constants.MATCH_FIRST_LETTER_CAPITAL),
         Validators.maxLength(20)
       ]],
       'email': [null, [
         Validators.required,
-        Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'),
+        Validators.pattern(constants.MATCH_VALID_EMAIL),
         Validators.maxLength(20)
-        ]
-      ],
+      ]],
       'password': [null,
         [
           Validators.required,
-          Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{6,}$')
+          Validators.pattern(constants.MATCH_VALID_PASSWORD)
         ]
       ],
       'confirmPassword': [null, Validators.required]
@@ -82,6 +79,7 @@ export class RegisterAdminComponent implements OnInit {
 
     registerObs.subscribe(
       (responseData) => {
+
         console.log(responseData);
         this.registerResponse = responseData;
         this.registerAdminForm.reset();

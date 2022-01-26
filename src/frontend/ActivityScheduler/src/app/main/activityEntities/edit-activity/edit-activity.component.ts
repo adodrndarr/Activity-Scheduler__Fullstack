@@ -1,21 +1,21 @@
 import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { ActivityEntity } from 'src/app/auth/Entities/Models/activity.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { HttpService } from 'src/app/services/http.service';
 import { ValidatorService } from 'src/app/services/validator.service';
-
+import * as constants from '../../../shared/constants';
 
 @Component({
   selector: 'app-edit-activity',
   templateUrl: './edit-activity.component.html'
 })
-export class EditActivityComponent implements OnInit {
+export class EditActivityComponent implements OnInit, OnDestroy {
   constructor(
     private validatorService: ValidatorService,
     private formBuilder: FormBuilder,
@@ -37,6 +37,7 @@ export class EditActivityComponent implements OnInit {
   progress: number;
   uploadResponse: any;
   fileToUpload: File;
+  uploadSub: Subscription;
   uploadFinished = new BehaviorSubject<boolean>(false);
 
   ngOnInit() {
@@ -52,48 +53,22 @@ export class EditActivityComponent implements OnInit {
   }
 
   private initializeEditActivityForm(): void {
-    this.populateEditActivityForm({
-      name: null,
-      imageUrl: null,
-      itemQuantity: null,
-      minUserCount: null,
-      maxUserCount: null,
-      description: null,
-      location: null
-    });
-
+    this.populateEditActivityForm({} as ActivityEntity);
     if (!this.activity) {
       this.getActivityEntity();
       return;
     }
 
-    this.populateEditActivityForm({
-      name: this.activity.name,
-      imageUrl: this.activity.imageUrl,
-      itemQuantity: this.activity.itemQuantity,
-      minUserCount: this.activity.minUserCount,
-      maxUserCount: this.activity.maxUserCount,
-      description: this.activity.description,
-      location: this.activity.location
-    });
+    this.populateEditActivityForm(this.activity);
   }
 
   private getActivityEntity(): void {
     this.isLoading = true;
     this.httpService.getActivityEntityById(this.id)
       .subscribe(newActivity => {
+
         this.activity = newActivity;
-
-        this.populateEditActivityForm({
-          name: this.activity.name,
-          imageUrl: this.activity.imageUrl,
-          itemQuantity: this.activity.itemQuantity,
-          minUserCount: this.activity.minUserCount,
-          maxUserCount: this.activity.maxUserCount,
-          description: this.activity.description,
-          location: this.activity.location
-        });
-
+        this.populateEditActivityForm(this.activity);
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
@@ -161,43 +136,37 @@ export class EditActivityComponent implements OnInit {
         updatedctivityEntity.maxUserCount = +updatedctivityEntity.maxUserCount;
         updatedctivityEntity.imagePath = this.dataStorageService.currentImagePath;
 
-        const updateObs = this.httpService.editActivityEntity
-          (
-            this.activity.id,
-            updatedctivityEntity
-          );
-
-        updateObs.subscribe(
-          (updateResponse) => {
-            console.log(updateResponse);
-
-            this.editActivityForm.reset();
-            this.resetActivityEntities();
-
-            this.helperService.navigateTo('activities');
-            this.isLoading = false;
-          },
-          (errorResponse: HttpErrorResponse) => {
-            console.log(errorResponse);
-
-            this.errorHandlerService.handleError(errorResponse);
-            this.errorMessage = this.errorHandlerService.errorMessage;
-
-            this.isLoading = false;
-          }
-        );
+        this.editActivityEntity(updatedctivityEntity);
       }
     });
 
   }
 
+  private editActivityEntity(updatedctivityEntity: ActivityEntity) {
+    const updateObs = this.httpService.editActivityEntity(this.activity.id, updatedctivityEntity);
+    updateObs.subscribe(
+      (updateResponse) => {
+        console.log(updateResponse);
+
+        this.editActivityForm.reset();
+        this.resetActivityEntities();
+
+        this.helperService.navigateTo('activities');
+        this.isLoading = false;
+      },
+      (errorResponse: HttpErrorResponse) => {
+        console.log(errorResponse);
+
+        this.errorHandlerService.handleError(errorResponse);
+        this.errorMessage = this.errorHandlerService.errorMessage;
+
+        this.isLoading = false;
+      }
+    );
+  }
+
   private initializeId(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = params.id;
-        }
-      );
+    this.route.params.subscribe((params: Params) => this.id = params.id);
   }
 
   private getActivityById(id: string): ActivityEntity {
@@ -213,52 +182,36 @@ export class EditActivityComponent implements OnInit {
     this.errorMessage = null;
   }
 
-  private populateEditActivityForm(
-    {
-      name,
-      imageUrl,
-      itemQuantity,
-      minUserCount,
-      maxUserCount,
-      description,
-      location
-    }
-  ): void {
+  private populateEditActivityForm(activityEntity: ActivityEntity): void {
     this.editActivityForm = this.formBuilder.group({
-      'name': [name, [
+      'name': [activityEntity.name, [
         Validators.required,
         Validators.maxLength(20)
-      ]
-      ],
+      ]],
       // 'imageUrl': [imageUrl, Validators.required],
-      'itemQuantity': [itemQuantity, [
+      'itemQuantity': [activityEntity.itemQuantity, [
         Validators.required,
-        Validators.pattern(`^[-+]?\\d+$`),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
-      'minUserCount': [minUserCount, [
+      ]],
+      'minUserCount': [activityEntity.minUserCount, [
         Validators.required,
-        Validators.pattern('^[-+]?\\d+$'),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
-      'maxUserCount': [maxUserCount, [
+      ]],
+      'maxUserCount': [activityEntity.maxUserCount, [
         Validators.required,
-        Validators.pattern('^[-+]?\\d+$'),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
-      'description': [description, [
+      ]],
+      'description': [activityEntity.description, [
         Validators.required,
         Validators.maxLength(400)
-      ]
-      ],
-      'location': [location, [
+      ]],
+      'location': [activityEntity.location, [
         Validators.required,
         Validators.maxLength(100)
-      ]
-      ]
+      ]]
     });
   }
 
@@ -283,4 +236,8 @@ export class EditActivityComponent implements OnInit {
     return this.validatorService.hasInvalidLength(fieldName, this.editActivityForm);
   }
 
+  ngOnDestroy(): void {
+    if (this.uploadSub)
+      this.uploadSub.unsubscribe();
+  }
 }

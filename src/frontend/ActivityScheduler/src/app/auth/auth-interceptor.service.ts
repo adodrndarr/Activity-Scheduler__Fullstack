@@ -18,9 +18,9 @@ export class AuthInterceptorService implements HttpInterceptor {
       .pipe(
         take(1),
         exhaustMap(user => {
-          if (!user) {
+
+          if (!user)
             return next.handle(req);
-          }
 
           const token = this.cookieService.get('token');
           const headersWithToken = new HttpHeaders().set('Authorization', `Bearer ${token}`);

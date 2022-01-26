@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
+import { PaginationInfo } from 'src/app/auth/Entities/Models/pagination.model';
+import { PaginationRequest } from 'src/app/auth/Entities/Models/requests/pagination-request.model';
 import { User } from 'src/app/auth/Entities/Models/user.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
@@ -33,6 +35,7 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
   isAdmin = false;
 
   searchTerm: string;
+  paginationRequest: PaginationRequest = {};
   includeAdmin = false;
   displayFiltered = false;
 
@@ -62,12 +65,11 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
   private checkUserRole(): void {
     this.userSub = this.authService.user
       .subscribe(user => {
-        if (user) {
+
+        if (user)
           this.isAdmin = user.isAdmin;
-        }
-        else {
+        else
           this.isAdmin = false;
-        }
       });
   }
 
@@ -95,33 +97,33 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
   }
 
   onDelete(user: User): void {
-    if (!this.isAdmin) {
+    if (!this.isAdmin)
       return;
-    }
 
     this.isLoading = true;
     const title = `Delete ${user.userName}?`;
 
     this.helperService.createAlert(title)
       .then((choice) => {
-        if (choice.isConfirmed) {
+
+        if (choice.isConfirmed)
           this.deleteUser(user);
-        }
-        else {
+        else
           this.isLoading = false;
-        }
       });
   }
 
   private deleteUser(user: User): void {
     this.httpService.deleteUser(user.id)
       .subscribe(res => {
+
         console.log(res);
 
         this.initializeUsers();
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
 
@@ -131,21 +133,20 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
   }
 
   updateUsers(selectedPage: number, value?: string): void {
-    this.currentPage = this.helperService
-      .markPageAsActive(
-        value,
-        selectedPage,
-        this.currentPage,
-        this.dataStorageService.pagination.totalPages
-      );
-
-    this.loadUsers(
+    const paginationInfo = new PaginationInfo(
+      value,
+      selectedPage,
       this.currentPage,
-      this.dataStorageService.pagination.pageSize,
-      this.displayFiltered,
-      this.searchTerm,
-      this.includeAdmin
+      this.dataStorageService.pagination.totalPages
     );
+    this.currentPage = this.helperService.markPageAsActive(paginationInfo);
+
+    this.paginationRequest = new PaginationRequest(
+      String(this.currentPage),
+      String(this.dataStorageService.pagination.pageSize),
+      this.searchTerm
+    );
+    this.loadUsers(this.displayFiltered, this.includeAdmin);
   }
 
   onCheckboxChange(): void {
@@ -164,21 +165,12 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
     this.updateUsers(this.currentPage);
   }
 
-  loadUsers(currentPage: number,
-            pageSize: number,
-            showFiltered?: boolean,
-            searchTerm = null,
-            includeAdmin = false
-  ): void {
+  loadUsers(showFiltered?: boolean, includeAdmin = false): void {
 
     this.isLoading = true;
-    this.httpService.getUsers(
-      String(currentPage),
-      String(pageSize),
-      String(includeAdmin),
-      searchTerm
-    )
+    this.httpService.getUsers(includeAdmin, this.paginationRequest)
       .subscribe((newUsers: User[]) => {
+
         const totalPages = this.dataStorageService.pagination.totalPages;
         if (totalPages === 0) {
           this.users.length = 0;
@@ -186,13 +178,14 @@ export class ManageUsersComponent implements OnInit, OnDestroy, AfterViewChecked
           return;
         }
 
-        if (!newUsers.length) {
+        const haveUsersOnCurrentPage = newUsers.length;
+        if (!haveUsersOnCurrentPage) {
           this.initializeUsers();
           return;
         }
 
         console.log(newUsers);
-        this.updateDataStore(newUsers, currentPage);
+        this.updateDataStore(newUsers, Number(this.paginationRequest.page));
 
         if (showFiltered) {
           this.filteredUsers = newUsers;

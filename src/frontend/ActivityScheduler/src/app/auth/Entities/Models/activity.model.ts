@@ -1,3 +1,5 @@
+import { DefaultDate } from "./date.model"
+
 export class ActivityEntity {
     constructor(
         public id: string,
@@ -41,5 +43,15 @@ export class Activity {
         public endTime: Date,
         public duration: string,
         public activityEntityId: string,
+    ) { }
+}
+
+export class CreateActivity {
+    constructor(
+        public defaultDate: DefaultDate,
+        public date: Date,
+        public activityId: string,
+        public userId: string,
+        public index: number
     ) { }
 }

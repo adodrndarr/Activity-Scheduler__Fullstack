@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Activity } from 'src/app/auth/Entities/Models/activity.model';
+import { PaginationInfo } from 'src/app/auth/Entities/Models/pagination.model';
+import { PaginationRequest } from 'src/app/auth/Entities/Models/requests/pagination-request.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { HelperService } from 'src/app/services/helper.service';
@@ -29,6 +31,7 @@ export class MyActivitiesComponent implements OnInit, AfterViewChecked {
   isLoading = true;
 
   searchTerm: string;
+  paginationRequest: PaginationRequest = {};
   displayFiltered = false;
 
   pageItems = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -82,12 +85,11 @@ export class MyActivitiesComponent implements OnInit, AfterViewChecked {
 
     this.helperService.createCancelAlert(title)
       .then((choice) => {
-        if (choice.isConfirmed) {
+
+        if (choice.isConfirmed)
           this.cancelActivity(activity);
-        }
-        else {
+        else
           this.isLoading = false;
-        }
       });
   }
 
@@ -100,6 +102,7 @@ export class MyActivitiesComponent implements OnInit, AfterViewChecked {
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
 
@@ -109,52 +112,45 @@ export class MyActivitiesComponent implements OnInit, AfterViewChecked {
   }
 
   updateActivities(selectedPage: number, value?: string): void {
-    this.currentPage = this.helperService
-      .markPageAsActive(
-        value,
-        selectedPage,
-        this.currentPage,
-        this.dataStorageService.pagination.totalPages
-      );
-
-    this.loadActivities(
+    const paginationInfo = new PaginationInfo(
+      value,
+      selectedPage,
       this.currentPage,
-      this.dataStorageService.pagination.pageSize,
-      this.displayFiltered,
+      this.dataStorageService.pagination.totalPages
+    );
+    this.currentPage = this.helperService.markPageAsActive(paginationInfo);
+
+    this.paginationRequest = new PaginationRequest(
+      String(this.currentPage),
+      String(this.dataStorageService.pagination.pageSize),
       this.searchTerm
     );
+    this.loadActivities(this.displayFiltered);
   }
 
-  loadActivities(currentPage: number,
-                 pageSize: number,
-                 showFiltered?: boolean,
-                 searchTerm = null
-  ): void {
+  loadActivities(showFiltered?: boolean): void {
     const user = this.authService.user.value;
     this.isLoading = true;
 
-    this.httpService.getActivities(
-      user.id,
-      String(currentPage),
-      String(pageSize),
-      searchTerm
-    )
+    this.httpService.getActivities(user.id, this.paginationRequest)
       .subscribe((newActivities: Activity[]) => {
+
         const totalPages = this.dataStorageService.pagination.totalPages;
         if (totalPages === 0) {
-            this.activities.length = 0;
-            this.isLoading = false;
-            return;
+          this.activities.length = 0;
+          this.isLoading = false;
+          return;
         }
 
-        if (!newActivities.length) {
+        const haveActivitiesOnCurrentPage = newActivities.length;
+        if (!haveActivitiesOnCurrentPage) {
           this.initializeActivities();
           return;
         }
 
         console.log(newActivities);
         this.createDate(newActivities);
-        this.updateDataStore(newActivities, currentPage);
+        this.updateDataStore(newActivities, Number(this.paginationRequest.page));
 
         if (showFiltered) {
           this.filteredActivities = newActivities;
@@ -164,6 +160,7 @@ export class MyActivitiesComponent implements OnInit, AfterViewChecked {
         this.errorMessage = null;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
           this.errorMessage = this.errorHandlerService.errorMessage;

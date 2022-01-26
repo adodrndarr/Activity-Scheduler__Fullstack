@@ -19,12 +19,15 @@
 // pages
 @import './pages/main-content';
 @import './pages/login';
-@import './pages/activityEntities';
+@import './pages/activityEntities/activityEntities';
 @import './pages/view-activity';
-@import './pages/manage-users';
+@import './pages/manageUsers/manage-users';
 @import './pages/register';
 @import './pages/view-user';
 @import './pages/common-view';
 @import './pages/schedule-activity';
-@import './pages/my-activities';
+@import './pages/myActivities/my-activities';
 
+// shared
+@import './shared/not-found';
+@import './shared/error';

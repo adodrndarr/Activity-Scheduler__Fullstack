@@ -34,10 +34,12 @@ export class ViewActivityComponent implements OnInit {
     this.isLoading = true;
     this.httpService.getActivityEntityById(this.id)
       .subscribe(newActivity => {
+
         this.activity = newActivity;
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.isLoading = false;
 
@@ -47,12 +49,7 @@ export class ViewActivityComponent implements OnInit {
   }
 
   private initializeId(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = params.id;
-        }
-      );
+    this.route.params.subscribe((params: Params) => this.id = params.id);
   }
 
   onGoBack(): void {
@@ -60,11 +57,9 @@ export class ViewActivityComponent implements OnInit {
   }
 
   createImagePath(imgPath: any): string {
-    if (!imgPath) {
+    if (!imgPath)
       return;
-    }
 
-    const fullImgPath = this.httpService.createImagePath(imgPath); 
-    return fullImgPath;
+    return this.httpService.createImagePath(imgPath);
   }
 }

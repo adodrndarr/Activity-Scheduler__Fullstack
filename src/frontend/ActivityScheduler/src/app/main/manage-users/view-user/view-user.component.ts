@@ -46,12 +46,14 @@ export class ViewUserComponent implements OnInit {
 
     this.httpService.getUsers()
       .subscribe(newUsers => {
+
         this.dataStorageService.users = newUsers;
         this.user = this.getUserById();
 
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.isLoading = false;
 
@@ -61,17 +63,11 @@ export class ViewUserComponent implements OnInit {
   }
 
   private getUserById(): User {
-    return this.dataStorageService.users
-      .find(user => user.id === this.id);
+    return this.dataStorageService.users.find(user => user.id === this.id);
   }
 
   private initializeId(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = params.id;
-        }
-      );
+    this.route.params.subscribe((params: Params) => this.id = params.id);
   }
 
   onGoBack(): void {

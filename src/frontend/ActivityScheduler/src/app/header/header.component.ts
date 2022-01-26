@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private checkUserRole(): void {
     this.userSub = this.authService.user
       .subscribe(user => {
+
         if (user) {
           this.isAdmin = user.isAdmin;
           this.isLoggedIn = true;

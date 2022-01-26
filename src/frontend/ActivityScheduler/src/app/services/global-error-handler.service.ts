@@ -9,10 +9,10 @@ export class GlobalErrorHandlerService implements ErrorHandler {
 
   handleError(error: Error) {
       const err = {
-          message: error.message ? error.message : error.toString(),
-          stack: error.stack ? error.stack : ''
+          message: (error.message) ? error.message : error.toString(),
+          stack: (error.stack) ? error.stack : ''
       };
-      console.log(err);
+      console.error(err);
 
       // Notify the user
       alert('Oops something went wrong, an unknown error ocurred, please try again later.');

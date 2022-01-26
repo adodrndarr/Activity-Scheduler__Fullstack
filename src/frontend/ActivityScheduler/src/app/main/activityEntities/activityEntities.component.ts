@@ -1,6 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { PaginationInfo } from 'src/app/auth/Entities/Models/pagination.model';
+import { PaginationRequest } from 'src/app/auth/Entities/Models/requests/pagination-request.model';
 import { AuthService } from '../../auth/auth.service';
 import { ActivityEntity } from '../../auth/Entities/Models/activity.model';
 import { DataStorageService } from '../../services/data-storage.service';
@@ -28,6 +30,7 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
 
   activityEntities: ActivityEntity[] = [];
   filteredActivityEntities: ActivityEntity[] = [];
+  paginationRequest: PaginationRequest = {};
   displayFiltered = false;
 
   errorMessage = null;
@@ -61,12 +64,11 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
   private checkUserRole(): void {
     this.userSub = this.authService.user
       .subscribe(user => {
-        if (user) {
+
+        if (user)
           this.isAdmin = user.isAdmin;
-        }
-        else {
+        else
           this.isAdmin = false;
-        }
       });
   }
 
@@ -103,12 +105,11 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
 
     this.helperService.createAlert(title, this.createImagePath(activity.imagePath))
       .then((choice) => {
-        if (choice.isConfirmed) {
+
+        if (choice.isConfirmed)
           this.deleteActivity(activity);
-        }
-        else {
+        else
           this.isLoading = false;
-        }
       });
   }
 
@@ -121,6 +122,7 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
         this.isLoading = false;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
 
@@ -134,37 +136,29 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
   }
 
   updateActivities(selectedPage: number, value?: string): void {
-    this.currentPage = this.helperService
-      .markPageAsActive(
-        value,
-        selectedPage,
-        this.currentPage,
-        this.dataStorageService.pagination.totalPages
-      );
-
-    this.loadActivities(
+    const paginationInfo = new PaginationInfo(
+      value,
+      selectedPage,
       this.currentPage,
-      this.dataStorageService.pagination.pageSize,
-      this.displayFiltered,
+      this.dataStorageService.pagination.totalPages
+    );
+    this.currentPage = this.helperService.markPageAsActive(paginationInfo);
+
+    this.paginationRequest = new PaginationRequest(
+      String(this.currentPage),
+      String(this.dataStorageService.pagination.pageSize),
       this.searchTerm
     );
+    this.loadActivities(this.displayFiltered);
   }
 
-  loadActivities(currentPage: number,
-                 pageSize: number,
-                 showFiltered?: boolean,
-                 searchTerm = null
-  ): void {
+  loadActivities(showFiltered?: boolean): void {
     const user = this.authService.user.value;
     this.isLoading = true;
 
-    this.httpService.getActivityEntities(
-      user.id,
-      String(currentPage),
-      String(pageSize),
-      searchTerm
-    )
+    this.httpService.getActivityEntities(user.id, this.paginationRequest)
       .subscribe((newActivities: ActivityEntity[]) => {
+
         const totalPages = this.dataStorageService.pagination.totalPages;
         if (totalPages === 0) {
           this.activityEntities.length = 0;
@@ -172,13 +166,14 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
           return;
         }
 
-        if (!newActivities.length) {
+        const haveActivityEntitiesOnCurrentPage = newActivities.length;
+        if (!haveActivityEntitiesOnCurrentPage) {
           this.initializeActivityEntities();
           return;
         }
 
         console.log(newActivities);
-        this.updateDataStore(newActivities, currentPage);
+        this.updateDataStore(newActivities, Number(this.paginationRequest.page));
 
         if (showFiltered) {
           this.filteredActivityEntities = newActivities;
@@ -188,6 +183,7 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
         this.errorMessage = null;
       },
         (errorRes: HttpErrorResponse) => {
+
           console.log(errorRes);
           this.errorHandlerService.handleError(errorRes);
           this.errorMessage = this.errorHandlerService.errorMessage;
@@ -216,7 +212,7 @@ export class ActivityEntitiesComponent implements OnInit, AfterViewChecked, OnDe
       return;
     }
 
-    const fullImgPath = this.httpService.createImagePath(imgPath); 
+    const fullImgPath = this.httpService.createImagePath(imgPath);
     return fullImgPath;
   }
 

@@ -1,8 +1,7 @@
-import { HttpEventType } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal, { SweetAlertResult } from 'sweetalert2';
-import { Pagination } from '../auth/Entities/Models/pagination.model';
+import { Pagination, PaginationInfo } from '../auth/Entities/Models/pagination.model';
 import { DataStorageService } from './data-storage.service';
 
 
@@ -28,8 +27,7 @@ export class HelperService {
     return textToCheck.includes(term);
   }
 
-  createAlert(title: string, imageUrl?: string)
-    : Promise<SweetAlertResult<any>> {
+  createAlert(title: string, imageUrl?: string): Promise<SweetAlertResult<any>> {
     if (imageUrl) {
       return Swal.fire({
         title: `${title}`,
@@ -73,22 +71,19 @@ export class HelperService {
     return document.querySelectorAll('.page-item');
   }
 
-  markPageAsActive(
-    value: string,
-    selectedPage: number,
-    currentPage: number,
-    totalPages: number
-  ): number {
+  markPageAsActive(paginationInfo: PaginationInfo): number {
 
+    let { currentPage } = paginationInfo;
     const elems: any = this.getPaginationElements();
+    currentPage = this.validatePage(paginationInfo);
 
-    currentPage = this.validatePage(currentPage, totalPages, value, selectedPage);
     this.markElements(elems, currentPage);
-
     return currentPage;
   }
 
-  validatePage(page: number, limit: number, value: string, selectedPage: number) {
+  validatePage(paginationInfo: PaginationInfo) {
+    let { currentPage: page, totalPages: limit, value, selectedPage } = paginationInfo;
+
     if (value === 'prev') {
       page = (page <= 1) ? 1 : page -= 1;
       page = (page <= limit) ? page : 1;
@@ -136,14 +131,14 @@ export class HelperService {
 
   checkCurrentPageForChange(pagination: Pagination): void {
     const currentPageIsInvalid = pagination.currentPage > pagination.totalPages &&
-                                 pagination.totalPages !== 0;
+      pagination.totalPages !== 0;
 
     if (currentPageIsInvalid) {
       this.dataStorageService.pagination.currentPage = pagination.totalPages;
     }
   }
 
-  handlePagination(obj: any): void {
+  handlePagination(obj: Pagination): void {
     if (obj) {
       const pagination = this.toPagination(obj);
       this.dataStorageService.pagination = pagination;

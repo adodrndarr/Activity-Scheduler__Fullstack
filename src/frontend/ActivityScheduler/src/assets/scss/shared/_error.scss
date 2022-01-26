@@ -1,0 +1,10 @@
+.error {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__wrapper {
+        max-width: 50rem;
+        text-align: center;
+    }
+}

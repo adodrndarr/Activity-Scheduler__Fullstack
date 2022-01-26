@@ -1,20 +1,20 @@
 import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { ActivityEntity } from 'src/app/auth/Entities/Models/activity.model';
 import { DataStorageService } from 'src/app/services/data-storage.service';
 import { ErrorHandlerService } from 'src/app/services/error-handler.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { HttpService } from 'src/app/services/http.service';
 import { ValidatorService } from '../../../services/validator.service';
-
+import * as constants from '../../../shared/constants';
 
 @Component({
   selector: 'app-new-activity',
   templateUrl: './new-activity.component.html'
 })
-export class NewActivityComponent implements OnInit {
+export class NewActivityComponent implements OnInit, OnDestroy {
   constructor(
     private validatorService: ValidatorService,
     private formBuilder: FormBuilder,
@@ -33,6 +33,7 @@ export class NewActivityComponent implements OnInit {
   progress: number;
   uploadResponse: any;
   fileToUpload: File;
+  uploadSub: Subscription;
   uploadFinished = new BehaviorSubject<boolean>(false);
 
   ngOnInit() {
@@ -50,37 +51,31 @@ export class NewActivityComponent implements OnInit {
       'name': [null, [
         Validators.required,
         Validators.maxLength(20),
-        Validators.pattern('^[A-Z]+.*$')
-      ]
-      ],
+        Validators.pattern(constants.MATCH_FIRST_LETTER_CAPITAL)
+      ]],
       'itemQuantity': [null, [
         Validators.required,
-        Validators.pattern(`^[-+]?\\d+$`),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
+      ]],
       'minUserCount': [null, [
         Validators.required,
-        Validators.pattern('^[-+]?\\d+$'),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
+      ]],
       'maxUserCount': [null, [
         Validators.required,
-        Validators.pattern('^[-+]?\\d+$'),
+        Validators.pattern(constants.MATCH_NUMBERS),
         Validators.maxLength(4)
-      ]
-      ],
+      ]],
       'description': [null, [
         Validators.required,
         Validators.maxLength(400)
-      ]
-      ],
+      ]],
       'location': [null, [
         Validators.required,
         Validators.maxLength(100)
-      ]
-      ]
+      ]]
     });
   }
 
@@ -107,6 +102,7 @@ export class NewActivityComponent implements OnInit {
     this.isLoading = true;
     this.httpService.uploadFile(formData)
       .subscribe(event => {
+
         if (event.type === HttpEventType.UploadProgress) {
           const uploadProgress = (event.loaded / event.total) * 100;
           this.progress = Math.round(uploadProgress);
@@ -118,8 +114,8 @@ export class NewActivityComponent implements OnInit {
           console.log(this.uploadResponse);
           this.dataStorageService.currentImagePath = this.uploadResponse.serverFilePath;
 
-          this.uploadFinished.next(true);            
-          this.isLoading = false;         
+          this.uploadFinished.next(true);
+          this.isLoading = false;
         }
       });
   }
@@ -130,7 +126,7 @@ export class NewActivityComponent implements OnInit {
     }
 
     this.uploadFile();
-    this.uploadFinished.subscribe(uploadFinished => {
+    this.uploadSub = this.uploadFinished.subscribe(uploadFinished => {
       if (uploadFinished) {
         const activityEntity: ActivityEntity = this.newActivityForm.value;
 
@@ -139,28 +135,32 @@ export class NewActivityComponent implements OnInit {
         activityEntity.maxUserCount = +activityEntity.maxUserCount;
         activityEntity.imagePath = this.dataStorageService.currentImagePath;
 
-        const creationObs = this.httpService.createActivityEntity(activityEntity);
-        creationObs.subscribe(
-          (creationResponse) => {
-            console.log(creationResponse);
-
-            this.newActivityForm.reset();
-            this.resetActivityEntities();
-
-            this.helperService.navigateTo('activities');
-            this.isLoading = false;
-          },
-          (errorResponse: HttpErrorResponse) => {
-            console.log(errorResponse);
-
-            this.errorHandlerService.handleError(errorResponse);
-            this.errorMessage = this.errorHandlerService.errorMessage;
-
-            this.isLoading = false;
-          }
-        );
+        this.createActivityEntity(activityEntity);
       }
     });
+  }
+
+  private createActivityEntity(activityEntity: ActivityEntity) {
+    const creationObs = this.httpService.createActivityEntity(activityEntity);
+    creationObs.subscribe(
+      (creationResponse) => {
+        console.log(creationResponse);
+
+        this.newActivityForm.reset();
+        this.resetActivityEntities();
+
+        this.helperService.navigateTo('activities');
+        this.isLoading = false;
+      },
+      (errorResponse: HttpErrorResponse) => {
+        console.log(errorResponse);
+
+        this.errorHandlerService.handleError(errorResponse);
+        this.errorMessage = this.errorHandlerService.errorMessage;
+
+        this.isLoading = false;
+      }
+    );
   }
 
   onCancel(): void {
@@ -190,6 +190,11 @@ export class NewActivityComponent implements OnInit {
 
   public hasInvalidLength(fieldName: string): boolean {
     return this.validatorService.hasInvalidLength(fieldName, this.newActivityForm);
+  }
+
+  ngOnDestroy(): void {
+    if (this.uploadSub)
+      this.uploadSub.unsubscribe();
   }
 }
 
