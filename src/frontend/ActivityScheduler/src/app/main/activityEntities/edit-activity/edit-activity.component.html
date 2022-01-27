@@ -14,9 +14,9 @@
                 formControlName="name"
             >
 
-            <span *ngIf="isInvalidInput('name')">
-                <span *ngIf="isRequired('name')">Name is required.</span>
-                <span *ngIf="hasInvalidLength('name')">Maximum 20 characters are allowed.</span><br />
+            <span *ngIf="isInvalidInput('name', editActivityForm)">
+                <span *ngIf="isRequired('name', editActivityForm)">Name is required.</span>
+                <span *ngIf="hasInvalidLength('name', editActivityForm)">Maximum 20 characters are allowed.</span><br />
             </span>
 
 
@@ -42,10 +42,10 @@
                 formControlName="itemQuantity"
             >
 
-            <span *ngIf="isInvalidInput('itemQuantity')">
-                <span *ngIf="isRequired('itemQuantity')">Item Quantity is required.</span>
-                <span *ngIf="hasInvalidLength('itemQuantity')">Maximum 4 characters are allowed.</span><br />
-                <span *ngIf="isInvalidFormat('itemQuantity')">Item Quantity should be a number.</span>
+            <span *ngIf="isInvalidInput('itemQuantity', editActivityForm)">
+                <span *ngIf="isRequired('itemQuantity', editActivityForm)">Item Quantity is required.</span>
+                <span *ngIf="hasInvalidLength('itemQuantity', editActivityForm)">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('itemQuantity', editActivityForm)">Item Quantity should be a number.</span>
             </span>
 
 
@@ -57,10 +57,10 @@
                 formControlName="minUserCount"
             >
 
-            <span *ngIf="isInvalidInput('minUserCount')">
-                <span *ngIf="isRequired('minUserCount')">User count is required.</span>
-                <span *ngIf="hasInvalidLength('minUserCount')">Maximum 4 characters are allowed.</span><br />
-                <span *ngIf="isInvalidFormat('minUserCount')">User count should be a number.</span>
+            <span *ngIf="isInvalidInput('minUserCount', editActivityForm)">
+                <span *ngIf="isRequired('minUserCount', editActivityForm)">User count is required.</span>
+                <span *ngIf="hasInvalidLength('minUserCount', editActivityForm)">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('minUserCount', editActivityForm)">User count should be a number.</span>
             </span>
 
 
@@ -72,10 +72,10 @@
                 formControlName="maxUserCount"
             >
 
-            <span *ngIf="isInvalidInput('maxUserCount')">
-                <span *ngIf="isRequired('maxUserCount')">User count is required.</span>
-                <span *ngIf="hasInvalidLength('maxUserCount')">Maximum 4 characters are allowed.</span><br />
-                <span *ngIf="isInvalidFormat('maxUserCount')">User count should be a number.</span>
+            <span *ngIf="isInvalidInput('maxUserCount', editActivityForm)">
+                <span *ngIf="isRequired('maxUserCount', editActivityForm)">User count is required.</span>
+                <span *ngIf="hasInvalidLength('maxUserCount', editActivityForm)">Maximum 4 characters are allowed.</span><br />
+                <span *ngIf="isInvalidFormat('maxUserCount', editActivityForm)">User count should be a number.</span>
             </span>
 
 
@@ -87,9 +87,9 @@
                 formControlName="description"
             >
 
-            <span *ngIf="isInvalidInput('description')">
-                <span *ngIf="isRequired('description')">Description is required.</span>
-                <span *ngIf="hasInvalidLength('description')">Maximum 400 characters are allowed.</span>
+            <span *ngIf="isInvalidInput('description', editActivityForm)">
+                <span *ngIf="isRequired('description', editActivityForm)">Description is required.</span>
+                <span *ngIf="hasInvalidLength('description', editActivityForm)">Maximum 400 characters are allowed.</span>
             </span>
 
 
@@ -101,9 +101,9 @@
                 formControlName="location"
             >
 
-            <span *ngIf="isInvalidInput('location')">
-                <span *ngIf="isRequired('location')">Location is required.</span>
-                <span *ngIf="hasInvalidLength('location')">Maximum 100 characters are allowed.</span>
+            <span *ngIf="isInvalidInput('location', editActivityForm)">
+                <span *ngIf="isRequired('location', editActivityForm)">Location is required.</span>
+                <span *ngIf="hasInvalidLength('location', editActivityForm)">Maximum 100 characters are allowed.</span>
             </span>
 
 

@@ -1,40 +1,18 @@
-import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { FormGroup, Validators } from '@angular/forms';
 import { ActivityEntity } from 'src/app/auth/Entities/Models/activity.model';
-import { DataStorageService } from 'src/app/services/data-storage.service';
-import { ErrorHandlerService } from 'src/app/services/error-handler.service';
-import { HelperService } from 'src/app/services/helper.service';
-import { HttpService } from 'src/app/services/http.service';
-import { ValidatorService } from '../../../services/validator.service';
 import * as constants from '../../../shared/constants';
+import { BaseActivityEntityComponent } from '../common/base-activity-entity/base-activity-entity.component';
 
 @Component({
   selector: 'app-new-activity',
   templateUrl: './new-activity.component.html'
 })
-export class NewActivityComponent implements OnInit, OnDestroy {
-  constructor(
-    private validatorService: ValidatorService,
-    private formBuilder: FormBuilder,
-    private httpService: HttpService,
-    private errorHandlerService: ErrorHandlerService,
-    private helperService: HelperService,
-    private dataStorageService: DataStorageService
-  ) { }
-
+export class NewActivityComponent extends BaseActivityEntityComponent implements OnInit, OnDestroy {
 
   newActivityForm: FormGroup;
-  isLoading = false;
   errorMessage: string = null;
-
-  uploadMessage: string;
-  progress: number;
-  uploadResponse: any;
-  fileToUpload: File;
-  uploadSub: Subscription;
-  uploadFinished = new BehaviorSubject<boolean>(false);
 
   ngOnInit() {
     this.initializeNewActivityForm();
@@ -77,47 +55,6 @@ export class NewActivityComponent implements OnInit, OnDestroy {
         Validators.maxLength(100)
       ]]
     });
-  }
-
-  saveFileForUpload(file): void {
-    const files = file.files;
-    if (files.length === 0) {
-      this.progress = 0;
-      this.uploadMessage = null;
-      return;
-    }
-
-    this.fileToUpload = <File>files[0];
-  }
-
-  uploadFile(): void {
-    if (!this.fileToUpload) {
-      this.uploadFinished.next(true);
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', this.fileToUpload, this.fileToUpload.name);
-
-    this.isLoading = true;
-    this.httpService.uploadFile(formData)
-      .subscribe(event => {
-
-        if (event.type === HttpEventType.UploadProgress) {
-          const uploadProgress = (event.loaded / event.total) * 100;
-          this.progress = Math.round(uploadProgress);
-        }
-        else if (event.type === HttpEventType.Response) {
-          this.uploadMessage = 'Upload finished.';
-          this.uploadResponse = event.body;
-
-          console.log(this.uploadResponse);
-          this.dataStorageService.currentImagePath = this.uploadResponse.serverFilePath;
-
-          this.uploadFinished.next(true);
-          this.isLoading = false;
-        }
-      });
   }
 
   private handleSubmittedNewActivityForm(): void {
@@ -169,27 +106,6 @@ export class NewActivityComponent implements OnInit, OnDestroy {
 
   private resetState(): void {
     this.errorMessage = null;
-  }
-
-  resetActivityEntities(): void {
-    this.dataStorageService.activityEntities.length = 0;
-    this.dataStorageService.currentImagePath = null;
-  }
-
-  public isInvalidInput(fieldName: string): boolean {
-    return this.validatorService.isInvalidInput(fieldName, this.newActivityForm);
-  }
-
-  public isRequired(fieldName: string): boolean {
-    return this.validatorService.isRequired(fieldName, this.newActivityForm);
-  }
-
-  public isInvalidFormat(fieldName: string): boolean {
-    return this.validatorService.isInvalidFormat(fieldName, this.newActivityForm);
-  }
-
-  public hasInvalidLength(fieldName: string): boolean {
-    return this.validatorService.hasInvalidLength(fieldName, this.newActivityForm);
   }
 
   ngOnDestroy(): void {
