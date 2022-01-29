@@ -32,23 +32,20 @@ namespace Domain.Repositories.Implementations
             if (pagination.IncludeName != null)
             {
                 allActivities = allActivities.Where(a => a.Name.ToLower()
-                                                         .Contains(pagination.IncludeName.ToLower())
-                                   );
+                                                         .Contains(pagination.IncludeName.ToLower()));
             }
 
             var activities = PagedList<ActivityEntity>.ToPagedList(
                                 allActivities,
                                 pagination.PageNumber,
-                                pagination.PageSize
-                            );
+                                pagination.PageSize);
 
             return activities;
         }
 
         public ActivityEntity GetActivityEntityById(Guid activityEntityId)
         {
-            var activityEntity = GetByCondition(a => a.Id == activityEntityId)
-                                     .SingleOrDefault();
+            var activityEntity = GetByCondition(a => a.Id == activityEntityId).SingleOrDefault();
 
             return activityEntity;
         }
@@ -59,8 +56,7 @@ namespace Domain.Repositories.Implementations
 
             if (name != null)
             {
-                activityEntity = GetByCondition(a => a.Name.ToLower() == name.ToLower())
-                                     .FirstOrDefault();
+                activityEntity = GetByCondition(a => a.Name.ToLower() == name.ToLower()).FirstOrDefault();
             }
 
             return activityEntity;
@@ -68,8 +64,7 @@ namespace Domain.Repositories.Implementations
 
         public IEnumerable<ActivityEntity> GetActivityEntitiesByIds(IEnumerable<Guid> activityEntityIds)
         {
-            var activityEntities = GetByCondition(a => activityEntityIds.Contains(a.Id))
-                                       .AsEnumerable();
+            var activityEntities = GetByCondition(a => activityEntityIds.Contains(a.Id)).AsEnumerable();
 
             return activityEntities;
         }

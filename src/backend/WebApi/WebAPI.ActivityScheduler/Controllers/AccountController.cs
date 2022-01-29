@@ -29,28 +29,14 @@ namespace WebAPI.ActivityScheduler.Controllers
         public async Task<ActionResult> Register(UserToRegisterDTO userToRegister)
         {
             var registerProcess = await _accountService.Register(userToRegister);
-            if (registerProcess.IsSuccessful)
+            var response = new RegistrationResponseDTO
             {
-                return StatusCode(
-                        registerProcess.StatusCode,
-                        new RegistrationResponseDTO
-                        {
-                            IsRegistrationSuccessful = registerProcess.IsSuccessful,
-                            Info = registerProcess.Info,
-                            ErrorMessages = registerProcess.Infos
-                        }
-                    );
-            }
+                IsRegistrationSuccessful = registerProcess.IsSuccessful,
+                Info = registerProcess.Info,
+                ErrorMessages = registerProcess.Infos
+            };
 
-            return StatusCode(
-                    registerProcess.StatusCode,
-                    new RegistrationResponseDTO
-                    {
-                        IsRegistrationSuccessful = registerProcess.IsSuccessful,
-                        Info = registerProcess.Info,
-                        ErrorMessages = registerProcess.Infos
-                    }
-                );
+            return StatusCode(registerProcess.StatusCode, response);
         }
 
         //POST: account/register-admin
@@ -59,28 +45,14 @@ namespace WebAPI.ActivityScheduler.Controllers
         public async Task<ActionResult<RegistrationResponseDTO>> RegisterAdmin(UserToRegisterDTO userToRegister)
         {
             var registerProcess = await _accountService.RegisterAdmin(userToRegister);
-            if (registerProcess.IsSuccessful)
+            var response = new RegistrationResponseDTO
             {
-                return StatusCode(
-                        registerProcess.StatusCode,
-                        new RegistrationResponseDTO
-                        {
-                            IsRegistrationSuccessful = registerProcess.IsSuccessful,
-                            Info = registerProcess.Info,
-                            ErrorMessages = registerProcess.Infos
-                        }
-                    );
-            }
+                IsRegistrationSuccessful = registerProcess.IsSuccessful,
+                Info = registerProcess.Info,
+                ErrorMessages = registerProcess.Infos
+            };
 
-            return StatusCode(
-                    registerProcess.StatusCode,
-                    new RegistrationResponseDTO
-                    {
-                        IsRegistrationSuccessful = registerProcess.IsSuccessful,
-                        Info = registerProcess.Info,
-                        ErrorMessages = registerProcess.Infos
-                    }
-                );
+            return StatusCode(registerProcess.StatusCode, response);
         }
 
         // POST: account/login
@@ -88,19 +60,18 @@ namespace WebAPI.ActivityScheduler.Controllers
         public async Task<ActionResult> Login(UserToLoginDTO userToLogin)
         {
             var loginProcess = await _accountService.Login(userToLogin, Response);
-            if (loginProcess.IsSuccessful)
+            if (!loginProcess.IsSuccessful)
             {
-                return StatusCode(loginProcess.StatusCode, loginProcess.Payload);
+                var response = new LoginResponseDTO
+                {
+                    IsLoginSuccessful = loginProcess.IsSuccessful,
+                    ErrorMessage = loginProcess.Info
+                };
+
+                return StatusCode(loginProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                    loginProcess.StatusCode,
-                    new LoginResponseDTO
-                    {
-                        IsLoginSuccessful = loginProcess.IsSuccessful,
-                        ErrorMessage = loginProcess.Info
-                    }
-                );
+            return StatusCode(loginProcess.StatusCode, loginProcess.Payload);
         }
 
         // GET: account/logout
@@ -108,12 +79,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         public async Task<ActionResult> Logout()
         {
             var signOutProcess = await _accountService.Logout();
-            return StatusCode(
-                signOutProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = signOutProcess.Info
-                });
+            var response = new InfoResponseDTO { Info = signOutProcess.Info };
+
+            return StatusCode(signOutProcess.StatusCode, response);
         }
     }
 }

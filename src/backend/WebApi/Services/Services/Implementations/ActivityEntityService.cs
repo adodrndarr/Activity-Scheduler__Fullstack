@@ -254,10 +254,9 @@ namespace ActivityScheduler.Services
             var fullImageFilesPaths = Directory.GetFiles(fullPathToSaveFile);
             foreach (var fullImgFilePath in fullImageFilesPaths)
             {
-                if (fullImgFilePath == fullPathWithCurrentFileName)
-                {
+                var skipCheckForCurrentFile = (fullImgFilePath == fullPathWithCurrentFileName);
+                if (skipCheckForCurrentFile)
                     continue;
-                }
 
                 foreach (var activityEntity in activityEntities)
                 {

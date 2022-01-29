@@ -28,7 +28,7 @@ namespace ActivityScheduler.Presentation.EntitiesDTO
         public static PagedList<T> ToPagedList(IQueryable<T> source, int pageNumber, int pageSize) 
         {
             int itemsToSkip = ((pageNumber - 1) * pageSize);
-            itemsToSkip = itemsToSkip < 0 ? 0 : itemsToSkip;
+            itemsToSkip = (itemsToSkip < 0) ? 0 : itemsToSkip;
 
             var count = source.Count();
             var items = source.Skip(itemsToSkip)

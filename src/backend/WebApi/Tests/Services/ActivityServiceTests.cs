@@ -63,7 +63,7 @@ namespace Services.Test.Services
             var expectedActivity = _activityService.GetActivityById(unknownGuid);
 
             // Assert
-            expectedActivity.Should().Be(null, because: "invalid Guid was passed");
+            expectedActivity.Should().Be(null, because: "Invalid Guid was passed");
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace Services.Test.Services
             var result = _activityService.ScheduleActivity(null, _testNewActivityDTO);
 
             // Assert
-            expectedToSucceed.Should().Be(result.IsSuccessful);
+            result.IsSuccessful.Should().Be(expectedToSucceed);
         }
 
         [Test]
@@ -208,7 +208,7 @@ namespace Services.Test.Services
             bool activitiesResult = activities.Count < 1;
 
             // Assert
-            expectToHaveNoActivities.Should().Be(activitiesResult);
+            activitiesResult.Should().Be(expectToHaveNoActivities);
         }
 
         [Test]
@@ -416,14 +416,18 @@ namespace Services.Test.Services
             SetupGetActivityEntityByName(_testActivityEntity);
 
             // Act
-            Action updateWithInvalidActivity = () => _activityService.Update(null, _testNewActivityDTO);
+            var updateWithInvalidActivity = _activityService.Update(null, _testNewActivityDTO);
+            var updateWithInvalidParams = _activityService.Update(null, null);
             Action updateWithInvalidActivityRequest = () => _activityService.Update(_testActivity, null);
-            Action updateWithInvalidParams = () => _activityService.Update(null, null);
 
             // Assert           
-            updateWithInvalidActivity.Should().Throw<NullReferenceException>();
+            updateWithInvalidActivity.Should().BeOfType(typeof(ResultDetails));
+            updateWithInvalidActivity.IsSuccessful.Should().Be(false);
+            
+            updateWithInvalidParams.Should().BeOfType(typeof(ResultDetails));
+            updateWithInvalidParams.IsSuccessful.Should().Be(false);
+
             updateWithInvalidActivityRequest.Should().Throw<NullReferenceException>();
-            updateWithInvalidParams.Should().Throw<NullReferenceException>();
         }
 
         [Test]

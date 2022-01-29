@@ -242,15 +242,13 @@ namespace ActivityScheduler.Services
             if (pagination.IncludeName != null)
             {
                 activities = activities.Where(a => a.Name.ToLower()
-                                                         .Contains(pagination.IncludeName.ToLower())
-                                   );
+                                                         .Contains(pagination.IncludeName.ToLower()));
             }
 
             var pagedActivities = PagedList<Activity>.ToPagedList(
                                 activities,
                                 pagination.PageNumber,
-                                pagination.PageSize
-                            );
+                                pagination.PageSize);
 
             var paginationMetadata = new
             {

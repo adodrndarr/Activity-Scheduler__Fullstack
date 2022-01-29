@@ -35,8 +35,8 @@ namespace ActivityScheduler.Services
 
         public Activity GetActivityById(Guid activityId)
         {
+            _logger.LogInfo("ActivityService GetActivityById - Getting specific activity...");
             var activity = _repos.ActivityRepo.GetActivityById(activityId);
-
             return activity;
         }
 
@@ -69,8 +69,19 @@ namespace ActivityScheduler.Services
             SaveChanges();
         }
 
-        public void Update(Activity activityToUpdate, ActivityRequestDTO newActivity)
+        public ResultDetails Update(Activity activityToUpdate, ActivityRequestDTO newActivity)
         {
+            if (activityToUpdate == null)
+            {
+                _logger.LogInfo("ActivityService Update - Update failed.");
+                return new ResultDetails
+                {
+                    StatusCode = StatusCodes.Status400BadRequest,
+                    IsSuccessful = false,
+                    Info = $"Could not update the activity, please make sure you provided valid Id and that the activity exists."
+                };
+            }
+
             activityToUpdate.Name = newActivity.ActivityEntityName;
             activityToUpdate.BookedForDate = newActivity.BookedForDate;
             activityToUpdate.StartTime = newActivity.StartTime;
@@ -78,8 +89,7 @@ namespace ActivityScheduler.Services
             activityToUpdate.OrganizerName = newActivity.OrganizerName;
             activityToUpdate.Duration = CalculateDuration(activityToUpdate.StartTime, activityToUpdate.EndTime);
 
-            var activityEntity = _repos.ActivityEntityRepo
-                .GetActivityEntityByName(newActivity.ActivityEntityName);
+            var activityEntity = _repos.ActivityEntityRepo.GetActivityEntityByName(newActivity.ActivityEntityName);
 
             var idToUpdate = activityToUpdate.ActivityEntityId;
             idToUpdate = (activityEntity == null) ? idToUpdate : activityEntity.Id.ToString();
@@ -88,6 +98,14 @@ namespace ActivityScheduler.Services
 
             _repos.ActivityRepo.Update(activityToUpdate);
             SaveChanges();
+
+            _logger.LogInfo("ActivityService Update - Update was successful.");
+            return new ResultDetails
+            {
+                StatusCode = StatusCodes.Status201Created,
+                IsSuccessful = true,
+                Info = $"Update for {newActivity?.ActivityEntityName} was successful."
+            };
         }
 
         public ResultDetails Delete(Guid activityId)
@@ -316,52 +334,23 @@ namespace ActivityScheduler.Services
 
         public List<Activity> GetBookedActivities(ActivityEntity activityEntity, DateTime forDate)
         {
-            var allActivitites = _repos.ActivityRepo.GetByCondition(a => a.Name.ToLower() == 
-                                                                         activityEntity.Name.ToLower())
-                                                    .ToList();
-
+            var activities = _repos.ActivityRepo.GetByCondition(a => a.Name.ToLower() == activityEntity.Name.ToLower())
+                                                .ToList();
             var bookedActivities = new List<Activity>();
-            var bookedQuantity = 0;
 
-            for (int i = 0; i < allActivitites.Count; i++)
+            foreach (var activity in activities)
             {
-                var currentActivity = allActivitites[i];
-                var currentDate = forDate.Date; // currentActivity.BookedForDate.Date;
-                var currentStartHour = currentActivity.StartTime.Hour;
-                var currentEndhour = currentActivity.EndTime.Hour;
-
-                var alreadyBooked = bookedActivities
-                    .Any(bookedActivity => bookedActivity.BookedForDate.Date == currentDate &&
-                                           bookedActivity.StartTime.Hour == currentStartHour &&
-                                           bookedActivity.EndTime.Hour == currentEndhour);
+                var alreadyBooked = bookedActivities.Any(ba => ba.Id == activity.Id);
                 if (alreadyBooked)
-                {
                     continue;
-                }
 
-                foreach (var activity in allActivitites)
-                {
-                    var activityDate = activity.BookedForDate.Date;
-                    var activityStartHour = activity.StartTime.Hour;
-                    var activityEndHour = activity.EndTime.Hour;
+                var activitiesFound = activities.Where(a => a.BookedForDate.Date == forDate.Date
+                                                         && a.StartTime.Hour == activity.StartTime.Hour
+                                                         && a.EndTime.Hour == activity.EndTime.Hour);
 
-                    bool activityExists = activityDate == currentDate &&
-                                          activityStartHour == currentStartHour &&
-                                          activityEndHour == currentEndhour;
-                    if (activityExists)
-                    {
-                        bookedQuantity += 1;
-
-                        bool allQuantitiesAreTaken = bookedQuantity >= activityEntity.ItemQuantity;
-                        if (allQuantitiesAreTaken)
-                        {
-                            bookedActivities.Add(activity);
-                            bookedQuantity = 0;
-                        }
-                    }
-                }
-
-                bookedQuantity = 0;
+                bool allQuantitiesAreTaken = activitiesFound?.Count() >= activityEntity.ItemQuantity;
+                if (allQuantitiesAreTaken)
+                    bookedActivities.AddRange(activitiesFound);
             }
 
             return bookedActivities;

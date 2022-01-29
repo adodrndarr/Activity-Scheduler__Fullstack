@@ -6,9 +6,6 @@ using ActivityScheduler.Domain.Structs;
 using ActivityScheduler.Services.Interfaces;
 using ActivityScheduler.Presentation.EntitiesDTO;
 using System.IO;
-using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Http;
-
 
 namespace WebAPI.ActivityScheduler.Controllers
 {
@@ -44,20 +41,14 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult<PagedList<ActivityEntityDTO>> GetActivityEntities([FromQuery] PaginationDTO pagination)
         {
             var getActivitiesProcess = _activityEntityService.GetAll(pagination, Response);
-           
-            if (getActivitiesProcess.IsSuccessful)
+            
+            if (!getActivitiesProcess.IsSuccessful)
             {
-                return StatusCode(
-                    getActivitiesProcess.StatusCode, 
-                    getActivitiesProcess.Payload);
+                var response = new InfoResponseDTO { Info = getActivitiesProcess.Info };
+                return StatusCode(getActivitiesProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                getActivitiesProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = getActivitiesProcess.Info
-                });
+            return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
         }
 
         [Authorize(Roles = UserRoles.StandardUser)]
@@ -76,13 +67,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult AddActivityEntity(ActivityEntityDTO newActivityEntity)
         {
             var additionProcess = _activityEntityService.Add(newActivityEntity);
+            var response = new InfoResponseDTO { Info = additionProcess.Info };
 
-            return StatusCode(
-                additionProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = additionProcess.Info
-                });
+            return StatusCode(additionProcess.StatusCode, response);
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -94,22 +81,13 @@ namespace WebAPI.ActivityScheduler.Controllers
             var file = Request.Form.Files[0];
 
             var uploadProcess = _activityEntityService.UploadFile(file, currentDirectory);
-            if (uploadProcess.IsSuccessful)
+            if (!uploadProcess.IsSuccessful)
             {
-                return StatusCode(
-                    uploadProcess.StatusCode, 
-                    new 
-                    { 
-                        serverFilePath = uploadProcess.Payload 
-                    });
+                var response = new InfoResponseDTO { Info = uploadProcess.Info };
+                return StatusCode(uploadProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                uploadProcess.StatusCode, 
-                new InfoResponseDTO
-                {
-                    Info = uploadProcess.Info
-                });
+            return StatusCode(uploadProcess.StatusCode, new { serverFilePath = uploadProcess.Payload });
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -119,23 +97,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         {
             var activityFound = _activityEntityService.GetById(activityId);
             var updateProcess = _activityEntityService.Update(activityFound, newActivity);
+            var response = new InfoResponseDTO { Info = updateProcess.Info };
 
-            if (updateProcess.IsSuccessful)
-            {
-                return StatusCode(
-                    updateProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = updateProcess.Info
-                    });
-            }
-
-            return StatusCode(
-                   updateProcess.StatusCode,
-                   new InfoResponseDTO
-                   {
-                       Info = updateProcess.Info
-                   });
+            return StatusCode(updateProcess.StatusCode, response);
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -144,22 +108,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult DeleteActivityEntity(Guid activityEntityId)
         {
             var deletionProcess = _activityEntityService.Delete(activityEntityId);
-            if (deletionProcess.IsSuccessful)
-            {
-                return StatusCode(
-                    deletionProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = deletionProcess.Info
-                    });
-            }
+            var response = new InfoResponseDTO { Info = deletionProcess.Info };
 
-            return StatusCode(
-                deletionProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = deletionProcess.Info
-                });
+            return StatusCode(deletionProcess.StatusCode, response);
         }
     }
 }

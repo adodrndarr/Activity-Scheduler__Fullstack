@@ -11,7 +11,7 @@ namespace ActivityScheduler.Services.Interfaces
         Activity GetActivityById(Guid activityId);
         void Add(ActivityRequestDTO activityDTO, User user);
         void AddMany(List<ActivityRequestDTO> activityRequestDTOs, User user);
-        void Update(Activity activityToUpdate, ActivityRequestDTO newActivity);
+        ResultDetails Update(Activity activityToUpdate, ActivityRequestDTO newActivity);
         ResultDetails Delete(Guid activityId);
         void SaveChanges();
 

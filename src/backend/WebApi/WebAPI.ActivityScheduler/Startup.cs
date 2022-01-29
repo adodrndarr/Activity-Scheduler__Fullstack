@@ -17,11 +17,13 @@ namespace WebAPI.ActivityScheduler
 {
     public class Startup
     {
+        private readonly string _loggerConfigPath = String.Concat(Directory.GetCurrentDirectory(), "/Logging/nlog.config");
+
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/Logging/nlog.config"));
+            LogManager.LoadConfiguration(_loggerConfigPath);
         }
 
         
@@ -65,7 +67,6 @@ namespace WebAPI.ActivityScheduler
 
             app.UseHttpsRedirection();
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

@@ -37,17 +37,13 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult<IEnumerable<UserDTO>> GetUsers([FromQuery] PaginationDTO pagination)
         {
             var getUsersProcess = _userService.GetAllDTOsWithDetails(pagination, Response);
-            if (getUsersProcess.IsSuccessful)
+            if (!getUsersProcess.IsSuccessful)
             {
-                return StatusCode(getUsersProcess.StatusCode, getUsersProcess.Payload);
+                var response = new InfoResponseDTO { Info = getUsersProcess.Info };
+                return StatusCode(getUsersProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                getUsersProcess.StatusCode, 
-                new InfoResponseDTO
-                {
-                    Info = getUsersProcess.Info
-                });
+            return StatusCode(getUsersProcess.StatusCode, getUsersProcess.Payload);
         }
 
         [Authorize(Roles = UserRoles.StandardUser)]
@@ -67,25 +63,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         {
             var userToUpdate = _userService.GetById(userId);
             var updateProcess = await _userService.Update(userToUpdate, newUser, HttpContext);
+            var response = new InfoResponseDTO { Info = updateProcess.Info };
 
-            if (updateProcess.IsSuccessful)
-            {
-                return StatusCode(
-                    updateProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = updateProcess.Info
-                    }
-                );
-            }
-
-            return StatusCode(
-                updateProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = updateProcess.Info
-                }
-            );
+            return StatusCode(updateProcess.StatusCode, response);
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -95,25 +75,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         {
             var userFound = _userService.GetByIdWithDetails(userId);
             var deletionProcess = _userService.Delete(userFound);
+            var response = new InfoResponseDTO { Info = deletionProcess.Info };
 
-            if (deletionProcess.IsSuccessful)
-            {
-                return StatusCode(
-                    deletionProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = deletionProcess.Info
-                    }
-                );
-            }
-
-            return StatusCode(
-                deletionProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = deletionProcess.Info
-                }
-            );
+            return StatusCode(deletionProcess.StatusCode, response);
         }
     }
 }

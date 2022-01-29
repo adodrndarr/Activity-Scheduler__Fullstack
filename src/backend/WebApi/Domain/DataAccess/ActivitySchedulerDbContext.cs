@@ -5,10 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ActivityScheduler.Domain.DataAccess
 {
-    public class ActivitySchedulerDbContext : IdentityDbContext<User>
+    public class ActivitySchedulerDbContext: IdentityDbContext<User>
     {
-        public ActivitySchedulerDbContext(DbContextOptions options) 
-            : base(options)
+        public ActivitySchedulerDbContext(DbContextOptions options): base(options)
         {
         }
 

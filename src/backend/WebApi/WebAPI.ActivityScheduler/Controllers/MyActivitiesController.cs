@@ -34,18 +34,13 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult<IEnumerable<ActivityRequestDTO>> GetAllActivities()
         {
             var getActivitiesProcess = _userService.GetAllActivities();
-            if (getActivitiesProcess.IsSuccessful)
+            if (!getActivitiesProcess.IsSuccessful)
             {
-                return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
+                var response = new InfoResponseDTO { Info = getActivitiesProcess.Info };
+                return StatusCode(getActivitiesProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                    getActivitiesProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = getActivitiesProcess.Info
-                    }
-                );
+            return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
         }
 
         [Authorize(Roles = UserRoles.StandardUser)]
@@ -54,18 +49,13 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult<IEnumerable<ActivityResponseDTO>> GetActivities(Guid userId, [FromQuery] PaginationDTO pagination)
         {
             var getActivitiesProcess = _userService.GetActivitiesByUserId(userId, pagination, Response);
-            if (getActivitiesProcess.IsSuccessful)
+            if (!getActivitiesProcess.IsSuccessful)
             {
-                return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
+                var response = new InfoResponseDTO { Info = getActivitiesProcess.Info };
+                return StatusCode(getActivitiesProcess.StatusCode, response);
             }
 
-            return StatusCode(
-                    getActivitiesProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = getActivitiesProcess.Info
-                    }
-                );
+            return StatusCode(getActivitiesProcess.StatusCode, getActivitiesProcess.Payload);
         }
 
         [Authorize(Roles = UserRoles.Admin)]
@@ -73,31 +63,11 @@ namespace WebAPI.ActivityScheduler.Controllers
         [HttpPut]
         public ActionResult UpdateActivity(Guid activityId, ActivityRequestDTO newActivity)
         {
-            _logger.LogInfo("MyActivitiesController UpdateActivity - Getting specific activity to update...");
             var activityToBeUpdated = _activityService.GetActivityById(activityId);
+            var updateProcess = _activityService.Update(activityToBeUpdated, newActivity);
+            var response = new InfoResponseDTO { Info = updateProcess.Info };
 
-            if (activityToBeUpdated != null)
-            {
-                _activityService.Update(activityToBeUpdated, newActivity);
-
-                _logger.LogInfo("MyActivitiesController UpdateActivity - Update was successful.");
-                return StatusCode(
-                    StatusCodes.Status201Created, 
-                    new InfoResponseDTO
-                    {
-                        Info = $"Update for {newActivity.ActivityEntityName} was successful."
-                    }
-                );
-            }
-
-            _logger.LogInfo("MyActivitiesController UpdateActivity - Update failed.");
-            return StatusCode(
-                StatusCodes.Status400BadRequest,
-                new InfoResponseDTO
-                {
-                    Info = $"Could not update the activity, please make sure you provided valid Id and that the activity already exists."
-                }
-            );
+            return StatusCode(updateProcess.StatusCode, response);
         }
 
         [Authorize(Roles = UserRoles.StandardUser)]
@@ -106,13 +76,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         public ActionResult DeleteActivity(Guid activityId)
         {
             var deleteProcess = _activityService.Delete(activityId);
+            var response = new InfoResponseDTO { Info = deleteProcess.Info };
 
-            return StatusCode(
-                deleteProcess.StatusCode,
-                new InfoResponseDTO
-                {
-                    Info = deleteProcess.Info
-                });
+            return StatusCode(deleteProcess.StatusCode, response);
         }
     }
 }

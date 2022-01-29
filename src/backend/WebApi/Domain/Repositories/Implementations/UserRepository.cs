@@ -10,10 +10,9 @@ using System.Linq;
 
 namespace Domain.Repositories.Implementations
 {
-    public class UserRepository : RepositoryBase<User>, IUserRepository
+    public class UserRepository: RepositoryBase<User>, IUserRepository
     {
-        public UserRepository(ActivitySchedulerDbContext dbContext) 
-            : base(dbContext)
+        public UserRepository(ActivitySchedulerDbContext dbContext): base(dbContext)
         {
         }
 
@@ -30,8 +29,7 @@ namespace Domain.Repositories.Implementations
             if (pagination.IncludeName != null)
             {
                 allUsers = allUsers.Where(u => u.UserName.ToLower()
-                                                         .Contains(pagination.IncludeName.ToLower())
-                                   );
+                                                         .Contains(pagination.IncludeName.ToLower()));
             }
 
             var users = PagedList<User>.ToPagedList(

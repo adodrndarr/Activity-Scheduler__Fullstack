@@ -20,7 +20,7 @@ namespace WebAPI.ActivityScheduler.Controllers
         private readonly IActivityEntityService _activityEntityService;
 
         public ScheduleActivityController(
-            IActivityService activityService,
+            IActivityService activityService, 
             IUserService userService,
             IActivityEntityService activityEntityService)
         {
@@ -36,14 +36,9 @@ namespace WebAPI.ActivityScheduler.Controllers
         {
             var userFound = _userService.GetByIdWithDetails(userId);
             var scheduleProcess = _activityService.ScheduleActivity(userFound, newActivityDTO);
+            var response = new InfoResponseDTO { Info = scheduleProcess.Info };
 
-            return StatusCode(
-                    scheduleProcess.StatusCode,
-                    new InfoResponseDTO
-                    {
-                        Info = scheduleProcess.Info
-                    }
-                );
+            return StatusCode(scheduleProcess.StatusCode, response);
         }
 
         // POST: scheduleActivity/multiple
@@ -53,10 +48,7 @@ namespace WebAPI.ActivityScheduler.Controllers
             var userFound = _userService.GetByIdWithDetails(userId);
             var scheduleResponse = _activityService.ScheduleActivities(userFound, newActivityDTOs);
 
-            return StatusCode(
-                    StatusCodes.Status200OK,
-                    scheduleResponse
-                );
+            return StatusCode(StatusCodes.Status200OK, scheduleResponse);
         }
 
         // GET: scheduleActivity/booked-activities
@@ -66,10 +58,7 @@ namespace WebAPI.ActivityScheduler.Controllers
             var activityEntity = _activityEntityService.GetById(activityEntityId);
             var checkProcess = _activityService.CheckAvailability(activityEntity, forDate);
 
-            return StatusCode(
-                    checkProcess.StatusCode,
-                    checkProcess.Payload
-                );
+            return StatusCode(checkProcess.StatusCode, checkProcess.Payload);
         }
     }
 }
