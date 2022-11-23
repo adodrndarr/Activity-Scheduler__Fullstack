@@ -1,6 +1,13 @@
 # ActivityScheduler
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+## *Development Enviornment Setup* 
+
+**Install latest SQL Server (Developer Edition)**<br />
+**Install nvm - Node Version Manager**<br />
+- Install node v10.9.0 (to be compatible with Angular CLI version 8.3.0), run:  **nvm install v10.9.0**
+- Downgrade node version to use v10.9.0, run: **nvm use 10.9.0**<br/>
+- Run: **nvm list** to confirm current active node version
 
 ## Development server
 
